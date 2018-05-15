@@ -6,7 +6,7 @@ nodes.metamaskNode = require('./nodeHelpers/metamask');
 nodes.nodeTypes = {
     MOAC: "MOAC",
     MOAC_TEST: "MOAC TestNet",
-    Custom: "CUSTOM ETH"
+    ETH: "ETH"
 };
 nodes.ensNodeTypes = [nodes.nodeTypes.ETH, nodes.nodeTypes.Ropsten];
 nodes.ensSubNodeTypes = [nodes.nodeTypes.ETH];
@@ -34,18 +34,30 @@ nodes.nodeList = {
         'tokenList': require('./tokens/moacTokens.json'),
         'abiList': require('./abiDefinitions/moacAbi.json'),
         'service': 'myetherapi.com',
-        'lib': new nodes.customNode('https://api.myetherapi.com/eth', '')
+        'lib': new nodes.customNode('https://moacwalletonline.com/moac_api', '')
     },
     'moac_test': {
         'name': 'MOAC TestNet',
-        'blockExplorerTX': 'https://ropsten.etherscan.io/tx/[[txHash]]',
-        'blockExplorerAddr': 'https://ropsten.etherscan.io/address/[[address]]',
+        'blockExplorerTX': 'http://47.75.144.55:3000/tx/[[txHash]]',
+        'blockExplorerAddr': 'http://47.75.144.55:3000/addr/[[address]]',
         'type': nodes.nodeTypes.MOAC_TEST,
         'eip155': true,
         'chainId': 101,
         'tokenList': require('./tokens/moacTestTokens.json'),
         'abiList': require('./abiDefinitions/moacTestAbi.json'),
         'service': 'infura.io',
+        'lib': new nodes.customNode('https://moacwalletonline.com/moac_test_api', '')
+    },
+    'eth_mew': {
+        'name': 'ETH',
+        'blockExplorerTX': 'https://etherscan.io/tx/[[txHash]]',
+        'blockExplorerAddr': 'https://etherscan.io/address/[[address]]',
+        'type': nodes.nodeTypes.ETH,
+        'eip155': true,
+        'chainId': 1,
+        'tokenList': require('./tokens/ethTokens.json'),
+        'abiList': require('./abiDefinitions/ethAbi.json'),
+        'service': 'myetherapi.com',
         'lib': new nodes.customNode('https://api.myetherapi.com/eth', '')
     }
 };
