@@ -164,17 +164,24 @@ uiFuncs.generateTx = function(txData, callback) {
         uiFuncs.isTxDataValid(txData);
         //Define the rawTX and sign with different signers
 
-        var genTxWithInfo = function(data) {
+        var genTxWithInfo = function(inData) {
             var rawTx = {
-                nonce: ethFuncs.sanitizeHex(data.nonce),
-                gasPrice: data.isOffline ? ethFuncs.sanitizeHex(data.gasprice) : ethFuncs.sanitizeHex(ethFuncs.addTinyMoreToGas(data.gasprice)),
+                nonce: ethFuncs.sanitizeHex(inData.nonce),
+                gasPrice: inData.isOffline ? ethFuncs.sanitizeHex(inData.gasprice) : ethFuncs.sanitizeHex(ethFuncs.addTinyMoreToGas(data.gasprice)),
                 gasLimit: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(txData.gasLimit)),
                 to: ethFuncs.sanitizeHex(txData.to),
                 value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(etherUnits.toWei(txData.value, txData.unit))),
                 data: ethFuncs.sanitizeHex(txData.data)
             }
             if (ajaxReq.eip155) rawTx.chainId = ajaxReq.chainId;
+            //If 
             rawTx.data = rawTx.data == '' ? '0x' : rawTx.data;
+
+            //For MOAC 
+            rawTx.via = txData.via || '0x';
+            rawTx.systemContract = txData.systemContract || '0x';
+            rawTx.shardingFlag = txData.systemContract || '0x';
+
             var eTx = new ethUtil.Tx(rawTx);
 
             if ((typeof txData.hwType != "undefined") && (txData.hwType == "ledger")) {
@@ -230,7 +237,8 @@ uiFuncs.generateTx = function(txData, callback) {
                 rawTx.isError = false;
                 if (callback !== undefined) callback(rawTx);
             }
-        }
+        }//end genTxWithInfo
+
         if (txData.nonce || txData.gasPrice) {
             var data = {
                 nonce: txData.nonce,
@@ -240,6 +248,7 @@ uiFuncs.generateTx = function(txData, callback) {
             genTxWithInfo(data);
         } else {
             //Not sure where data is come from in the callback function
+            //Maybe from the interface.
             ajaxReq.getTransactionData(txData.from, function(data) {
                 if (data.error && callback !== undefined) {
                     callback({
