@@ -279,7 +279,7 @@ NAV_InteractContract        : 'Interact with Contract ',
 NAV_Multisig                : 'Multisig ',
 NAV_MyWallets               : '我的钱包 ',
 NAV_Offline                 : '离线发送 ',
-NAV_SendEther               : '发送以太币 / 发送代币 ', //combined these tabs
+NAV_SendEther               : '发送墨客币 / 发送代币 ', //combined these tabs
 NAV_SendTokens              : 'Send Tokens ',
 NAV_SignMsg                 : 'Sign Message ',
 NAV_Swap                    : 'Swap ',

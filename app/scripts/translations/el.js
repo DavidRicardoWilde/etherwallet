@@ -278,7 +278,7 @@ NAV_InteractContract        : 'Αλληλεπίδραση με συμβόλαι�
 NAV_Multisig                : 'Multisig ',
 NAV_MyWallets               : 'Τα πορτοφόλια μου ',
 NAV_Offline                 : 'Αποστολή εκτός σύνδεσης ',
-NAV_SendEther               : 'Αποστολή αιθέρα και μαρκών ',
+NAV_SendEther               : 'Send MOAC & Tokens',
 NAV_SendTokens              : 'Αποστολή μαρκών ',
 NAV_SignMsg                 : 'Υπογραφή μηνύματος ',
 NAV_Swap                    : 'Ανταλλαγή ',

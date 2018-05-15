@@ -279,7 +279,7 @@ NAV_InteractContract        : 'Interact with Contract ',
 NAV_Multisig                : 'Multisig ',
 NAV_MyWallets               : 'Mina Plånböcker ',
 NAV_Offline                 : 'Skicka Offline ',
-NAV_SendEther               : 'Skicka Ether och Tokens ',
+NAV_SendEther               : 'Skicka MOAC och Tokens ',
 NAV_SendTokens              : 'Skicka Token ', /*Översätt token?*/
 NAV_SignMsg                 : 'Sign Message ',
 NAV_Swap                    : 'Swap ',
