@@ -5,7 +5,7 @@
       ng-cloak>
 
   <article class="block__wrap gen__1" ng-show="!wallet && !showGetAddress">
-    <section class="block__main gen__1--inner">
+    <section class="col-xs-12 col-sm-8 col-sm-offset-2 text-center">
       <br />
       <h1 translate="NAV_GenerateWallet" aria-live="polite">
         Create New Wallet
