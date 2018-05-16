@@ -143,6 +143,18 @@ uiFuncs.trezorUnlockCallback = function(txData, callback) {
         }
     });
 }
+/*
+ * Main function generating a signed TX
+ * Support the following wallet format:
+ * 1. MetaMask/Mist
+ * 2. Ledger hardware Wallet
+ * 3. Trezor
+ * 4. Digital Bitbox
+ * 5. Secalot
+ * 6. Keystore/JSON
+ * 7. Mnemonic Phrase
+ * 8. Private key (string)
+*/
 uiFuncs.generateTx = function(txData, callback) {
     if ((typeof txData.hwType != "undefined") && (txData.hwType == "trezor") && !txData.trezorUnlocked) {
         uiFuncs.trezorUnlockCallback(txData, callback);
@@ -150,6 +162,8 @@ uiFuncs.generateTx = function(txData, callback) {
     }
     try {
         uiFuncs.isTxDataValid(txData);
+        //Define the rawTX and sign with different signers
+
         var genTxWithInfo = function(data) {
             var rawTx = {
                 nonce: ethFuncs.sanitizeHex(data.nonce),
@@ -162,7 +176,9 @@ uiFuncs.generateTx = function(txData, callback) {
             if (ajaxReq.eip155) rawTx.chainId = ajaxReq.chainId;
             rawTx.data = rawTx.data == '' ? '0x' : rawTx.data;
             var eTx = new ethUtil.Tx(rawTx);
+
             if ((typeof txData.hwType != "undefined") && (txData.hwType == "ledger")) {
+                //ledger hardware wallet
                 var app = new ledgerEth(txData.hwTransport);
                 var EIP155Supported = false;
                 var localCallback = function(result, error) {
@@ -205,7 +221,10 @@ uiFuncs.generateTx = function(txData, callback) {
             } else if ((typeof txData.hwType != "undefined") && (txData.hwType == "secalot")) {
                 uiFuncs.signTxSecalot(eTx, rawTx, txData, callback);
             } else {
+                //8. Private key
+                //use private and the 
                 eTx.sign(new Buffer(txData.privKey, 'hex'));
+
                 rawTx.rawTx = JSON.stringify(rawTx);
                 rawTx.signedTx = '0x' + eTx.serialize().toString('hex');
                 rawTx.isError = false;
@@ -220,6 +239,7 @@ uiFuncs.generateTx = function(txData, callback) {
             data.isOffline = txData.isOffline ? txData.isOffline : false;
             genTxWithInfo(data);
         } else {
+            //Not sure where data is come from in the callback function
             ajaxReq.getTransactionData(txData.from, function(data) {
                 if (data.error && callback !== undefined) {
                     callback({
@@ -240,6 +260,7 @@ uiFuncs.generateTx = function(txData, callback) {
         });
     }
 }
+//Actual send the TX
 uiFuncs.sendTx = function(signedTx, callback) {
     // check for web3 late signed tx
     if (signedTx.slice(0, 2) !== '0x') {
