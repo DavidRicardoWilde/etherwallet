@@ -13,7 +13,7 @@
       </label>
       <input class="form-control"
              type="text"
-             placeholder="0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D"
+             placeholder="0xf1f5b7a35dff6400af7ab3ea54e4e637059ef909"
              ng-model="tx.to"
              ng-change="validateAddress(tx.to,'')"/>
     </section>
@@ -147,7 +147,7 @@
 
   <!-- Data -->
   <article class="clearfix">
-    <section class="col-sm-11" ng-show="tokenTx.id=='ether'">
+    <section class="col-sm-11" ng-show="tokenTx.id=='moac'">
       <span class="account-help-icon">
         <img src="images/icon-help.svg" class="help-icon" />
         <p class="account-help-text" translate="OFFLINE_Step2_Label_6b">

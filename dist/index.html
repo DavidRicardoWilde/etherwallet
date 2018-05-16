@@ -1203,7 +1203,7 @@
       </label>
       <input class="form-control"
              type="text"
-             placeholder="0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D"
+             placeholder="0xf1f5b7a35dff6400af7ab3ea54e4e637059ef909"
              ng-model="tx.to"
              ng-change="validateAddress(tx.to,'')"/>
     </section>
@@ -1337,7 +1337,7 @@
 
   <!-- Data -->
   <article class="clearfix">
-    <section class="col-sm-11" ng-show="tokenTx.id=='ether'">
+    <section class="col-sm-11" ng-show="tokenTx.id=='moac'">
       <span class="account-help-icon">
         <img src="images/icon-help.svg" class="help-icon" />
         <p class="account-help-text" translate="OFFLINE_Step2_Label_6b">
@@ -1422,28 +1422,28 @@
 
         <table class="table text-center"><tbody><tr>
 
-          <td ng-show="tx.sendMode=='ether'">
+          <td ng-show="tx.sendMode=='moac'">
             <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tx.from}}" watch-var="tx.from"></div>
           </td>
-          <td ng-show="tx.sendMode!=='ether'">
+          <td ng-show="tx.sendMode!=='moac'">
             <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tokenTx.from}}" watch-var="tokenTx.from"></div>
           </td>
 
-          <td ng-show="tx.sendMode=='ether'" class="mono">
+          <td ng-show="tx.sendMode=='moac'" class="mono">
             ->
             <br />
             {{tx.value}} {{unitReadable}}
           </td>
-          <td ng-show="tx.sendMode!=='ether'" class="mono">
+          <td ng-show="tx.sendMode!=='moac'" class="mono">
             ->
             <br />
             {{tokenTx.value}} {{unitReadable}}
           </td>
 
-          <td ng-show="tx.sendMode=='ether'">
+          <td ng-show="tx.sendMode=='moac'">
             <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tx.to}}" watch-var="tx.to"></div>
           </td>
-          <td ng-show="tx.sendMode!=='ether'">
+          <td ng-show="tx.sendMode!=='moac'">
             <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tokenTx.to}}" watch-var="tokenTx.to"></div>
           </td>
 
@@ -1455,20 +1455,20 @@
           <span translate="SENDModal_Content_1">
             You are about to send
           </span>
-          <strong ng-show="tx.sendMode=='ether'" class="mono">
+          <strong ng-show="tx.sendMode=='moac'" class="mono">
             {{tx.value}} {{unitReadable}}
           </strong>
-          <strong ng-show="tx.sendMode!=='ether'" class="mono">
+          <strong ng-show="tx.sendMode!=='moac'" class="mono">
             {{tokenTx.value}} {{unitReadable}}
           </strong>
           <br />
           <span translate="SENDModal_Content_2">
             to address
           </span>
-          <strong ng-show="tx.sendMode=='ether'" class="mono">
+          <strong ng-show="tx.sendMode=='moac'" class="mono">
             {{tx.to}}.
           </strong>
-          <strong ng-show="tx.sendMode!=='ether'" class="mono">
+          <strong ng-show="tx.sendMode!=='moac'" class="mono">
             {{tokenTx.to}}
           </strong>
         </p>
