@@ -35,7 +35,7 @@ moacFuncs.padLeftEven = function(hex) {
 }
 moacFuncs.addTinyMoreToGas = function(hex) {
     hex = this.sanitizeHex(hex);
-    return new BigNumber(moacFuncs.gasAdjustment * moacUnits.getValueOfUnit('gwei')).toString(16);
+    return new BigNumber(moacFuncs.gasAdjustment * moacUnits.getValueOfUnit('gsha')).toString(16);
 }
 moacFuncs.decimalToHex = function(dec) {
     return new BigNumber(dec).toString(16);
@@ -132,8 +132,8 @@ moacFuncs.signTransaction = function (tx, privateKey) {
               transaction.to = tx.to || '0x';//Can be zero, for contract creation
               transaction.data = tx.data || '0x';//can be zero for general TXs
               transaction.value = tx.value || '0x';//can be zero for contract call
-              transaction.chainId = utils.numberToHex(tx.chainId);
-              transaction.shardingFlag = utils.numberToHex(tx.shardingFlag);
+              transaction.chainId = tx.chainId;//ethUtil.numberToHex(tx.chainId);
+              transaction.shardingFlag = tx.shardingFlag;//ethUtil.numberToHex(tx.shardingFlag);
               transaction.systemContract = '0x';//System contract flag, always = 0
               transaction.via = tx.via || '0x'; //Sharding subchain address
   
@@ -154,19 +154,19 @@ moacFuncs.signTransaction = function (tx, privateKey) {
               // R *big.Int `json:"r" gencodec:"required"`
               // S *big.Int `json:"s" gencodec:"required"`
   
-            //   var rlpEncoded = RLP.encode([
-            //       Bytes.fromNat(transaction.nonce),
-            //       Bytes.fromNat(transaction.systemContract),
-            //       Bytes.fromNat(transaction.gasPrice),
-            //       Bytes.fromNat(transaction.gasLimit),
-            //       transaction.to.toLowerCase(),
-            //       Bytes.fromNat(transaction.value),
-            //       transaction.data,
-            //       Bytes.fromNat(transaction.shardingFlag),
-            //       transaction.via.toLowerCase(),
-            //       Bytes.fromNat(transaction.chainId || "0x1"),
-            //       "0x",
-            //       "0x"]);
+              var rlpEncoded = ethUtil.rlp.encode([
+                  Bytes.fromNat(transaction.nonce),
+                  Bytes.fromNat(transaction.systemContract),
+                  Bytes.fromNat(transaction.gasPrice),
+                  Bytes.fromNat(transaction.gasLimit),
+                  transaction.to.toLowerCase(),
+                  Bytes.fromNat(transaction.value),
+                  transaction.data,
+                  Bytes.fromNat(transaction.shardingFlag),
+                  transaction.via.toLowerCase(),
+                  Bytes.fromNat(transaction.chainId || "0x1"),
+                  "0x",
+                  "0x"]);
   
             //   var hash = Hash.keccak256(rlpEncoded);
   
@@ -188,8 +188,8 @@ moacFuncs.signTransaction = function (tx, privateKey) {
               var vPos = 9;
               //Sign the hash with the private key to produce the
               //V, R, S
-              var newsign = ecsign(hash, privateKey);
-              var rawTx = RLP.decode(rlpEncoded).slice(0,vPos+3);
+              var newsign = ethUtil.ecsign(hash, privateKey);
+              var rawTx = ethUtil.rlp.decode(rlpEncoded).slice(0,vPos+3);
   
               //Replace the V field with chainID info
               var newV = newsign.v + 8 + transaction.chainId *2;
@@ -199,7 +199,7 @@ moacFuncs.signTransaction = function (tx, privateKey) {
               rawTx[vPos+1] = makeEven(bufferToHex(newsign.r));
               rawTx[vPos+2] = makeEven(bufferToHex(newsign.s));
   
-              var rawTransaction = RLP.encode(rawTx);
+              var rawTransaction = rlpEncoded;//RLP.encode(rawTx);
   
   
           } catch(e) {

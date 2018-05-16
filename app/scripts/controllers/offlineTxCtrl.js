@@ -53,7 +53,7 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
     }
 
     $scope.convertPrice = function(gasPrice) {
-      if($scope.gasPriceDef === 'GWEI') {
+      if($scope.gasPriceDef === 'GSHA') {
         return moacUnits.toSha(gasPrice,$scope.gasPriceDef.toLowerCase());
       } return gasPrice;
     }
@@ -81,8 +81,8 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
         }
     }
     $scope.$watch('gasPriceDef', function(newValue, oldValue) {
-        if(newValue == "WEI" && oldValue == "GWEI") $scope.gasPriceDec = moacUnits.toSha($scope.gasPriceDec, 'gwei');
-        else if(newValue == "GWEI" && oldValue == "WEI") $scope.gasPriceDec = moacUnits.toGsha($scope.gasPriceDec,'wei');
+        if(newValue == "SHA" && oldValue == "GSHA") $scope.gasPriceDec = moacUnits.toSha($scope.gasPriceDec, 'gsha');
+        else if(newValue == "GWEI" && oldValue == "SHA") $scope.gasPriceDec = moacUnits.toGsha($scope.gasPriceDec,'sha');
         else $scope.gasPriceDec = 0;
     });
     $scope.$watch('tx', function() {
@@ -135,6 +135,7 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
             return;
         }
         var txData = uiFuncs.getTxData($scope);
+        console.log("txdata:", txData);
         txData.isOffline = true;
         txData.nonce = ethFuncs.sanitizeHex(ethFuncs.decimalToHex($scope.nonceDec));
         txData.gasPrice = ethFuncs.sanitizeHex(ethFuncs.decimalToHex($scope.convertPrice($scope.gasPriceDec)));

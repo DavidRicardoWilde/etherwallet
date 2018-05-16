@@ -173,70 +173,73 @@ uiFuncs.generateTx = function(txData, callback) {
                 value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(moacUnits.toSha(txData.value, txData.unit))),
                 data: ethFuncs.sanitizeHex(txData.data)
             }
-            if (ajaxReq.eip155) rawTx.chainId = ajaxReq.chainId;
+            if (ajaxReq.eip155) rawTx.chainId = '0x'+moacFuncs.decimalToHex(ajaxReq.chainId);
             //If 
             rawTx.data = rawTx.data == '' ? '0x' : rawTx.data;
 
             //For MOAC 
             rawTx.via = txData.via || '0x';
             rawTx.systemContract = txData.systemContract || '0x';
-            rawTx.shardingFlag = txData.systemContract || '0x';
+            rawTx.shardingFlag = txData.shardingFlag || '0x';
+var mTx = new moacTx(rawTx);
+            // var eTx = new ethUtil.Tx(rawTx);
 
-            var eTx = new ethUtil.Tx(rawTx);
-
-            if ((typeof txData.hwType != "undefined") && (txData.hwType == "ledger")) {
-                //ledger hardware wallet
-                var app = new ledgerEth(txData.hwTransport);
-                var EIP155Supported = false;
-                var localCallback = function(result, error) {
-                    if (typeof error != "undefined") {
-                        if (callback !== undefined) callback({
-                            isError: true,
-                            error: error
-                        });
-                        return;
-                    }
-                    var splitVersion = result['version'].split('.');
-                    if (parseInt(splitVersion[0]) > 1) {
-                        EIP155Supported = true;
-                    } else
-                    if (parseInt(splitVersion[1]) > 0) {
-                        EIP155Supported = true;
-                    } else
-                    if (parseInt(splitVersion[2]) > 2) {
-                        EIP155Supported = true;
-                    }
-                    uiFuncs.signTxLedger(app, eTx, rawTx, txData, !EIP155Supported, callback);
-                }
-                app.getAppConfiguration(localCallback);
-            } else if ((typeof txData.hwType != "undefined") && (txData.hwType == "trezor")) {
-                uiFuncs.signTxTrezor(rawTx, txData, callback);
-            } else if ((typeof txData.hwType != "undefined") && (txData.hwType == "web3")) {
-                // for web3, we dont actually sign it here
-                // instead we put the final params in the "signedTx" field and
-                // wait for the confirmation dialogue / sendTx method
-                var txParams = Object.assign({
-                    from: txData.from,
-                    gas: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(txData.gasLimit)) // MetaMask and Web3 v1.0 use 'gas' not 'gasLimit'
-                }, rawTx)
-                rawTx.rawTx = JSON.stringify(rawTx);
-                rawTx.signedTx = JSON.stringify(txParams);
-                rawTx.isError = false;
-                callback(rawTx)
-            } else if ((typeof txData.hwType != "undefined") && (txData.hwType == "digitalBitbox")) {
-                uiFuncs.signTxDigitalBitbox(eTx, rawTx, txData, callback);
-            } else if ((typeof txData.hwType != "undefined") && (txData.hwType == "secalot")) {
-                uiFuncs.signTxSecalot(eTx, rawTx, txData, callback);
-            } else {
+            // if ((typeof txData.hwType != "undefined") && (txData.hwType == "ledger")) {
+            //     //ledger hardware wallet
+            //     var app = new ledgerEth(txData.hwTransport);
+            //     var EIP155Supported = false;
+            //     var localCallback = function(result, error) {
+            //         if (typeof error != "undefined") {
+            //             if (callback !== undefined) callback({
+            //                 isError: true,
+            //                 error: error
+            //             });
+            //             return;
+            //         }
+            //         var splitVersion = result['version'].split('.');
+            //         if (parseInt(splitVersion[0]) > 1) {
+            //             EIP155Supported = true;
+            //         } else
+            //         if (parseInt(splitVersion[1]) > 0) {
+            //             EIP155Supported = true;
+            //         } else
+            //         if (parseInt(splitVersion[2]) > 2) {
+            //             EIP155Supported = true;
+            //         }
+            //         uiFuncs.signTxLedger(app, eTx, rawTx, txData, !EIP155Supported, callback);
+            //     }
+            //     app.getAppConfiguration(localCallback);
+            // } else if ((typeof txData.hwType != "undefined") && (txData.hwType == "trezor")) {
+            //     uiFuncs.signTxTrezor(rawTx, txData, callback);
+            // } else if ((typeof txData.hwType != "undefined") && (txData.hwType == "web3")) {
+            //     // for web3, we dont actually sign it here
+            //     // instead we put the final params in the "signedTx" field and
+            //     // wait for the confirmation dialogue / sendTx method
+            //     var txParams = Object.assign({
+            //         from: txData.from,
+            //         gas: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(txData.gasLimit)) // MetaMask and Web3 v1.0 use 'gas' not 'gasLimit'
+            //     }, rawTx)
+            //     rawTx.rawTx = JSON.stringify(rawTx);
+            //     rawTx.signedTx = JSON.stringify(txParams);
+            //     rawTx.isError = false;
+            //     callback(rawTx)
+            // } else if ((typeof txData.hwType != "undefined") && (txData.hwType == "digitalBitbox")) {
+            //     uiFuncs.signTxDigitalBitbox(eTx, rawTx, txData, callback);
+            // } else if ((typeof txData.hwType != "undefined") && (txData.hwType == "secalot")) {
+            //     uiFuncs.signTxSecalot(eTx, rawTx, txData, callback);
+            // } else {
                 //8. Private key
                 //use private and the 
-                eTx.sign(new Buffer(txData.privKey, 'hex'));
-
+                //eTx.sign(new Buffer(txData.privKey, 'hex'));
+                mTx.sign(new Buffer(txData.privKey, 'hex'));
+                rawTx.signedTx = '0x' + mTx.serialize().toString('hex');
+                // console.log("RawTx:", rawTx);
+                // var signedTx = moacFuncs.signTransaction(rawTx, txData.privKey);
                 rawTx.rawTx = JSON.stringify(rawTx);
-                rawTx.signedTx = 'test send';//'0x' + eTx.serialize().toString('hex');
+                // rawTx.signedTx = signedTx;//'test send';//'0x' + eTx.serialize().toString('hex');
                 rawTx.isError = false;
                 if (callback !== undefined) callback(rawTx);
-            }
+            // }
         }//end genTxWithInfo
 
         if (txData.nonce || txData.gasPrice) {
@@ -311,10 +314,10 @@ uiFuncs.transferAllBalance = function(fromAdd, gasLimit, callback) {
             data = data.data;
             var gasPrice = new BigNumber(ethFuncs.sanitizeHex(ethFuncs.addTinyMoreToGas(data.gasprice))).times(gasLimit);
             var maxVal = new BigNumber(data.balance).minus(gasPrice);
-            maxVal = moacUnits.toMc(maxVal, 'wei') < 0 ? 0 : moacUnits.toMc(maxVal, 'wei');
+            maxVal = moacUnits.toMc(maxVal, 'sha') < 0 ? 0 : moacUnits.toMc(maxVal, 'sha');
             if (callback !== undefined) callback({
                 isError: false,
-                unit: "ether",
+                unit: "mc",
                 value: maxVal
             });
         });
