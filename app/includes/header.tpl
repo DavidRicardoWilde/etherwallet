@@ -35,7 +35,7 @@
 <meta property="og:title" content="MoacWalletOnline.com  &middot; Your Key to Ethereum" />
 <meta property="og:type" content="website">
 <meta property="og:image" content="/images/myetherwallet-logo-banner.png" />
-<meta property="og:image" content="/images/myetherwallet-logo.png" />
+<meta property="og:image" content="/images/moacwallet-logo.png" />
 <meta property="og:image" content="/images/myetherwallet-logo-square.png" />
 <meta property="og:image" content="/images/myetherwallet-banner-fun.jpg" />
 <meta name="twitter:image" content="/images/myetherwallet-logo-twitter.png">
@@ -55,7 +55,7 @@
   "url"   : "https://MoacWalletOnline.com",
   "contactType" : "customer service"
 }],
-"logo" : "https://www.MoacWalletOnline.com/images/myetherwallet-logo.png",
+"logo" : "https://www.MoacWalletOnline.com/images/moacwallet-logo.png",
 "description": "MoacWalletOnline.com is a free, open-source, client-side interface for generating MOAC wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely.",
 "sameAs" : [
   "https://www.MoacWalletOnline.com/",
@@ -79,7 +79,7 @@
   <section class="container">
     @@if (site === 'moac' ) {
       <a class="brand" href="/" aria-label="Go to homepage">
-        <img src="images/myetherwallet-logo.png"   height="64px" width="245px" alt="MoacWalletOnline" />
+        <img src="images/moacwallet-logo.png"   height="64px" width="245px" alt="MoacWalletOnline" />
         <p class="small visible-xs">3.21.11</p>
       </a>
     }

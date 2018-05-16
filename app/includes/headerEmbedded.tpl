@@ -32,6 +32,6 @@
 
 <header class="bg-gradient text-white">
 <section class="container text-center">
-  <a href="https://www.MoacWalletOnline.com/"><img src="images/myetherwallet-logo.png" height="50px" width="auto" alt="Ether Wallet" class="embedded-logo" /></a>
+  <a href="https://www.MoacWalletOnline.com/"><img src="images/moacwallet-logo.png" height="50px" width="auto" alt="Ether Wallet" class="embedded-logo" /></a>
 </section>
 </header>
