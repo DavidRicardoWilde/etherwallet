@@ -19,67 +19,6 @@
         View w/ Address Only
     </label>
 
-    <!-- MetaMask -->
-    <label aria-flowto="aria2"
-           class="radio">
-      <input aria-flowto="aria2"
-             type="radio"
-             aria-label="MetaMask / Mist"
-             ng-model="walletType"
-             value="metamask" />
-      <span translate="x_MetaMask">
-        MetaMask / Mist
-      </span>
-    </label>
-
-    <!-- Ledger -->
-    <label aria-flowto="aria3"
-           class="radio"
-           ng-show="ajaxReq.type=='ETH'||ajaxReq.type=='ETC'||ajaxReq.type=='ROPSTEN ETH'||ajaxReq.type=='RINKEBY ETH'||ajaxReq.type=='KOVAN ETH'||ajaxReq.type=='EXP'||ajaxReq.type=='UBQ'||ajaxReq.type=='POA'||ajaxReq.type=='TOMO'">
-      <input aria-flowto="aria3"
-             type="radio"
-             aria-label="Ledger Hardware Wallet"
-             ng-model="walletType"
-             value="ledger"/>
-      Ledger Wallet
-    </label>
-
-    <!-- TREZOR -->
-    <label class="radio"
-           aria-flowto="aria4"
-           ng-show="ajaxReq.type=='ETH'||ajaxReq.type=='ETC'||ajaxReq.type=='ROPSTEN ETH'||ajaxReq.type=='RINKEBY ETH'||ajaxReq.type=='KOVAN ETH'||ajaxReq.type=='EXP'||ajaxReq.type=='UBQ'||ajaxReq.type=='RSK'||ajaxReq.type=='POA'||ajaxReq.type=='TOMO'||ajaxReq.type=='ELLA'||ajaxReq.type=='EGEM'">
-      <input aria-flowto="aria4"
-             type="radio"
-             aria-label="Trezor Hardware Wallet"
-             ng-model="walletType"
-             value="trezor" />
-      TREZOR
-    </label>
-
-    <!-- Digital Bitbox -->
-    <label aria-flowto="aria5"
-           class="radio"
-           ng-show="ajaxReq.type=='ETH'||ajaxReq.type=='ETC'||ajaxReq.type=='ROPSTEN ETH'||ajaxReq.type=='RINKEBY ETH'||ajaxReq.type=='KOVAN ETH'||ajaxReq.type=='EXP'">
-      <input aria-flowto="aria5"
-             type="radio"
-             aria-label="Digital Bitbox hardware wallet"
-             ng-model="walletType"
-             value="digitalBitbox"/>
-      Digital Bitbox
-    </label>
-
-    <!-- Secalot -->
-    <label aria-flowto="aria5"
-           class="radio"
-           ng-show="ajaxReq.type=='ETH'||ajaxReq.type=='ETC'||ajaxReq.type=='ROPSTEN ETH'||ajaxReq.type=='RINKEBY ETH'||ajaxReq.type=='KOVAN ETH'||ajaxReq.type=='EXP'">
-      <input aria-flowto="aria5"
-             type="radio"
-             aria-label="Secalot hardware wallet"
-             ng-model="walletType"
-             value="secalot"/>
-      Secalot
-    </label>
-
     <!-- Keystore / JSON File -->
     <label aria-flowto="aria6"
            class="radio">
@@ -93,69 +32,6 @@
          target="_blank"
          rel="noopener noreferrer">
         <img src="images/icon-help-3.svg" width="16px" height="16px" style="margin: 0 5px 5px">
-      </a>
-    </label>
-
-    <!-- Mnemonic Phrase -->
-    <label aria-flowto="aria7"
-           class="radio">
-      <input aria-flowto="aria7"
-             aria-label="mnemonic phrase"
-             type="radio"
-             ng-model="walletType"
-             value="pastemnemonic" />
-      <span translate="x_Mnemonic">
-        Mnemonic Phrase
-      </span>
-      <a href="https://myetherwallet.github.io/knowledge-base/private-keys-passwords/difference-beween-private-key-and-keystore-file.html"
-         target="_blank"
-         rel="noopener noreferrer">
-        <img src="images/icon-help-3.svg" width="16px" height="16px" style="margin: 0 5px 5px">
-      </a>
-    </label>
-
-    <!-- Private -->
-    <label aria-flowto="aria8"
-           class="radio">
-      <input aria-flowto="aria8"
-             aria-label="private key"
-             type="radio"
-             ng-model="walletType"
-             value="pasteprivkey" />
-      <span translate="x_PrivKey2">
-        Private Key
-      </span>
-      <a href="https://myetherwallet.github.io/knowledge-base/private-keys-passwords/difference-beween-private-key-and-keystore-file.html"
-         target="_blank"
-         rel="noopener noreferrer">
-        <img src="images/icon-help-3.svg" width="16px" height="16px" style="margin: 0 5px 5px">
-      </a>
-    </label>
-
-    <!-- Parity -->
-    <label aria-flowto="aria9"
-           class="radio"
-           style="display: none;"
-           id="showMeTheMoney">
-      <input aria-flowto="aria9"
-             aria-label="parity phrase"
-             type="radio"
-             ng-model="walletType"
-             value="parityBWallet" />
-      <span translate="x_ParityPhrase">
-        Parity Phrase
-      </span>
-    </label>
-
-    <label class="radio">
-      &nbsp;
-      <span translate="x_ParityPhrase">
-        Parity Phrase
-      </span>
-      <a href="https://myetherwallet.github.io/knowledge-base/private-keys-passwords/parity-phrases-are-no-longer-supported.html"
-         target="_blank"
-         rel="noopener noreferrer">
-           <img src="images/icon-help-2.svg" width="16px" height="16px" style="margin: 0 5px 5px">
       </a>
     </label>
   </section>
@@ -353,7 +229,7 @@
           </a>
         </li>
         <li class="u__protip">
-          <a href="https://trezor.io/?a=myetherwallet.com"
+          <a href="https://trezor.io/?a=MoacWalletOnline.com"
              target="_blank"
              rel="noopener noreferrer">
                 Don't have a TREZOR? Get one now.
@@ -524,7 +400,7 @@
         </li>
       </ul>
       <div class="form-group">
-        If you must, please <u>double-check the URL &amp; SSL cert</u>. It should say <code>https://www.myetherwallet.com</code> &amp; <code>MYETHERWALLET INC</code> in your URL bar.
+        If you must, please <u>double-check the URL &amp; SSL cert</u>. It should say <code>https://www.MoacWalletOnline.com</code> &amp; <code>MYETHERWALLET INC</code> in your URL bar.
       </div>
       <br />
       <div class="form-group">
@@ -600,7 +476,7 @@
         </li>
       </ul>
       <div class="form-group">
-        If you must, please <u>double-check the URL &amp; SSL cert</u>. It should say <code>https://www.myetherwallet.com</code> &amp; <code>MYETHERWALLET INC</code> in your URL bar.
+        If you must, please <u>double-check the URL &amp; SSL cert</u>. It should say <code>https://www.MoacWalletOnline.com</code> &amp; <code>MYETHERWALLET INC</code> in your URL bar.
       </div>
       <br />
       <div class="form-group">
@@ -681,7 +557,7 @@
         </li>
       </ul>
       <div class="form-group">
-        If you must, please <u>double-check the URL &amp; SSL cert</u>. It should say <code>https://www.myetherwallet.com</code> &amp; <code>MYETHERWALLET INC</code> in your URL bar.
+        If you must, please <u>double-check the URL &amp; SSL cert</u>. It should say <code>https://www.MoacWalletOnline.com</code> &amp; <code>MYETHERWALLET INC</code> in your URL bar.
       </div>
       <br />
       <div class="form-group">

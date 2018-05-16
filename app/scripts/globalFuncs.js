@@ -172,8 +172,8 @@ globalFuncs.stripTags = function(str) {
     return xssFilters.inHTMLData(str);
 };
 globalFuncs.checkAndRedirectHTTPS = function() {
-    var host = "myetherwallet.com";
-    var hostw = "https://www.myetherwallet.com";
+    var host = "MoacWalletOnline.com";
+    var hostw = "https://www.MoacWalletOnline.com";
     var path = window.location.pathname;
     if (host == window.location.host) window.location = hostw + path;
 };
@@ -219,7 +219,7 @@ globalFuncs.getDefaultTokensAndNetworkType =  function getDefaultTokensAndNetwor
         'rin': require('./tokens/rinkebyTokens.json')
     };
 
-    var nodeErrMsg = 'Node does not exist, contact support@myetherwallet.com CODE:localstorageNodeMissing'
+    var nodeErrMsg = 'Node does not exist, contact support@MoacWalletOnline.com CODE:localstorageNodeMissing'
     // localStorage selected node
     var currentNodeKey = getFromLS("curNode", nodeErrMsg).key;
     // custom nodes in local storage

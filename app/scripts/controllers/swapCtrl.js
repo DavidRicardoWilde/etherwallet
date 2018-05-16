@@ -44,7 +44,7 @@ var swapCtrl = function ($scope, $sce, walletService) {
         REPETH: 1
     };
 
-    $scope.availableCoins = ["ETH", "BTC", "REP"];
+    $scope.availableCoins = ["MOAC", "ETH", "BTC", "REP"];
     $scope.availableTokens = [];
     $scope.availableOptions = [...$scope.availableCoins, ...$scope.availableTokens];
 

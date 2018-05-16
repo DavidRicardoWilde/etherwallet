@@ -24,6 +24,7 @@
 
     @@if (site === 'cx' ) {  @@include( './viewWalletInfo-content.tpl', { "site": "cx" } )    }
     @@if (site === 'mew') {  @@include( './viewWalletInfo-content.tpl', { "site": "mew" } )   }
+    @@if (site === 'moac') {  @@include( './viewWalletInfo-content.tpl', { "site": "moac" } )   }
 
   </article>
 
