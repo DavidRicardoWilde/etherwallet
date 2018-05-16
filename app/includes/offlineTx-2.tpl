@@ -13,7 +13,7 @@
       </label>
       <input class="form-control"
              type="text"
-             placeholder="0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D"
+             placeholder="0xf1f5b7a35dff6400af7ab3ea54e4e637059ef909"
              ng-model="tx.to"
              ng-change="validateAddress(tx.to,'')"/>
     </section>
@@ -49,7 +49,7 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-right" ng-show="dropdownAmount">
             <li>
-              <a ng-class="{true:'active'}[tokenTx.id == 'ether']" ng-click="setSendMode('ether')">
+              <a ng-class="{true:'active'}[tokenTx.id == 'moac']" ng-click="setSendMode('moac')">
                 {{ajaxReq.type}}
               </a>
             </li>
@@ -74,7 +74,7 @@
          rel="noopener noreferrer">
         <img src="images/icon-help.svg" class="help-icon" />
         <p class="account-help-text" translate="OFFLINE_Step2_Label_4b">
-          21000 is the default gas limit.
+          1000 is the default gas limit.
         </p>
       </a>
       <label translate="OFFLINE_Step2_Label_4">
@@ -114,8 +114,8 @@
               <i class="caret"></i>
             </a>
             <ul class="dropdown-menu" ng-show="gpDropdown">
-              <li><a ng-class="{true:'active'}[gasPriceDef=='WEI']" ng-click="changePrice('WEI')"> WEI          </a></li>
-              <li><a ng-class="{true:'active'}[gasPriceDef=='GWEI']" ng-click="changePrice('GWEI')"> GWEI         </a></li>
+              <li><a ng-class="{true:'active'}[gasPriceDef=='SHA']" ng-click="changePrice('SHA')"> SHA          </a></li>
+              <li><a ng-class="{true:'active'}[gasPriceDef=='GSHA']" ng-click="changePrice('GSHA')"> GSHA         </a></li>
             </ul>
           </span>
 
@@ -147,7 +147,7 @@
 
   <!-- Data -->
   <article class="clearfix">
-    <section class="col-sm-11" ng-show="tokenTx.id=='ether'">
+    <section class="col-sm-11" ng-show="tokenTx.id=='moac'">
       <span class="account-help-icon">
         <img src="images/icon-help.svg" class="help-icon" />
         <p class="account-help-text" translate="OFFLINE_Step2_Label_6b">

@@ -160,9 +160,9 @@
               </span>
             </td>
             <td>
-              {{ txInfo.gasPrice.gwei }} GWEI
+              {{ txInfo.gasPrice.gwei }} GSHA/XIAO
               <small>
-                ({{ txInfo.gasPrice.wei }} WEI)
+                ({{ txInfo.gasPrice.wei }} SHA)
               </small>
             </td>
           </tr>
