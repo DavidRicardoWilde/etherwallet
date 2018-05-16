@@ -114,8 +114,8 @@
               <i class="caret"></i>
             </a>
             <ul class="dropdown-menu" ng-show="gpDropdown">
-              <li><a ng-class="{true:'active'}[gasPriceDef=='WEI']" ng-click="changePrice('WEI')"> WEI          </a></li>
-              <li><a ng-class="{true:'active'}[gasPriceDef=='GWEI']" ng-click="changePrice('GWEI')"> GWEI         </a></li>
+              <li><a ng-class="{true:'active'}[gasPriceDef=='SHA']" ng-click="changePrice('SHA')"> SHA          </a></li>
+              <li><a ng-class="{true:'active'}[gasPriceDef=='GSHA']" ng-click="changePrice('GSHA')"> GSHA         </a></li>
             </ul>
           </span>
 
