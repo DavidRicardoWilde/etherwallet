@@ -28,7 +28,7 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
         gasLimit: globalFuncs.urlGet('gaslimit') != null || globalFuncs.urlGet('gas') != null ? globalFuncs.urlGet('gaslimit') != null ? globalFuncs.urlGet('gaslimit') : globalFuncs.urlGet('gas') : globalFuncs.defaultTxGasLimit,
         data: globalFuncs.urlGet('data') == null ? "" : globalFuncs.urlGet('data'),
         to: globalFuncs.urlGet('to') == null ? "" : globalFuncs.urlGet('to'),
-        unit: "ether",
+        unit: "moac",
         value: globalFuncs.urlGet('value') == null ? "" : globalFuncs.urlGet('value'),
         nonce: null,
         gasPrice: globalFuncs.urlGet('gasprice') == null ? null : globalFuncs.urlGet('gasprice'),
@@ -43,7 +43,7 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
         if ( globalFuncs.urlGet('tokensymbol') != null ) {
             $scope.unitReadable = $scope.tx.tokensymbol;
             $scope.tx.sendMode = 'token';
-        } else if (sendMode == 'ether') {
+        } else if (sendMode == 'moac') {
             $scope.unitReadable = ajaxReq.type;
         } else {
             $scope.unitReadable = tokensymbol;
