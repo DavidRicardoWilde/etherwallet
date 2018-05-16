@@ -20,7 +20,7 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
         from: "",
         data: "",
         to: "",
-        unit: "ether",
+        unit: "mc",
         value: '',
         nonce: null,
         gasPrice: null,
@@ -29,7 +29,7 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
     $scope.tokenTx = {
         to: '',
         value: 0,
-        id: 'ether',
+        id: 'mc',
         gasLimit: 150000
     };
     $scope.localToken = {
@@ -54,7 +54,7 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
 
     $scope.convertPrice = function(gasPrice) {
       if($scope.gasPriceDef === 'GWEI') {
-        return etherUnits.toWei(gasPrice,$scope.gasPriceDef.toLowerCase());
+        return moacUnits.toSha(gasPrice,$scope.gasPriceDef.toLowerCase());
       } return gasPrice;
     }
 
@@ -81,8 +81,8 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
         }
     }
     $scope.$watch('gasPriceDef', function(newValue, oldValue) {
-        if(newValue == "WEI" && oldValue == "GWEI") $scope.gasPriceDec = etherUnits.toWei($scope.gasPriceDec, 'gwei');
-        else if(newValue == "GWEI" && oldValue == "WEI") $scope.gasPriceDec = etherUnits.toGwei($scope.gasPriceDec,'wei');
+        if(newValue == "WEI" && oldValue == "GWEI") $scope.gasPriceDec = moacUnits.toSha($scope.gasPriceDec, 'gwei');
+        else if(newValue == "GWEI" && oldValue == "WEI") $scope.gasPriceDec = moacUnits.toGsha($scope.gasPriceDec,'wei');
         else $scope.gasPriceDec = 0;
     });
     $scope.$watch('tx', function() {
@@ -90,7 +90,7 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
 
     }, true);
     $scope.$watch('tokenTx.id', function() {
-        if ($scope.tokenTx.id != 'ether') {
+        if ($scope.tokenTx.id != 'mc') {
             $scope.tx.gasLimit = 150000;
         } else {
             $scope.tx.gasLimit = globalFuncs.defaultTxGasLimit;
@@ -99,7 +99,7 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
     $scope.$watch('[tx.to]', function() {
         // if golem crowdfund address
         if ($scope.tx.to == "0xa74476443119A942dE498590Fe1f2454d7D4aC0d") {
-            $scope.setSendMode('ether')
+            $scope.setSendMode('mc')
             $scope.dropdownEnabled = false
             $scope.tx.data = '0xefc81a8c'
             $scope.tx.gasLimit = 70000
@@ -109,7 +109,7 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
     }, true);
     $scope.setSendMode = function(index, tokensymbol = '') {
         $scope.tokenTx.id = index;
-        if (index == 'ether') {
+        if (index == 'mc') {
             $scope.unitReadable = ajaxReq.type;
         } else {
             $scope.unitReadable = tokensymbol;
@@ -138,7 +138,7 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
         txData.isOffline = true;
         txData.nonce = ethFuncs.sanitizeHex(ethFuncs.decimalToHex($scope.nonceDec));
         txData.gasPrice = ethFuncs.sanitizeHex(ethFuncs.decimalToHex($scope.convertPrice($scope.gasPriceDec)));
-        if ($scope.tokenTx.id != 'ether') {
+        if ($scope.tokenTx.id != 'mc') {
             txData.data = $scope.tokenObjs[$scope.tokenTx.id].getData($scope.tx.to, $scope.tx.value).data;
             txData.to = $scope.tokenObjs[$scope.tokenTx.id].getContractAddress();
             txData.value = '0x00';
@@ -168,8 +168,8 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
                 $scope.unitReadable = token.symbol;
                 $scope.tokenTx.from = ethFuncs.sanitizeHex(eTx.getSenderAddress().toString('hex'));
             } else {
-                $scope.tx.sendMode = 'ether';
-                $scope.tx.value = eTx.value.length ? etherUnits.toEther(ethFuncs.sanitizeHex(eTx.value.toString('hex')), 'wei') : 0;
+                $scope.tx.sendMode = 'mc';
+                $scope.tx.value = eTx.value.length ? moacUnits.toMc(ethFuncs.sanitizeHex(eTx.value.toString('hex')), 'wei') : 0;
                 $scope.unitReadable = ajaxReq.type;
                 $scope.tx.from = ethFuncs.sanitizeHex(eTx.getSenderAddress().toString('hex'));
                 $scope.tx.to = ethFuncs.sanitizeHex(eTx.to.toString('hex'));

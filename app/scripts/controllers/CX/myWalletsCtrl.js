@@ -213,26 +213,26 @@ var myWalletsCtrl = function($scope, $sce, $timeout, walletService) {
 			if (data.error) {
 				$scope[varWal][id].balance = data.msg;
 			} else {
-				$scope[varWal][id].balance = etherUnits.toEther(
+				$scope[varWal][id].balance = moacUnits.toMc(
 					data.data.balance,
 					"wei"
 				);
 				$scope[varWal][id].balanceR = new BigNumber(
 					$scope[varWal][id].balance
 				).toPrecision(5);
-				$scope[varWal][id].usd = etherUnits.toFiat(
+				$scope[varWal][id].usd = moacUnits.toFiat(
 					$scope[varWal][id].balance,
-					"ether",
+					"mc",
 					$scope.fiatVal.usd
 				);
-				$scope[varWal][id].eur = etherUnits.toFiat(
+				$scope[varWal][id].eur = moacUnits.toFiat(
 					$scope[varWal][id].balance,
-					"ether",
+					"mc",
 					$scope.fiatVal.eur
 				);
-				$scope[varWal][id].btc = etherUnits.toFiat(
+				$scope[varWal][id].btc = moacUnits.toFiat(
 					$scope[varWal][id].balance,
-					"ether",
+					"mc",
 					$scope.fiatVal.btc
 				);
 			}

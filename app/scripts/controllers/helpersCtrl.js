@@ -2,10 +2,10 @@
 var helpersCtrl = function($scope) {
     var ENS = new ens();
 
-    var unitNames = ['wei', 'kwei', 'mwei', 'gwei', 'szabo', 'finney', 'ether', 'kether', 'mether', 'gether', 'tether']
+    var unitNames = ['wei', 'kwei', 'mwei', 'gwei', 'szabo', 'finney', 'mc', 'kether', 'mether', 'gether', 'tether']
 
     $scope.units = {
-        ether: 1
+        mc: 1
     };
 
     $scope.decimalNumber = 10;
@@ -14,7 +14,7 @@ var helpersCtrl = function($scope) {
     $scope.convertUnit = function(currentUnit) {
         unitNames.forEach(function(unit) {
             if (currentUnit !== unit) {
-                $scope.units[unit] = $scope.units[currentUnit] ? etherUnits.unitToUnit($scope.units[currentUnit], currentUnit, unit) : '';
+                $scope.units[unit] = $scope.units[currentUnit] ? moacUnits.unitToUnit($scope.units[currentUnit], currentUnit, unit) : '';
             }
         })
     }
@@ -50,12 +50,12 @@ var helpersCtrl = function($scope) {
     }
 
     $scope.toBidWei = function() {
-        $scope.bidWei = $scope.bidEth ? Number(etherUnits.toWei($scope.bidEth, 'ether')) : '';
+        $scope.bidWei = $scope.bidEth ? Number(moacUnits.toSha($scope.bidEth, 'mc')) : '';
         $scope.toBidHex();
     }
 
     $scope.toBidEth = function() {
-        $scope.bidEth = $scope.bidWei ? Number(etherUnits.toEther($scope.bidWei, 'wei')) : '';
+        $scope.bidEth = $scope.bidWei ? Number(moacUnits.toMc($scope.bidWei, 'wei')) : '';
         $scope.toBidHex();
     }
 
@@ -133,7 +133,7 @@ var helpersCtrl = function($scope) {
             $scope.actualPK = "Sorry not found :(";
     }
 
-    $scope.convertUnit('ether');
+    $scope.convertUnit('mc');
     $scope.decimalToHex();
     $scope.toSHA3();
 };

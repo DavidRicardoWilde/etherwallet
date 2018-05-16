@@ -48,7 +48,7 @@ var ensCtrl = function($scope, $sce, walletService) {
         gasLimit: '500000',
         data: '',
         to: '',
-        unit: "ether",
+        unit: "mc",
         value: 0,
         gasPrice: null
     };
@@ -76,7 +76,7 @@ var ensCtrl = function($scope, $sce, walletService) {
             $scope.parentTxConfig = {
                 to: $scope.objSub.buy.registrar,
                 value: $scope.objSub.buy.EthVal,
-                sendMode: 'ether',
+                sendMode: 'mc',
                 data: ENS.getSubDomainBuyData($scope.objSub.buy.domain, $scope.objSub.buy.subdomain, $scope.wallet.getAddressString()),
                 readOnly: true
             }
@@ -143,7 +143,7 @@ var ensCtrl = function($scope, $sce, walletService) {
                 names.forEach((name) => {
                     $scope.objSub.validNames.push({
                         available: name.data[0] != "",
-                        EthVal: etherUnits.toEther(name.data[1].toString(), 'wei'),
+                        EthVal: moacUnits.toMc(name.data[1].toString(), 'wei'),
                         weiBN: name.data[1],
                         fullName: $scope.objSub.name + "." + name.domain.name + "." + tld,
                         domain: name.domain,
@@ -209,7 +209,7 @@ var ensCtrl = function($scope, $sce, walletService) {
                         case $scope.ensModes.reveal:
                             $scope.objENS.bidValue = 0;
                             $scope.objENS.secret = '';
-                            $scope.objENS.highestBid = etherUnits.toEther($scope.objENS.highestBid.toString(), 'wei');
+                            $scope.objENS.highestBid = moacUnits.toMc($scope.objENS.highestBid.toString(), 'wei');
                             clearInterval($scope.objENS.timer);
                             $scope.objENS.timer = setInterval(() => timeRem($scope.objENS.registrationDate), 1000);
                             break;
@@ -225,7 +225,7 @@ var ensCtrl = function($scope, $sce, walletService) {
             $scope.objENS.revealObject = null;
             var tObj = JSON.parse($scope.longJsonString.replace(/\\/g, ''));
             $scope.objENS.revealObject = tObj;
-            if (tObj.value) $scope.objENS.bidValue = Number(etherUnits.toEther(tObj.value, "wei"));
+            if (tObj.value) $scope.objENS.bidValue = Number(moacUnits.toMc(tObj.value, "wei"));
             if (tObj.secret) $scope.objENS.secret = tObj.secret;
             if (tObj.name && ens.normalise(tObj.name) != $scope.objENS.name) { // check if correct name
                 $scope.notifier.danger(globalFuncs.errorMsgs[34]);
@@ -251,7 +251,7 @@ var ensCtrl = function($scope, $sce, walletService) {
             name: _objENS.name,
             nameSHA3: ENS.getSHA3(_objENS.name),
             owner: $scope.wallet.getAddressString(),
-            value: etherUnits.toWei(_objENS.bidValue, 'ether'),
+            value: moacUnits.toSha(_objENS.bidValue, 'mc'),
             secret: _objENS.secret.trim(),
             secretSHA3: ENS.getSHA3(_objENS.secret.trim())
         }
@@ -292,7 +292,7 @@ var ensCtrl = function($scope, $sce, walletService) {
             if (data.error) $scope.notifier.danger(data.msg);
             data = data.data;
             $scope.tx.to = ENS.getAuctionAddress();
-            $scope.tx.data = ENS.getRevealBidData(_objENS.name, etherUnits.toWei(_objENS.bidValue, 'ether'), _objENS.secret);
+            $scope.tx.data = ENS.getRevealBidData(_objENS.name, moacUnits.toSha(_objENS.bidValue, 'mc'), _objENS.secret);
             $scope.tx.value = 0;
             var txData = uiFuncs.getTxData($scope);
             txData.gasPrice = data.gasprice;

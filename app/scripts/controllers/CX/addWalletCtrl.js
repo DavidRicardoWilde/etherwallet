@@ -266,11 +266,11 @@ var addWalletCtrl = function($scope, $sce) {
             if (data.error) {
                 $scope.etherBalance = data.msg;
             } else {
-                $scope.etherBalance = etherUnits.toEther(data.data.balance, 'wei');
+                $scope.etherBalance = moacUnits.toMc(data.data.balance, 'wei');
                 ajaxReq.getETHvalue(function(data) {
-                    $scope.usdBalance = etherUnits.toFiat($scope.etherBalance, 'ether', data.usd);
-                    $scope.eurBalance = etherUnits.toFiat($scope.etherBalance, 'ether', data.eur);
-                    $scope.btcBalance = etherUnits.toFiat($scope.etherBalance, 'ether', data.btc);
+                    $scope.usdBalance = moacUnits.toFiat($scope.etherBalance, 'mc', data.usd);
+                    $scope.eurBalance = moacUnits.toFiat($scope.etherBalance, 'mc', data.eur);
+                    $scope.btcBalance = moacUnits.toFiat($scope.etherBalance, 'mc', data.btc);
                 });
             }
         });

@@ -49,7 +49,13 @@ moacUnits.toMc = function(number, unit) {
 	var returnValue = new BigNumber(this.toSha(number, unit)).div(this.getValueOfUnit('mc'));
 	return returnValue.toString(10);
 };
-moacUnits.toGwei = function(number, unit) {
+
+moacUnits.toMoac = function(number, unit) {
+	var returnValue = new BigNumber(this.toSha(number, unit)).div(this.getValueOfUnit('mc'));
+	return returnValue.toString(10);
+};
+
+moacUnits.toGsha = function(number, unit) {
 	var returnValue = new BigNumber(this.toSha(number, unit)).div(this.getValueOfUnit('gsha'));
 	return returnValue.toString(10);
 };

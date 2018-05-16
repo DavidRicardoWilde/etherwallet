@@ -170,7 +170,7 @@ uiFuncs.generateTx = function(txData, callback) {
                 gasPrice: inData.isOffline ? ethFuncs.sanitizeHex(inData.gasprice) : ethFuncs.sanitizeHex(ethFuncs.addTinyMoreToGas(data.gasprice)),
                 gasLimit: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(txData.gasLimit)),
                 to: ethFuncs.sanitizeHex(txData.to),
-                value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(etherUnits.toWei(txData.value, txData.unit))),
+                value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(moacUnits.toSha(txData.value, txData.unit))),
                 data: ethFuncs.sanitizeHex(txData.data)
             }
             if (ajaxReq.eip155) rawTx.chainId = ajaxReq.chainId;
@@ -311,7 +311,7 @@ uiFuncs.transferAllBalance = function(fromAdd, gasLimit, callback) {
             data = data.data;
             var gasPrice = new BigNumber(ethFuncs.sanitizeHex(ethFuncs.addTinyMoreToGas(data.gasprice))).times(gasLimit);
             var maxVal = new BigNumber(data.balance).minus(gasPrice);
-            maxVal = etherUnits.toEther(maxVal, 'wei') < 0 ? 0 : etherUnits.toEther(maxVal, 'wei');
+            maxVal = moacUnits.toMc(maxVal, 'wei') < 0 ? 0 : moacUnits.toMc(maxVal, 'wei');
             if (callback !== undefined) callback({
                 isError: false,
                 unit: "ether",

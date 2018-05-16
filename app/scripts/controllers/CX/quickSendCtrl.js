@@ -8,7 +8,7 @@ var quickSendCtrl = function($scope, $sce, darkList) {
 		gasLimit: globalFuncs.defaultTxGasLimit,
 		data: "",
 		to: "",
-		unit: "ether",
+		unit: "mc",
 		value: "",
 		nonce: null,
 		gasPrice: null,
@@ -30,7 +30,7 @@ var quickSendCtrl = function($scope, $sce, darkList) {
 			if (data.error) {
 				$scope[varWal][id].balance = data.msg;
 			} else {
-				$scope[varWal][id].balance = etherUnits.toEther(data.data.balance, 'wei');
+				$scope[varWal][id].balance = moacUnits.toMc(data.data.balance, 'wei');
 				$scope[varWal][id].balanceR = new BigNumber($scope[varWal][id].balance).toPrecision(5);
 			}
 		});

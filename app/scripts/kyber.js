@@ -213,7 +213,7 @@ kyberFuncs.prototype.convertToTokenWei = function (_value, _token) {
     if (decimal < 18) {
         return new BigNumber(String(_value)).times(new BigNumber(10).pow(decimal)).toString();
     } else {
-        return etherUnits.toWei(_value, "ether");
+        return moacUnits.toSha(_value, "ether");
     }
 
 };
@@ -229,7 +229,7 @@ kyberFuncs.prototype.convertToTokenBase = function (_value, _token) {
 
         return numnum;
     } else {
-        return etherUnits.toEther(_value, "wei");
+        return moacUnits.toMc(_value, "wei");
     }
 };
 
@@ -414,7 +414,7 @@ kyberFuncs.prototype.getTradeData = function (swapOrder, minRate) {
         let walletId = "0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D";
         let minConversionRate = _this.convertToTokenWei(minRate, "ETH"); // Uses slippagePrice with fallback to MarketRate.  1 => Market Rate, but we could also set this as the quoted rate
         // console.log("minConversionRate", minRate); //todo remove dev item
-        let srcAmount = _this.convertToTokenWei(swapOrder.fromVal, swapOrder.fromCoin); //etherUnits.toWei(swapOrder.fromVal, "ether");
+        let srcAmount = _this.convertToTokenWei(swapOrder.fromVal, swapOrder.fromCoin); //moacUnits.toSha(swapOrder.fromVal, "ether");
         // console.log("srcAmount", srcAmount); //todo remove dev item
         let maxDestAmount = 2 ** 200; //100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000; // Really big number (like a googol)
 

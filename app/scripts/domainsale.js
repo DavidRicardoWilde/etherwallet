@@ -40,11 +40,11 @@ domainsale.prototype.getSale = function(name, callback) {
             
             data.data = {
                 price: res[0],
-                priceEth: Number(etherUnits.toEther(res[0].toString(), 'wei')),
+                priceEth: Number(moacUnits.toMc(res[0].toString(), 'wei')),
                 reserve: res[1],
-                reserveEth: Number(etherUnits.toEther(res[1].toString(), 'wei')),
+                reserveEth: Number(moacUnits.toMc(res[1].toString(), 'wei')),
                 lastBid: res[2],
-                lastBidEth: Number(etherUnits.toEther(res[2].toString(), 'wei')),
+                lastBidEth: Number(moacUnits.toMc(res[2].toString(), 'wei')),
                 lastBidder: res[3],
                 auctionStarted: new Date(res[4].toNumber() * 1000),
                 auctionEnds: new Date(res[5].toNumber() * 1000)
@@ -67,7 +67,7 @@ domainsale.prototype.getMinimumBid = function(name, callback) {
             
             data.data = {
                 minimumBid: res[0],
-                minimumBidEth: Number(etherUnits.toEther(res[0].toString(), 'wei'))
+                minimumBidEth: Number(moacUnits.toMc(res[0].toString(), 'wei'))
             };
             callback(data);
         }
@@ -86,7 +86,7 @@ domainsale.prototype.getBalance = function(address, callback) {
 
             data.data = {
                 balance: res[0],
-                balanceEth: Number(etherUnits.toEther(res[0].toString(), 'wei'))
+                balanceEth: Number(moacUnits.toMc(res[0].toString(), 'wei'))
             };
             callback(data);
         }

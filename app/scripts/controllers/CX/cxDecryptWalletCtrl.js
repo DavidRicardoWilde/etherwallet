@@ -19,7 +19,7 @@ var cxDecryptWalletCtrl = function($scope, $sce, walletService) {
 			if (data.error) {
 				$scope.allWallets[id].balance = data.msg;
 			} else {
-                $scope.allWallets[id].balance = etherUnits.toEther(data.data.balance, 'wei');
+                $scope.allWallets[id].balance = moacUnits.toMc(data.data.balance, 'wei');
 			}
 		});
 	};

@@ -115,21 +115,21 @@ Wallet.prototype.setBalance = function(callback) {
     ajaxReq.getBalance(parentObj.getAddressString(), function(data) {
         if (data.error) parentObj.balance = data.msg;
         else {
-            parentObj.balance = etherUnits.toEther(data.data.balance, 'wei');
+            parentObj.balance = moacUnits.toMc(data.data.balance, 'wei');
             ajaxReq.getETHvalue(function(data) {
-                parentObj.usdPrice   = etherUnits.toFiat('1', 'ether', data.usd);
-                parentObj.gbpPrice   = etherUnits.toFiat('1', 'ether', data.gbp);
-                parentObj.eurPrice   = etherUnits.toFiat('1', 'ether', data.eur);
-                parentObj.btcPrice   = etherUnits.toFiat('1', 'ether', data.btc);
-                parentObj.chfPrice   = etherUnits.toFiat('1', 'ether', data.chf);
-                parentObj.repPrice   = etherUnits.toFiat('1', 'ether', data.rep);
+                parentObj.usdPrice   = moacUnits.toFiat('1', 'ether', data.usd);
+                parentObj.gbpPrice   = moacUnits.toFiat('1', 'ether', data.gbp);
+                parentObj.eurPrice   = moacUnits.toFiat('1', 'ether', data.eur);
+                parentObj.btcPrice   = moacUnits.toFiat('1', 'ether', data.btc);
+                parentObj.chfPrice   = moacUnits.toFiat('1', 'ether', data.chf);
+                parentObj.repPrice   = moacUnits.toFiat('1', 'ether', data.rep);
 
-                parentObj.usdBalance = etherUnits.toFiat(parentObj.balance, 'ether', data.usd);
-                parentObj.gbpBalance = etherUnits.toFiat(parentObj.balance, 'ether', data.gbp);
-                parentObj.eurBalance = etherUnits.toFiat(parentObj.balance, 'ether', data.eur);
-                parentObj.btcBalance = etherUnits.toFiat(parentObj.balance, 'ether', data.btc);
-                parentObj.chfBalance = etherUnits.toFiat(parentObj.balance, 'ether', data.chf);
-                parentObj.repBalance = etherUnits.toFiat(parentObj.balance, 'ether', data.rep);
+                parentObj.usdBalance = moacUnits.toFiat(parentObj.balance, 'ether', data.usd);
+                parentObj.gbpBalance = moacUnits.toFiat(parentObj.balance, 'ether', data.gbp);
+                parentObj.eurBalance = moacUnits.toFiat(parentObj.balance, 'ether', data.eur);
+                parentObj.btcBalance = moacUnits.toFiat(parentObj.balance, 'ether', data.btc);
+                parentObj.chfBalance = moacUnits.toFiat(parentObj.balance, 'ether', data.chf);
+                parentObj.repBalance = moacUnits.toFiat(parentObj.balance, 'ether', data.rep);
                 if(callback) callback();
             });
         }

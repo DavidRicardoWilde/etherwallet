@@ -334,7 +334,7 @@ var swapCtrl = function ($scope, $sce, walletService) {
             $scope.parentTxConfig = {
                 to: ethUtil.toChecksumAddress($scope.orderResult.payment_address),
                 value: $scope.orderResult.input.amount,
-                sendMode: $scope.orderResult.input.currency == 'ETH' ? 'ether' : 'token',
+                sendMode: $scope.orderResult.input.currency == 'ETH' ? 'mc' : 'token',
                 tokensymbol: $scope.orderResult.input.currency == 'ETH' ? '' : $scope.orderResult.input.currency,
                 readOnly: true
             }
@@ -1149,9 +1149,9 @@ var swapCtrl = function ($scope, $sce, walletService) {
             gasLimit: kyber.defaultValues.gasLimit,
             data: data,
             to: to,
-            unit: "ether",
+            unit: "mc",
             value: value ? value : 0,
-            sendMode: "ether",
+            sendMode: "mc",
             gasPrice: gasPrice ? gasPrice : kyber.defaultValues.gasPrice
         };
     };
@@ -1276,14 +1276,14 @@ var swapCtrl = function ($scope, $sce, walletService) {
         parsedKyberTx.balance = $scope.walletKyber.getBalance()
         parsedKyberTx.from = isJSON ? $scope.walletKyber.getChecksumAddressString() : ethFuncs.sanitizeHex(ethUtil.toChecksumAddress(txData.from.toString('hex')))
         parsedKyberTx.to = ethFuncs.sanitizeHex(ethUtil.toChecksumAddress(txData.to.toString('hex')))
-        parsedKyberTx.value = (txData.value == '0x' || txData.value == '' || txData.value == null) ? '0' : etherUnits.toEther(new BigNumber(ethFuncs.sanitizeHex(txData.value.toString('hex'))).toString(), 'wei')
+        parsedKyberTx.value = (txData.value == '0x' || txData.value == '' || txData.value == null) ? '0' : moacUnits.toMc(new BigNumber(ethFuncs.sanitizeHex(txData.value.toString('hex'))).toString(), 'wei')
         parsedKyberTx.gasLimit = new BigNumber(ethFuncs.sanitizeHex(txData.gasLimit.toString('hex'))).toString()
         parsedKyberTx.gasPrice.wei = new BigNumber(ethFuncs.sanitizeHex(txData.gasPrice.toString('hex'))).toString()
-        parsedKyberTx.gasPrice.gwei = new BigNumber(ethFuncs.sanitizeHex(txData.gasPrice.toString('hex'))).div(etherUnits.getValueOfUnit('gwei')).toString()
-        parsedKyberTx.gasPrice.eth = etherUnits.toEther(new BigNumber(ethFuncs.sanitizeHex(txData.gasPrice.toString('hex'))).toString(), 'wei')
+        parsedKyberTx.gasPrice.gwei = new BigNumber(ethFuncs.sanitizeHex(txData.gasPrice.toString('hex'))).div(moacUnits.getValueOfUnit('gwei')).toString()
+        parsedKyberTx.gasPrice.eth = moacUnits.toMc(new BigNumber(ethFuncs.sanitizeHex(txData.gasPrice.toString('hex'))).toString(), 'wei')
         parsedKyberTx.txFee.wei = new BigNumber(parseInt(parsedKyberTx.gasLimit)).times(new BigNumber(parseInt(parsedKyberTx.gasPrice.wei)))
-        parsedKyberTx.txFee.gwei = new BigNumber(parsedKyberTx.txFee.wei).div(etherUnits.getValueOfUnit('gwei')).toString()
-        parsedKyberTx.txFee.eth = etherUnits.toEther(parseInt(parsedKyberTx.txFee.wei), 'wei').toString()
+        parsedKyberTx.txFee.gwei = new BigNumber(parsedKyberTx.txFee.wei).div(moacUnits.getValueOfUnit('gwei')).toString()
+        parsedKyberTx.txFee.eth = moacUnits.toMc(parseInt(parsedKyberTx.txFee.wei), 'wei').toString()
         parsedKyberTx.nonce = (txData.nonce == '0x' || txData.nonce == '' || txData.nonce == null) ? '0' : new BigNumber(ethFuncs.sanitizeHex(txData.nonce.toString('hex'))).toString()
         parsedKyberTx.data = (txData.data == '0x' || txData.data == '' || txData.data == null) ? '(none)' : ethFuncs.sanitizeHex(txData.data.toString('hex'))
         return parsedKyberTx;

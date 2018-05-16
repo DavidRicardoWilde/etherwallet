@@ -11,7 +11,7 @@ var contractsCtrl = function($scope, $sce, walletService) {
         gasLimit: '',
         data: '',
         to: '',
-        unit: "ether",
+        unit: "mc",
         value: 0,
         nonce: null,
         gasPrice: null
@@ -39,7 +39,7 @@ var contractsCtrl = function($scope, $sce, walletService) {
             gasLimit: '',
             data: '',
             to: '',
-            unit: "ether",
+            unit: "mc",
             value: 0,
             nonce: null,
             gasPrice: null
@@ -82,7 +82,7 @@ var contractsCtrl = function($scope, $sce, walletService) {
     $scope.estimateGasLimit = function() {
         var estObj = {
             from: $scope.wallet != null ? $scope.wallet.getAddressString() : globalFuncs.donateAddress,
-            value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(etherUnits.toWei($scope.tx.value, $scope.tx.unit))),
+            value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(moacUnits.toSha($scope.tx.value, $scope.tx.unit))),
             data: ethFuncs.sanitizeHex($scope.tx.data),
         }
         if ($scope.tx.to != '') estObj.to = $scope.tx.to;

@@ -35,7 +35,7 @@ moacFuncs.padLeftEven = function(hex) {
 }
 moacFuncs.addTinyMoreToGas = function(hex) {
     hex = this.sanitizeHex(hex);
-    return new BigNumber(moacFuncs.gasAdjustment * etherUnits.getValueOfUnit('gwei')).toString(16);
+    return new BigNumber(moacFuncs.gasAdjustment * moacUnits.getValueOfUnit('gwei')).toString(16);
 }
 moacFuncs.decimalToHex = function(dec) {
     return new BigNumber(dec).toString(16);
@@ -154,22 +154,36 @@ moacFuncs.signTransaction = function (tx, privateKey) {
               // R *big.Int `json:"r" gencodec:"required"`
               // S *big.Int `json:"s" gencodec:"required"`
   
-              var rlpEncoded = RLP.encode([
-                  Bytes.fromNat(transaction.nonce),
-                  Bytes.fromNat(transaction.systemContract),
-                  Bytes.fromNat(transaction.gasPrice),
-                  Bytes.fromNat(transaction.gasLimit),
-                  transaction.to.toLowerCase(),
-                  Bytes.fromNat(transaction.value),
-                  transaction.data,
-                  Bytes.fromNat(transaction.shardingFlag),
-                  transaction.via.toLowerCase(),
-                  Bytes.fromNat(transaction.chainId || "0x1"),
-                  "0x",
-                  "0x"]);
+            //   var rlpEncoded = RLP.encode([
+            //       Bytes.fromNat(transaction.nonce),
+            //       Bytes.fromNat(transaction.systemContract),
+            //       Bytes.fromNat(transaction.gasPrice),
+            //       Bytes.fromNat(transaction.gasLimit),
+            //       transaction.to.toLowerCase(),
+            //       Bytes.fromNat(transaction.value),
+            //       transaction.data,
+            //       Bytes.fromNat(transaction.shardingFlag),
+            //       transaction.via.toLowerCase(),
+            //       Bytes.fromNat(transaction.chainId || "0x1"),
+            //       "0x",
+            //       "0x"]);
   
-              var hash = Hash.keccak256(rlpEncoded);
+            //   var hash = Hash.keccak256(rlpEncoded);
   
+              var hash2 = ethUtil.rlphash([
+                Bytes.fromNat(transaction.nonce),
+                Bytes.fromNat(transaction.systemContract),
+                Bytes.fromNat(transaction.gasPrice),
+                Bytes.fromNat(transaction.gasLimit),
+                transaction.to.toLowerCase(),
+                Bytes.fromNat(transaction.value),
+                transaction.data,
+                Bytes.fromNat(transaction.shardingFlag),
+                transaction.via.toLowerCase(),
+                Bytes.fromNat(transaction.chainId || "0x1"),
+                "0x",
+                "0x"]);
+
               // for MOAC, keep 9 fields instead of 6
               var vPos = 9;
               //Sign the hash with the private key to produce the
