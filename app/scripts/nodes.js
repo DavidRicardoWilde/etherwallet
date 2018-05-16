@@ -33,7 +33,7 @@ nodes.nodeList = {
         'chainId': 99,
         'tokenList': require('./tokens/moacTokens.json'),
         'abiList': require('./abiDefinitions/moacAbi.json'),
-        'service': 'myetherapi.com',
+        'service': 'https://moacwalletonline.com/moac_api',
         'lib': new nodes.customNode('https://moacwalletonline.com/moac_api', '')
     },
     'moac_test': {
@@ -45,20 +45,8 @@ nodes.nodeList = {
         'chainId': 101,
         'tokenList': require('./tokens/moacTestTokens.json'),
         'abiList': require('./abiDefinitions/moacTestAbi.json'),
-        'service': 'infura.io',
+        'service': 'https://moacwalletonline.com/moac_test_api',
         'lib': new nodes.customNode('https://moacwalletonline.com/moac_test_api', '')
-    },
-    'eth_mew': {
-        'name': 'ETH',
-        'blockExplorerTX': 'https://etherscan.io/tx/[[txHash]]',
-        'blockExplorerAddr': 'https://etherscan.io/address/[[address]]',
-        'type': nodes.nodeTypes.ETH,
-        'eip155': true,
-        'chainId': 1,
-        'tokenList': require('./tokens/ethTokens.json'),
-        'abiList': require('./abiDefinitions/ethAbi.json'),
-        'service': 'myetherapi.com',
-        'lib': new nodes.customNode('https://api.myetherapi.com/eth', '')
     }
 };
 

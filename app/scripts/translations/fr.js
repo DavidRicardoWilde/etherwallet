@@ -106,7 +106,7 @@ EOS_09                          :  'Claim EOS Tokens',
 EOS_10                          :  'Select `claimAll`.',
 
 /* Onboarding */
-ONBOARD_welcome_title           :  'Welcome to MyEtherWallet.com',
+ONBOARD_welcome_title           :  'Welcome to MoacWalletOnline.com',
 ONBOARD_welcome_content__1      :  'Please take some time to understand this for your own safety. 🙏',
 ONBOARD_welcome_content__2      :  'Your funds will be stolen if you do not heed these warnings.',
 ONBOARD_welcome_content__3      :  'We know this click-through stuff is annoying. We are sorry.',
@@ -138,7 +138,7 @@ ONBOARD_blockchain_content__1   :  'The blockchain is like a huge, global, decen
 ONBOARD_blockchain_content__2   :  'It keeps track of who sent how many coins to whom, and what the balance of every account is.',
 ONBOARD_blockchain_content__3   :  'It is stored and maintained by thousands of people (miners) across the globe who have special computers.',
 ONBOARD_blockchain_content__4   :  'The blocks in the blockchain are made up of all the individual transactions sent from MyEtherWallet, MetaMask, Exodus, Mist, Geth, Parity, and everywhere else.',
-ONBOARD_blockchain_content__5   :  'When you see your balance on MyEtherWallet.com or view your transactions on [etherscan.io](https://etherscan.io), you are seeing data on the blockchain, not in our personal systems.',
+ONBOARD_blockchain_content__5   :  'When you see your balance on MoacWalletOnline.com or view your transactions on [etherscan.io](https://etherscan.io), you are seeing data on the blockchain, not in our personal systems.',
 ONBOARD_blockchain_content__6   :  'Again: **we are not a bank**.',
 ONBOARD_interface_title__alt    :  'MEW is an Interface',
 ONBOARD_why_title__alt          :  'But...why does this matter?',
@@ -167,7 +167,7 @@ ONBOARD_secure_title            :  'How To Protect Yourself & Your Funds',
 ONBOARD_secure_1_title          :  'How To Protect Yourself from Phishers',
 ONBOARD_secure_1_content__1     :  'Phishers send you a message with a link to a website that looks just like MyEtherWallet, EtherDelta, Paypal, or your bank, but is not the real website. They steal your information and then steal your money.',
 ONBOARD_secure_1_content__2     :  'Install [EAL](https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn) or [MetaMask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) or [Cryptonite by Metacert](https://chrome.google.com/webstore/detail/cryptonite-by-metacert/keghdcpemohlojlglbiegihkljkgnige) or the [MyEtherWallet Chrome Extension](https://chrome.google.com/webstore/detail/myetherwallet-cx/nlbmnnijcnlegkjjpcfjclmcfggfefdm) to block malicious websites.',
-ONBOARD_secure_1_content__3     :  'Always check the URL: `https://www.myetherwallet.com`.',
+ONBOARD_secure_1_content__3     :  'Always check the URL: `https://www.MoacWalletOnline.com`.',
 ONBOARD_secure_1_content__4     :  'Always make sure the URL bar has `MYETHERWALLET INC` in green.',
 ONBOARD_secure_1_content__5     :  'Do not trust messages or links sent to you randomly via email, Slack, Reddit, Twitter, etc.',
 ONBOARD_secure_1_content__6     :  'Always navigate directly to a site before you enter information. Do not enter information after clicking a link from a message or email.',
@@ -258,7 +258,7 @@ GEN_Unlock                  : 'Déverouillez votre portefeuille pour voir votre 
 GAS_PRICE_Desc              : 'Le prix du Gas est le montant que vous payez par unité de Gas. `frais de transaction = prix du GAS x GAS limite` est payé aux mineurs pour inclure votre transaction dans un bloc. Prix de GAS plus haut = transaction plus rapide, mais plus coûteuse. Le prix par défaut est de `21 GWEI`.',
 GAS_LIMIT_Desc              : 'Le GAS limite est le montant de GAS à envoyer avec votre transaction. `frais de transaction = prix du GAS * GAS limite` est payé aux mineurs pour inclure votre transaction dans un bloc. Augmenter ce nombre n\'exécutera pas votre transaction plus rapidement. Envoyer ETH : `21000`. Envoyer des Tokens : ~`200000`.',
 NONCE_Desc                  : 'Le nonce est le nombre de transactions envoyées depuis une adresse. Il fait en sorte que les transactions sont envoyées en ordre et pas plus d\'une fois.',
-TXFEE_Desc                  : 'Les frais de transaction sont payés aux mineurs pour inclure votre transaction dans un bloc. Cela représente le `GAS limite` * le `prix du GAS`. [Vous pouvez convertir GWEI -> ETH ici.](https://www.myetherwallet.com/helpers.html)',
+TXFEE_Desc                  : 'Les frais de transaction sont payés aux mineurs pour inclure votre transaction dans un bloc. Cela représente le `GAS limite` * le `prix du GAS`. [Vous pouvez convertir GWEI -> ETH ici.](https://www.MoacWalletOnline.com/helpers.html)',
 
 
 /* Navigation*/
@@ -522,7 +522,7 @@ CX_quicksend                : 'Envoyer', // if no appropriate translation, just 
 /* Misc *//* Node Switcher */
 NODE_Title                  : 'Ajouter votre nœud personnalisé',
 NODE_Subtitle               : 'Connexion à un nœud local…',
-NODE_Warning                : 'Votre nœud doit être en HTTPS pour vous y connecter via MyEtherWallet.com. Vous pouvez [télécharger MyEtherWallet et le lancer localement](https://github.com/kvhnuke/etherwallet/releases/latest) pour vous connecter à un nœud quelconque, ou obtenir un certificat SSL gratuit via [LetsEncrypt](https://letsencrypt.org/)',
+NODE_Warning                : 'Votre nœud doit être en HTTPS pour vous y connecter via MoacWalletOnline.com. Vous pouvez [télécharger MyEtherWallet et le lancer localement](https://github.com/kvhnuke/etherwallet/releases/latest) pour vous connecter à un nœud quelconque, ou obtenir un certificat SSL gratuit via [LetsEncrypt](https://letsencrypt.org/)',
 NODE_Name                   : 'Nom du nœud',
 NODE_Port                   : 'Port du nœud',
 NODE_CTA                    : 'Sauvegarder et utiliser le nœud personnalisé',
@@ -592,7 +592,7 @@ ERROR_24                    : '(error_25) Please enter a valid port. Veuillez en
 ERROR_25                    : '(error_26) Please enter a valid chain ID. Veuillez entrer un ID de chaîne valide.',
 ERROR_26                    : '(error_27) Please enter a valid ABI. Veuillez entrer une ABI valide.',
 ERROR_27                    : '(error_28) Minimum amount: 0.01. Max amount: Montant minimum : 0.01. Montant maximum : ',
-ERROR_28                    : '(error_29) You need this `Keystore File + Password` or the `Private Key` (next page) to access this wallet in the future.  **Vous avez besoin de votre fichier Keystore et du mot de passe** (ou de la clé privée) pour accéder à ce portefeuille à l\'avenir. Merci de le télécharger et d\'en faire une sauvegarde externe. Il n\'existe aucun moyen de récupérer un portefeuille si vous ne le sauvegardez pas. Merci de lire la [page d\'Aide](https://www.myetherwallet.com/#help) pour plus de détails.',
+ERROR_28                    : '(error_29) You need this `Keystore File + Password` or the `Private Key` (next page) to access this wallet in the future.  **Vous avez besoin de votre fichier Keystore et du mot de passe** (ou de la clé privée) pour accéder à ce portefeuille à l\'avenir. Merci de le télécharger et d\'en faire une sauvegarde externe. Il n\'existe aucun moyen de récupérer un portefeuille si vous ne le sauvegardez pas. Merci de lire la [page d\'Aide](https://www.MoacWalletOnline.com/#help) pour plus de détails.',
 ERROR_29                    : '(error_30) Please enter a valid user and password. Veuillez entrer un nom d\'utilisateur et mot de passe valides.',
 ERROR_30                    : '(error_31) Please enter a valid name (7+ characters, limited punctuation) Veuillez entrer un nom ENS valide.',
 ERROR_31                    : '(error_32) Please enter a valid secret phrase. Phrase secrète invalide.',
@@ -637,7 +637,7 @@ PARITY_TooCheapToReplace    : "(parity-08) TX Fee is too low. It does not satisf
 /* Tranlsation Info */
 translate_version           : '0.4',
 Translator_Desc             : 'Merci à nos traducteurs',
-TranslatorName_1            : '[Simon P](https://www.myetherwallet.com/?gaslimit=21000&to=0x89a18eE46b5aabC62e94b1830881887D04C687f3&value=1.0#send-transaction) ·',
+TranslatorName_1            : '[Simon P](https://www.MoacWalletOnline.com/?gaslimit=21000&to=0x89a18eE46b5aabC62e94b1830881887D04C687f3&value=1.0#send-transaction) ·',
 TranslatorAddr_1            : '0x89a18eE46b5aabC62e94b1830881887D04C687f3 ',
 /* Translator 1             : Translation in French. Début de la traduction, il reste encore du travail.. Je continue dès que j'ai un peu de temps :) */
 TranslatorName_2            : 'Jean Zundel ·',
@@ -655,10 +655,10 @@ TranslatorAddr_5            : '0x4817Ad0411eddB9A32fda74AD1a2DfCAb3a89039',
 
 /* Help - Nothing after this point has to be translated. If you feel like being extra helpful, go for it. */
 HELP_Warning                : 'Si vous avez créé un portefeuille ou téléchargé le référentiel avant **le 31 déc. 2015**, merci de vérifier vos portefeuilles ou de télécharger une nouvelle version du référentiel. Cliquez ici pour plus de détails.',
-HELP_Desc                   : 'Il manque quelque chose ? Vous avez d\'autres questions ? [Contactez-nous](mailto:support@myetherwallet.com), et non seulement nous allons vous répondre, mais nous mettrons aussi à jour cette page afin qu\'elle soit plus utile à tout le monde à l\'avenir !',
+HELP_Desc                   : 'Il manque quelque chose ? Vous avez d\'autres questions ? [Contactez-nous](mailto:support@MoacWalletOnline.com), et non seulement nous allons vous répondre, mais nous mettrons aussi à jour cette page afin qu\'elle soit plus utile à tout le monde à l\'avenir !',
 HELP_Remind_Title           : 'Quelques rappels :',
-HELP_Remind_Desc_1          : '**Ethereum, MyEtherWallet.com & MyEtherWallet CX, ainsi que certaines des bibliothèques Javascript que nous employons sont en cours de développement.** Bien que nous les ayons testés intensivement et que des dizaines de milliers de portefeuilles aient été créés avec succès dans le monde entier, il existe toujours une faible possibilité qu\'un incident se produise, conduisant à la perte de vos ethers. N\'investissez pas plus que ce que vous pouvez vous permettre de perdre, et restez toujours prudents. En cas d\'accident, nous en serons désolés mais **nous ne sommes pas responsables d\'une éventuelle perte d\'ether**.',
-HELP_Remind_Desc_2          : 'MyEtherWallet.com & MyEtherWallet CX ne sont pas des "portefeuilles web". Vous ne créez pas un compte, vous ne déposez pas votre ether chez nous. Aucune donnée ne sort de votre ordinateur ou de votre navigateur. Nous vous facilitons la création, la sauvegarde et l\'accès à vos informations ainsi que l\'interaction avec le blockchain.',
+HELP_Remind_Desc_1          : '**Ethereum, MoacWalletOnline.com & MyEtherWallet CX, ainsi que certaines des bibliothèques Javascript que nous employons sont en cours de développement.** Bien que nous les ayons testés intensivement et que des dizaines de milliers de portefeuilles aient été créés avec succès dans le monde entier, il existe toujours une faible possibilité qu\'un incident se produise, conduisant à la perte de vos ethers. N\'investissez pas plus que ce que vous pouvez vous permettre de perdre, et restez toujours prudents. En cas d\'accident, nous en serons désolés mais **nous ne sommes pas responsables d\'une éventuelle perte d\'ether**.',
+HELP_Remind_Desc_2          : 'MoacWalletOnline.com & MyEtherWallet CX ne sont pas des "portefeuilles web". Vous ne créez pas un compte, vous ne déposez pas votre ether chez nous. Aucune donnée ne sort de votre ordinateur ou de votre navigateur. Nous vous facilitons la création, la sauvegarde et l\'accès à vos informations ainsi que l\'interaction avec le blockchain.',
 HELP_Remind_Desc_3          : 'Si vous ne sauvegardez pas votre clef privée et votre mot de passe, il n\'existe aucun moyen de regagner accès à votre portefeuille et aux fonds qu\'il détient. Sauvegardez-les en plusieurs endroits et non seulement sur votre ordinateur !',
 
 HELP_0_Title                : '0) Je suis nouveau. Que puis-je faire ?',
@@ -696,7 +696,7 @@ HELP_2b_Desc_8              : 'Allez à la page "Visualisation d\'un portefeuill
 HELP_3_Title                : '3) Comment puis-je vérifier que j\'ai accès à mon nouveau portefeuille ?',
 HELP_3_Desc_1               : '**Avant d\'envoyer de l\'Ether à votre portefeuille**, vous devez vous assurer que vous y avez accès.',
 HELP_3_Desc_2               : 'Naviguez vers la page "Visualisation d\'un portefeuille".',
-HELP_3_Desc_3               : 'Naviguez vers la page Visualisation d\'un portefeuille" de MyEtherWallet.com.',
+HELP_3_Desc_3               : 'Naviguez vers la page Visualisation d\'un portefeuille" de MoacWalletOnline.com.',
 HELP_3_Desc_4               : 'Sélectionnez le fichier de votre portefeuille ou votre clef privée et déverrouillez votre portefeuille. ',
 HELP_3_Desc_5               : 'Si le portefeuille est chiffré, une zone texte apparaîtra automatiquement. Entrez le mot de passe.',
 HELP_3_Desc_6               : 'Cliquez sur le bouton "Déverrouiller votre portefeuille".',
@@ -731,11 +731,11 @@ HELP_4CX_Desc_10            : 'Entrez le mot de passe du portefeuille.',
 HELP_4CX_Desc_11            : 'Cliquez sur "Envoyez la transaction." ',
 HELP_4CX_Desc_12            : 'Avec la page "Envoyer des Ether et des Tokens" ',
 
-HELP_5_Title                : '5) Comment puis-je lancer MyEtherWallet.com hors ligne (en local) ?',
-HELP_5_Desc_1               : 'Vous pouvez lancer MyEtherWallet.com sur votre ordinateur au lieu de passer par les serveurs GitHub. Vous pouvez générer un portefeuille en restant totalement hors ligne et envoyer des transactions depuis la page "Transaction hors ligne".',
-HELP_5_Desc_7               : 'MyEtherWallet.com tourne maintenant complètement sur votre ordinateur.',
+HELP_5_Title                : '5) Comment puis-je lancer MoacWalletOnline.com hors ligne (en local) ?',
+HELP_5_Desc_1               : 'Vous pouvez lancer MoacWalletOnline.com sur votre ordinateur au lieu de passer par les serveurs GitHub. Vous pouvez générer un portefeuille en restant totalement hors ligne et envoyer des transactions depuis la page "Transaction hors ligne".',
+HELP_5_Desc_7               : 'MoacWalletOnline.com tourne maintenant complètement sur votre ordinateur.',
 HELP_5_Desc_8               : 'Au cas où cela ne vous est pas familier, vous devez conserver l\'intégralité du dossier pour faire tourner le site web et non uniquement `index.html`. Ne touchez à rien, ne déplacez rien dans le dossier. Si vous stockez une sauvegarde du repo MyEtherWallet pour l\'avenir, nous vous recommandons de ne stocker que le ZIP afin d\'être sûr que le contenu du dossier restera intact.',
-HELP_5_Desc_9               : 'Comme nous améliorons constamment MyEtherWallet.com, nous vous recommandons de mettre régulièrement à jour votre version de sauvegarde.',
+HELP_5_Desc_9               : 'Comme nous améliorons constamment MoacWalletOnline.com, nous vous recommandons de mettre régulièrement à jour votre version de sauvegarde.',
 
 HELP_5CX_Title              : '5) Comment puis-je installer cette extension depuis le repo au lieu du Chrome Store ?',
 HELP_5CX_Desc_2             : 'Cliquez sur `chrome-extension-vX.X.X.X.zip`',
@@ -766,7 +766,7 @@ HELP_7_Desc_15              : 'La transaction est alors soumise au réseau. Son 
 
 HELP_8_Title                : '8) Que se passe-t-il si votre site est hors-ligne ?',
 HELP_8_Desc_1               : 'MyEtherWallet n\'est pas un portefeuille web. Vous n\'avez pas de compte dessus et rien n\'est jamais stocké sur nos serveurs. Ce n\'est qu\'une interface qui vous permet d\'interagir avec le blockchain.',
-HELP_8_Desc_2               : 'Si MyEtherWallet.com venait à être hors ligne, vous devrez trouver un autre moyen (comme Geth ou Ethereum Wallet / Mist) pour faire la même chose. Mais vous n\'aurez pas à "récupérer" votre Ether depuis MyEtherWallet parce qu\'il ne se trouve pas dans MyEtherWallet. Il est chez vous, dans le portefeuille que vous avez généré par notre site.',
+HELP_8_Desc_2               : 'Si MoacWalletOnline.com venait à être hors ligne, vous devrez trouver un autre moyen (comme Geth ou Ethereum Wallet / Mist) pour faire la même chose. Mais vous n\'aurez pas à "récupérer" votre Ether depuis MyEtherWallet parce qu\'il ne se trouve pas dans MyEtherWallet. Il est chez vous, dans le portefeuille que vous avez généré par notre site.',
 HELP_8_Desc_3               : 'Vous pouvez maintenant importer facilement votre clef privée non chiffrée et vos fichiers (chiffrés) au format Geth/Mist, directement dans geth / Ethereum Wallet / Mist. Voir question #12 ci-dessous.',
 HELP_8_Desc_4               : 'De plus, la probabilité que nous laissions tomber MyEtherWallet approche zéro. Il ne nous coûte presque rien de le maintenir comme nous n\'y stockons aucune information. Si le domaine venait à être perdu, le logiciel sera toujours disponible publiquement sur [https://github.com/kvhnuke/etherwallet](https://github.com/kvhnuke/etherwallet/tree/gh-pages). Vous pourrez y télécharger le ZIP et le faire tourner localement.',
 
@@ -823,8 +823,8 @@ HELP_12_Desc_28             : 'La prochaine fois que vous ouvrirez l\'applicatio
 HELP_13_Title               : '13) Que signifie « Fonds insuffisants. Le compte d\'où vous essayez d\'envoyer une transaction ne possède pas assez de fonds. Requis : XXXXXXXXXXXXXXXXXXX, disponible : XXXXXXXXXXXXXXXXXXX. » ? ',
 HELP_13_Desc_1              : 'Cela signifie que vous n\'avez pas assez d\'Ether sur votre compte pour couvrir les coûts en Gas. Chaque transaction (y compris pour les tokens et les contrats) demande du Gas, et ce Gas est payé en Ether. Le nombre affiché est le montant requis pour couvrir le coût de la transaction en Wei. Prenez ce nombre, divisez-le par `10^18` (soit `1000000000000000000`) et soustrayez la somme en Ether que vous essayiez d\'envoyer (si vous tentiez d\'envoyer de l\'Ether). Cela vous donnera le montant en Ether que vous avez besoin d\'ajouter à votre compte pour effectuer cette transaction.',
 
-HELP_14_Title               : '14) Certains sites initialisent la génération de clef privée par les mouvements de la sours. Ce n\'est pas le cas de MyEtherWallet.com. La génération de nombres aléatoires de MyEtherWallet est-elle sûre ?',
-HELP_14_Desc_1              : 'Bien que l\'interception des mouvement de la souris soit jugée attractive par beaucoup, et que nous en comprenions les raisons, la réalité est que window.crypto assure plus d\'entropie que les mouvements de votre souris. L\'utilisation de ces mouvements est sûre mais nous (ainsi que de nombreux projets crypto) avons de bonnes raisons de croire en window.crypto. De plus, MyEtherWallet.com peut être utilisé sur des périphériques tactiles. Voici une [conversation entre un redditeur rageur et Vitalik Buterin à propos des mouvements de souris et window.crypto](https://www.reddit.com/r/ethereum/comments/2bilqg/note_there_is_a_paranoid_highsecurity_way_to/cj5sgrm) et voici [les spécifications w3 de window.crypto](https://dvcs.w3.org/hg/webcrypto-api/raw-file/tip/spec/Overview.html#dfn-GlobalCrypto).',
+HELP_14_Title               : '14) Certains sites initialisent la génération de clef privée par les mouvements de la sours. Ce n\'est pas le cas de MoacWalletOnline.com. La génération de nombres aléatoires de MyEtherWallet est-elle sûre ?',
+HELP_14_Desc_1              : 'Bien que l\'interception des mouvement de la souris soit jugée attractive par beaucoup, et que nous en comprenions les raisons, la réalité est que window.crypto assure plus d\'entropie que les mouvements de votre souris. L\'utilisation de ces mouvements est sûre mais nous (ainsi que de nombreux projets crypto) avons de bonnes raisons de croire en window.crypto. De plus, MoacWalletOnline.com peut être utilisé sur des périphériques tactiles. Voici une [conversation entre un redditeur rageur et Vitalik Buterin à propos des mouvements de souris et window.crypto](https://www.reddit.com/r/ethereum/comments/2bilqg/note_there_is_a_paranoid_highsecurity_way_to/cj5sgrm) et voici [les spécifications w3 de window.crypto](https://dvcs.w3.org/hg/webcrypto-api/raw-file/tip/spec/Overview.html#dfn-GlobalCrypto).',
 
 HELP_15_Title               : '15) Pourquoi le compte que je viens de créer n\'apparaît-il pas dans l\'explorateur de blockchain ? (etherchain, etherscan)',
 HELP_15_Desc_1              : 'Les comptes n\'apparaissent dans un explorateur de blockchain qu\'après une activité, comme par exemple, un envoi ou une réception d\'Ether.',
@@ -859,13 +859,13 @@ HELP_SecCX_Desc_2           : 'Les informations stockées par cette extension so
 HELP_SecCX_Desc_3           : 'Quelles informations sont sauvegardées ? ',
 HELP_SecCX_Desc_4           : 'L\'adresse, le surnom et la clef privée sont stockés dans chrome.storage. La clef privée est chiffrée par le mot de passe défini à l\'ajout du portefeuille. Le surnom et l\'adresse du portefeuille ne sont pas chiffrés. ',
 HELP_SecCX_Desc_5           : 'Pourquoi le surnom et l\'adresse du portefeuille ne sont-ils pas chiffrés ? ',
-HELP_SecCX_Desc_6           : 'Si nous devions chiffrer ces informations, il vous faudrait entrer un mot de passe à chaque fois que vous voudriez voir votre solde ou les surnoms. Si cela vous ennuie, nous vous recommandons d\'utiliser MyEtherWallet.com au lieu de cette extension Chrome.',
+HELP_SecCX_Desc_6           : 'Si nous devions chiffrer ces informations, il vous faudrait entrer un mot de passe à chaque fois que vous voudriez voir votre solde ou les surnoms. Si cela vous ennuie, nous vous recommandons d\'utiliser MoacWalletOnline.com au lieu de cette extension Chrome.',
 
 HELP_Sec_Title              : 'Sécurité',
 HELP_Sec_Desc_1             : 'Si l\'une des premières questions que vous vous posez est "Pourquoi devrais-je faire confiance à ces gens ?", c\'est une bonne démarche. Nous espérons que ce qui suit va dissiper vos craintes. ',
 HELP_Sec_Desc_2             : 'Nous avons commencé en août 2015. Si vous recherchez ["myetherwallet" sur reddit](https://www.reddit.com/search?q=myetherwallet), vous pouvez voir qu\'un nombre considérable de personnes nous utilisent sans problème. ',
 HELP_Sec_Desc_3             : 'Nous n\'allons pas prendre votre argent ou voler vos clefs privées. Il n\'y a pas de code malveillant sur ce site. En fait, les pages sont du côté du client. Cela signifie que tout le code s\'éxécute sur **votre ordinateur** et n\'est jamais sauvegardé ou transmis où que ce soit.',
-HELP_Sec_Desc_4             : 'Vérifiez l\'URL -- Ce site est servi par Github (et vous pouvez en voir le code source ici : [https://github.com/kvhnuke/etherwallet/tree/gh-pages](https://github.com/kvhnuke/etherwallet/tree/gh-pages)) vers [https://www.myetherwallet.com](https://www.myetherwallet.com).',
+HELP_Sec_Desc_4             : 'Vérifiez l\'URL -- Ce site est servi par Github (et vous pouvez en voir le code source ici : [https://github.com/kvhnuke/etherwallet/tree/gh-pages](https://github.com/kvhnuke/etherwallet/tree/gh-pages)) vers [https://www.MoacWalletOnline.com](https://www.MoacWalletOnline.com).',
 HELP_Sec_Desc_5             : 'Pour générer les portefeuilles, vous pouvez télécharger le [code source](https://github.com/kvhnuke/etherwallet/releases/latest). Voir #5 ci-dessus. ',
 HELP_Sec_Desc_6             : 'Lancez un test et vérifiez le type d\'activité réseau. La manière la plus simple consiste en un clic droit sur la page, puis "Inspecter". Allez à l\'onglet "Network". Générez un portefeuille de test. Vous verrez qu\'il n\'y a pas d\'activité réseau. Vous pourrez voir quelque chose se produire ressemblant à data:image/gif et data:image/png. Ce sont les QR codes en cours de génération... sur votre ordinateur. Aucun octet n\'a été transféré. ',
 HELP_Sec_Desc_8             : 'Si cet outil ne vous plaît pas, alors ne l\'utilisez surtout pas. Nous l\'avons créé pour qu\'il aide les gens à générer des portefeuilles et à effectuer des transactions sans avoir besoin de plonger dans des lignes de commandes, ni faire tourner un nœud complet. À nouveau, n\'hésitez pas à nous faire part de vos doutes et nous répondrons aussi rapidement que possible. Merci ! ',

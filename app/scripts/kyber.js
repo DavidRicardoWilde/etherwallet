@@ -119,7 +119,7 @@ kyberFuncs.prototype.getTokenAddress = function(_token) {
 
 kyberFuncs.prototype.getTokenList = function () {
     var _this = this;
-    return _this.mainTokens.filter(_tok => _tok !== "ETH")
+    return _this.mainTokens.filter(_tok => _tok !== "MOAC")
 };
 
 kyberFuncs.prototype.getDataString = function (func, inputs) {

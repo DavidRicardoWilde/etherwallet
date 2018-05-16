@@ -106,7 +106,7 @@ EOS_09                          :  'Klaim Token EOS',
 EOS_10                          :  'Pilih `claimAll`.',
 
 /* Onboarding */
-ONBOARD_welcome_title           :  'Selamat datang di MyEtherWallet.com',
+ONBOARD_welcome_title           :  'Selamat datang di MoacWalletOnline.com',
 ONBOARD_welcome_content__1      :  'Sisihkan waktu untuk memahami informasi berikut, demi keamanan Anda. 🙏',
 ONBOARD_welcome_content__2      :  'Dana Anda akan bisa dicuri jika Anda tidak mengindahkan peringatan ini.',
 ONBOARD_welcome_content__3      :  'Kami tahu laman informasi yang harus di klik ini mengganggu. Kami mohon maaf sebelumnya.',
@@ -138,7 +138,7 @@ ONBOARD_blockchain_content__1   :  'Blockchain itu seperti spreadsheet besar yan
 ONBOARD_blockchain_content__2   :  'Blockchain mencatat siapa yang mengirimkan berapa banyak koin kepada siapa, dan berapa saldo setiap akunnya?.',
 ONBOARD_blockchain_content__3   :  'Catatan tersebut disimpan dan dikelola oleh ribuan orang (penambang) di seluruh dunia yang memiliki komputer khusus.',
 ONBOARD_blockchain_content__4   :  'Blok di blockchain berisi catatan dari semua transaksi individual yang dikirim dari MyEtherWallet, MetaMask, Exodus, Mist, Geth, Parity, dan lain-lainnya..',
-ONBOARD_blockchain_content__5   :  'Saat Anda melihat saldo di MyEtherWallet.com atau melihat transaksi Anda di [etherscan.io](https://etherscan.io), Anda melihat data di blockchain, bukan di sistem privat Anda.',
+ONBOARD_blockchain_content__5   :  'Saat Anda melihat saldo di MoacWalletOnline.com atau melihat transaksi Anda di [etherscan.io](https://etherscan.io), Anda melihat data di blockchain, bukan di sistem privat Anda.',
 ONBOARD_blockchain_content__6   :  'Sekali lagi: **kami bukan sebuah bank**.',
 ONBOARD_interface_title__alt    :  'MEW adalah sebuah antarmuka',
 ONBOARD_why_title__alt          :  'Lalu...apa pentingnya?',
@@ -167,7 +167,7 @@ ONBOARD_secure_title            :  'Cara Melindungi Diri & Dana Anda',
 ONBOARD_secure_1_title          :  'Cara Melindungi Diri Anda dari Phisher',
 ONBOARD_secure_1_content__1     :  'Phisher biasanya mengirim Anda pesan dengan link ke situs web yang sekilas terlihat seperti MyEtherWallet, EtherDelta, Paypal, atau bank Anda, namun bukan situs web yang asli. Mereka mencuri informasi Anda dan kemudian mencuri uang Anda.',
 ONBOARD_secure_1_content__2     :  'Pasang [EAL](https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn) atau [MetaMask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) atau [Cryptonite by Metacert](https://chrome.google.com/webstore/detail/cryptonite-by-metacert/keghdcpemohlojlglbiegihkljkgnige) atau [MyEtherWallet Chrome Extension](https://chrome.google.com/webstore/detail/myetherwallet-cx/nlbmnnijcnlegkjjpcfjclmcfggfefdm) untuk memblokir situs web jahat.',
-ONBOARD_secure_1_content__3     :  'Selalu periksa URLnya: `https://www.myetherwallet.com`.',
+ONBOARD_secure_1_content__3     :  'Selalu periksa URLnya: `https://www.MoacWalletOnline.com`.',
 ONBOARD_secure_1_content__4     :  'Pastikan bar URL menunjukkan `MYETHERWALLET INC` dalam warna hijau.',
 ONBOARD_secure_1_content__5     :  'Jangan mempercayai pesan atau tautan yang dikirim kepada Anda secara acak melalui email, Slack, Reddit, Twitter, dll.',
 ONBOARD_secure_1_content__6     :  'Selalu kunjungi situs secara langsung sebelum memasukkan informasi. Jangan memasukkan informasi setelah mengklik link dari pesan atau email.',
@@ -261,7 +261,7 @@ GEN_Unlock                  : 'Buka kunci dompet Anda untuk melihat alamat Anda'
 GAS_PRICE_Desc              : 'Harga Gas Price adalah jumlah yang Anda bayar per unit gas. `Biaya TX = harga gas * gas limit` & dibayarkan kepada miners untuk memasukkan TX Anda ke dalam block. Makin tinggi harga gas = transaksi makin cepat, tapi makin mahal. Default-nya `41 GWEI`.',
 GAS_LIMIT_Desc              : 'Batas Gas (Gas limit) adalah jumlah gas untuk dikirim bersama TX Anda.  `Biaya TX = harga gas * gas limit` & dibayarkan kepada miners untuk memasukkan TX Anda ke dalam block. Menaikkan angka ini tidak mempercepat TX Anda untuk ditambang. Pengiriman ETH = `21000`. Pengiriman Token = ~`200000`.',
 NONCE_Desc                  : 'Nonce adalah nomor transaksi yang dikirimn dari sebuah alamat. Ini untuk menjamin agar pengiriman terlaksana secara runtut dan tidak ada yang dilakukan lebih dari sekali.',
-TXFEE_Desc                  : 'Biaya TX Fee dibayarkan kepada miners untuk memasukkan TX Anda ke dalam block. Jumlahnya =  `gas limit` * `gas price`. [Anda dapat mengkonversi GWEI -> ETH](https://www.myetherwallet.com/helpers.html)',
+TXFEE_Desc                  : 'Biaya TX Fee dibayarkan kepada miners untuk memasukkan TX Anda ke dalam block. Jumlahnya =  `gas limit` * `gas price`. [Anda dapat mengkonversi GWEI -> ETH](https://www.MoacWalletOnline.com/helpers.html)',
 
 
 
@@ -522,7 +522,7 @@ CX_quicksend                : 'Kirim ', // if no appropriate translation, just u
 /* Node Switcher */
 NODE_Title                  : 'Set Up Node Custom Anda',
 NODE_Subtitle               : 'Untuk terhubung ke node lokal...',
-NODE_Warning                : 'Node Anda harus berupa HTTPS untuk dapat terhubung melalui MyEtherWallet.com. Anda dapat [mengunduh MyEtherWallet repo & menjalankannya secara lokal](https://github.com/kvhnuke/etherwallet/releases/latest) untuk terhubung ke node apa saja. Atau, dapatkan SSL certificate gratis melalui [LetsEncrypt](https://letsencrypt.org/)',
+NODE_Warning                : 'Node Anda harus berupa HTTPS untuk dapat terhubung melalui MoacWalletOnline.com. Anda dapat [mengunduh MyEtherWallet repo & menjalankannya secara lokal](https://github.com/kvhnuke/etherwallet/releases/latest) untuk terhubung ke node apa saja. Atau, dapatkan SSL certificate gratis melalui [LetsEncrypt](https://letsencrypt.org/)',
 NODE_Name                   : 'Nama Node',
 NODE_Port                   : 'Port Node',
 NODE_CTA                    : 'Simpan & Pakai Node Custom',
@@ -592,7 +592,7 @@ ERROR_24                    : 'Masukkan port yang valid. ', // 24
 ERROR_25                    : 'Masukkan chain ID yang valid. ', // 25
 ERROR_26                    : 'Masukkan ABI yang valid. ', // 26
 ERROR_27                    : 'Jumlah Minimum: 0.01. Jumlah Max: ', // 27
-ERROR_28                    : '**DIPERLUKAN File Keystore & password** (atau Kunci Privat) untuk mengakses dompet Anda. Simpan dan backup dengan baik file ini! Tidak ada mekanisme untuk me-recover dompet jika file-nya hilang. Baca instruksi lengkapnya [di sini](https://www.myetherwallet.com/#help). ',
+ERROR_28                    : '**DIPERLUKAN File Keystore & password** (atau Kunci Privat) untuk mengakses dompet Anda. Simpan dan backup dengan baik file ini! Tidak ada mekanisme untuk me-recover dompet jika file-nya hilang. Baca instruksi lengkapnya [di sini](https://www.MoacWalletOnline.com/#help). ',
 ERROR_29                    : 'Masukkan user dan password yang valid. ', // 29
 ERROR_30                    : 'Masukkan nama yang vaklid (7+ karakter, tanda baca terbatas) ', // 30
 ERROR_31                    : 'Masukkan frase rahasia yang valid. ', // 31
@@ -636,7 +636,7 @@ PARITY_TooCheapToReplace    : "(parity-08) Biaya transaksi terlalu rendah. Ada t
 /* Tranlsation Info */
 translate_version           : '0.3 ',
 Translator_Desc             : 'Thank you to our translators ',
-TranslatorName_1            : '[Yos Ginting](https://www.myetherwallet.com/?gaslimit=21000&to=0x8F646C5c215be6E0163f02Bd2eB97AFC2DF70e5c&value=1.0#send-transaction) ',
+TranslatorName_1            : '[Yos Ginting](https://www.MoacWalletOnline.com/?gaslimit=21000&to=0x8F646C5c215be6E0163f02Bd2eB97AFC2DF70e5c&value=1.0#send-transaction) ',
 TranslatorAddr_1            : '0x8F646C5c215be6E0163f02Bd2eB97AFC2DF70e5c ',
 /* Translator 1             : 05 Sep 2016: Translation completed (except HELP texts); 09 Sep 2016: Revisions; 3 Sep 2017 more translations; 1 Jan 2018 more translations*/
 TranslatorName_2            : '',
@@ -654,10 +654,10 @@ TranslatorAddr_5            : '',
 
 /* Help - Nothing after this point has to be translated. If you feel like being extra helpful, go for it. */
 HELP_Warning                : 'Jika Anda telah membuat dompet -atau- mendownload repo sebelum **Des. 31, 2015**, periksa dompet Anda &amp; download versi repo yang baru. Klik untuk penjelasan yang lebih rinci. ',
-HELP_Desc                   : 'Anda melihat sesuatu yang hilang? Atau ada pertanyaan lain? [Hubungi kami](mailto:support@myetherwallet.com), dan kami tidak hanya akan menjawab pertanyaan Anda, kami akan memperbarui halaman ini untuk lebih bermanfaat bagi pengguna lainnya kedepan! ',
+HELP_Desc                   : 'Anda melihat sesuatu yang hilang? Atau ada pertanyaan lain? [Hubungi kami](mailto:support@MoacWalletOnline.com), dan kami tidak hanya akan menjawab pertanyaan Anda, kami akan memperbarui halaman ini untuk lebih bermanfaat bagi pengguna lainnya kedepan! ',
 HELP_Remind_Title           : 'Beberapa pengingat ',
-HELP_Remind_Desc_1          : '** Ethereum, MyEtherWallet.com & MyEtherWallet CX, dan beberapa library Javascript yang kami gunakan sedang dalam pengembangan yang aktif.** Meskipun kami telah benar-benar menguji & puluhan ribu dompet telah berhasil diciptakan oleh para pengguna di seluruh dunia, selalu ada kemungkinan bahwa sesuatu yang tidak terduga dapat terjadi yang menyebabkan ETH Anda hilang. Tolong jangan menginvestasikan lebih dari yang Anda mampu kehilangan, dan mohon berhati-hati. Jika ada sesuatu yang buruk terjadi, kami mohon maaf, tapi **kami tidak bertanggung jawab atas Ether yang hilang**. ',
-HELP_Remind_Desc_2          : 'MyEtherWallet.com & MyEtherWallet CX bukan "dompet web". Anda tidak membuat akun atau memberikan Ether Anda untuk kami pegang. Semua data tidak pernah meninggalkan komputer/browser Anda. Kami mempermudah Anda untuk membuat, menyimpan, dan mengakses informasi Anda dan berinteraksi dengan blockchain. ',
+HELP_Remind_Desc_1          : '** Ethereum, MoacWalletOnline.com & MyEtherWallet CX, dan beberapa library Javascript yang kami gunakan sedang dalam pengembangan yang aktif.** Meskipun kami telah benar-benar menguji & puluhan ribu dompet telah berhasil diciptakan oleh para pengguna di seluruh dunia, selalu ada kemungkinan bahwa sesuatu yang tidak terduga dapat terjadi yang menyebabkan ETH Anda hilang. Tolong jangan menginvestasikan lebih dari yang Anda mampu kehilangan, dan mohon berhati-hati. Jika ada sesuatu yang buruk terjadi, kami mohon maaf, tapi **kami tidak bertanggung jawab atas Ether yang hilang**. ',
+HELP_Remind_Desc_2          : 'MoacWalletOnline.com & MyEtherWallet CX bukan "dompet web". Anda tidak membuat akun atau memberikan Ether Anda untuk kami pegang. Semua data tidak pernah meninggalkan komputer/browser Anda. Kami mempermudah Anda untuk membuat, menyimpan, dan mengakses informasi Anda dan berinteraksi dengan blockchain. ',
 HELP_Remind_Desc_3          : 'Jika Anda tidak menyimpan Kunci Privat & password Anda, tidak ada cara untuk memulihkan akses ke dompet Anda atau dana yang ada di dalamnya. Simpan kunci cadangan ke beberapa lokasi fisik &ndash; jangan hanya di komputer Anda saja! ',
 
 HELP_0_Title                : '0) Saya masih baru. Apa yang harus saya lakukan? ',
@@ -694,7 +694,7 @@ HELP_2b_Desc_8              : 'Buka halaman "Lihat Info Dompet" dan ketik passwo
 HELP_3_Title                : '3) Bagaimana cara memverifikasi bahwa saya memiliki akses ke dompet baru saya? ',
 HELP_3_Desc_1               : '**Sebelum Anda mengirim Ether ke dompet baru Anda**, Anda harus memastikan Anda memiliki akses ke dompet baru tersebut. ',
 HELP_3_Desc_2               : 'Buka halaman "Lihat Info Dompet". ',
-HELP_3_Desc_3               : 'Buka laman MyEtherWallet.com bagian "Lihat Info Dompet" . ',
+HELP_3_Desc_3               : 'Buka laman MoacWalletOnline.com bagian "Lihat Info Dompet" . ',
 HELP_3_Desc_4               : 'Pilih file dompet Anda -atau- Kunci Privat Anda dan buka dompet Anda. ',
 HELP_3_Desc_5               : 'Jika dompet dienkripsi, halaman isian password akan muncul secara otomatis. Masukkan passwordnya. ',
 HELP_3_Desc_6               : 'Klik tombol "Buka Dompet/Unlock Wallet". ',
@@ -729,11 +729,11 @@ HELP_4CX_Desc_10            : 'Masukkan password untuk dompet itu. ',
 HELP_4CX_Desc_11            : 'Klik "Kirim Transaksi". ',
 HELP_4CX_Desc_12            : 'Menggunakan halaman "Kirim Ether dan Tokens" ',
 
-HELP_5_Title                : '5) Bagaimana cara menjalankan MyEtherWallet.com secara offline/lokal? ',
-HELP_5_Desc_1               : 'Anda dapat menjalankan MyEtherWallet.com secara lokal di komputer Anda, bukan dari server GitHub. Anda dapat membuat dompet yang benar-benar offline dan mengirim transaksi dari laman "Transaksi Offline". ',
-HELP_5_Desc_7               : 'MyEtherWallet.com sekarang berjalan sepenuhnya di komputer Anda. ',
+HELP_5_Title                : '5) Bagaimana cara menjalankan MoacWalletOnline.com secara offline/lokal? ',
+HELP_5_Desc_1               : 'Anda dapat menjalankan MoacWalletOnline.com secara lokal di komputer Anda, bukan dari server GitHub. Anda dapat membuat dompet yang benar-benar offline dan mengirim transaksi dari laman "Transaksi Offline". ',
+HELP_5_Desc_7               : 'MoacWalletOnline.com sekarang berjalan sepenuhnya di komputer Anda. ',
 HELP_5_Desc_8               : 'Jika Anda belum pernah melakukannya, Anda harus menyimpan folder dan seluruh isinya (bukan hanya `index.html`) agar bisa menjalankan websitenya. Jangan rubah atau pindahkan file apapun yang ada di dalam folder. Jika Anda akan menyimpan backup dari MyEtherWallet repo, sebaiknya simpan versi ZIP-nya untuk menggaransi bahwa isi foldernya lengkap. ',
-HELP_5_Desc_9               : 'Karena kami masih terus memperbarui MyEtherWallet.com, sebaiknya Anda juga memperbarui versi repo yang Anda simpan secara berkala. ',
+HELP_5_Desc_9               : 'Karena kami masih terus memperbarui MoacWalletOnline.com, sebaiknya Anda juga memperbarui versi repo yang Anda simpan secara berkala. ',
 
 HELP_5CX_Title              : '6) Bagaimana cara memasang ekstensi ini dari repo, bukan dari Chrome Store? ',
 HELP_5CX_Desc_2             : 'Klik `chrome-extension-vX.X.X.X.zip` dan unzip. ',
@@ -764,7 +764,7 @@ HELP_7_Desc_15              : 'Transaksi akan dijalankan. TX Hash akan ditampilk
 
 HELP_8_Title                : '8) Apa yang terjadi jika situs Anda tidak berfungsi? ',
 HELP_8_Desc_1               : 'MyEtherWallet bukan dompet web. Anda tidak memiliki login dan tidak ada yang bisa disimpan ke server kami. Ini hanyalah sebuah antarmuka yang memungkinkan Anda berinteraksi dengan blockchain. ',
-HELP_8_Desc_2               : 'Jika situs MyEtherWallet.com tidak berfungsi, Anda harus memakai cara lain (misalnya memakai geth atau Ethereum Wallet/Mist) sebagai alternatifnya. Tapi Anda tidak perlu "mengeluarkan" Ether Anda dari MyEtherWallet.com karena Ether Anda tidak disimpan di MyEtherWallet.com. Ether Anda tetap tersimpan dalam dompet yang Anda buat di situs kami. ',
+HELP_8_Desc_2               : 'Jika situs MoacWalletOnline.com tidak berfungsi, Anda harus memakai cara lain (misalnya memakai geth atau Ethereum Wallet/Mist) sebagai alternatifnya. Tapi Anda tidak perlu "mengeluarkan" Ether Anda dari MoacWalletOnline.com karena Ether Anda tidak disimpan di MoacWalletOnline.com. Ether Anda tetap tersimpan dalam dompet yang Anda buat di situs kami. ',
 HELP_8_Desc_3               : 'Sekarang Anda dapat mengimpor Kunci Privat yang tidak dienkripsi dan file dalam format Geth/Mist (terenkripsi) langsung ke geth/ Ethereum Wallet/Mist dengan sangat mudah. Lihat pertanyaan #12 di bawah ini. ',
 HELP_8_Desc_4               : 'Lebih dari itu, kemungkinan kita menghentikan layanan MyEtherWallet sangat kecil. Hampir tidak ada biaya dari penyelenggaraan layanan ini karena kami tidak menyimpan data apapun. Kalaupun sampai kami menghentikan layanan, semua file ini akan selalu akan tersedia untuk umum di [https://github.com/kvhnuke/etherwallet](https://github.com/kvhnuke/etherwallet/tree/gh-pages). Anda bisa mendownload file ZIP-nya disana dan menjalankannya secara lokal. ',
 
@@ -823,8 +823,8 @@ HELP_12_Desc_28             : 'Saat Anda membuka aplikasi Wallet Etereum berikut
 HELP_13_Title               : '13) Apa arti dari "Dana yang tersedia tidak mencukupi. Akun yang Anda pakai untuk mengirim transaksi tidak memiliki cukup dana. Diperlukan XXXXXXXXXXXXXXXXXXX dan tersedia: XXXXXXXXXXXXXXXX."? ',
 HELP_13_Desc_1              : 'Ini artinya tidak tersedia cukup Ether di akun Anda untuk menutupi biaya gas. Setiap transaksi (termasuk token dan transaksi kontrak) memerlukan gas dan gas tersebut dibayarkan menggunakan Ether. Jumlah yang ditampilkan adalah jumlah yang dibutuhkan untuk menutupi biaya transaksi di Wei. Ambil nomor itu, bagi dengan `1000000000000000000`, dan pakai untuk mengurangi jumlah Ether yang ingin Anda kirim (jika Anda mencoba mengirim Eter). Ini akan memberi Anda jumlah Ether yang perlu Anda kirim ke akun tersebut untuk melakukan transaksi. ',
 
-HELP_14_Title               : '14) Beberapa situs menggunakan metode randomisasi pembuatan Kunci Privat melalui gerakan mouse. MyEtherWallet.com tidak menggunakan metode ini. Apakah metode pembuatan angka random yang dipakai MyEtherWallet aman? ',
-HELP_14_Desc_1              : 'Harus diakuai bahwa penggunaan gerakan mouse adalah cara yang pandai dan oleh karenanya banyak orang menyukainya, namun sebenarnya metode window.crypto memastikan lebih banya entropi dibanding gerakan mouse anda. Menggunakan gerakan mouse bukanlah tidak aman, hanya saja kami (dan banyak peneliti kripto lainnya) percaya pada window.crypto. Selain itu, MyEtherWallet.com dapat digunakan pada perangkat sentuh. Bisa dilihat [percakapan antara redditor yang marah dengan Vitalik Buterin terkait gerakan mouse versus window.crypto](https://www.reddit.com/r/ethereum/comments/2bilqg/note_there_is_a_paranoid_highsecurity_way_to/cj5sgrm) dan ini tautan [window.crypto w3 spec](https://dvcs.w3.org/hg/webcrypto-api/raw-file/tip/spec/Overview.html#dfn-GlobalCrypto). ',
+HELP_14_Title               : '14) Beberapa situs menggunakan metode randomisasi pembuatan Kunci Privat melalui gerakan mouse. MoacWalletOnline.com tidak menggunakan metode ini. Apakah metode pembuatan angka random yang dipakai MyEtherWallet aman? ',
+HELP_14_Desc_1              : 'Harus diakuai bahwa penggunaan gerakan mouse adalah cara yang pandai dan oleh karenanya banyak orang menyukainya, namun sebenarnya metode window.crypto memastikan lebih banya entropi dibanding gerakan mouse anda. Menggunakan gerakan mouse bukanlah tidak aman, hanya saja kami (dan banyak peneliti kripto lainnya) percaya pada window.crypto. Selain itu, MoacWalletOnline.com dapat digunakan pada perangkat sentuh. Bisa dilihat [percakapan antara redditor yang marah dengan Vitalik Buterin terkait gerakan mouse versus window.crypto](https://www.reddit.com/r/ethereum/comments/2bilqg/note_there_is_a_paranoid_highsecurity_way_to/cj5sgrm) dan ini tautan [window.crypto w3 spec](https://dvcs.w3.org/hg/webcrypto-api/raw-file/tip/spec/Overview.html#dfn-GlobalCrypto). ',
 
 HELP_15_Title               : '15) Kenapa akun yang baru saja saya buat tidak muncul di explorer blockchain? (seperti: etherchain, etherscan) ',
 HELP_15_Desc_1              : 'Account hanya akan muncul di explorer blockchain begitu akun memiliki aktivitas di dalamnya&mdash;misalnya, setelah Anda memindahkan beberapa Ether ke sana. ',
@@ -859,13 +859,13 @@ HELP_SecCX_Desc_2           : 'Informasi yang dimasukkan ke Chrome Extension ini
 HELP_SecCX_Desc_3           : 'Informasi apa saja yang disimpan? ',
 HELP_SecCX_Desc_4           : 'Alamat, nickname, Kunci Privat disimpan di chrome.storage. Kunci Privat dienkripsi menggunakan kata sandi yang Anda pakai saat menambahkan dompet. Alamat dompet dan nickname tidak dienkripsi. ',
 HELP_SecCX_Desc_5           : 'mengapa alamat dompet dan nickname tidak dienkripsi? ',
-HELP_SecCX_Desc_6           : 'Jika kami mengenkripsi item ini, Anda harus memasukkan password setiap kali Anda ingin melihat saldo akun atau melihat nickname. Jiak Anda khawatir, kami sarankan Anda menggunakan MyEtherWallet.com, bukan Chrome Extension ini. ',
+HELP_SecCX_Desc_6           : 'Jika kami mengenkripsi item ini, Anda harus memasukkan password setiap kali Anda ingin melihat saldo akun atau melihat nickname. Jiak Anda khawatir, kami sarankan Anda menggunakan MoacWalletOnline.com, bukan Chrome Extension ini. ',
 
 HELP_Sec_Title              : 'Keamanan ',
 HELP_Sec_Desc_1             : 'Jika salah satu pertanyaan pertama Anda adalah "Mengapa saya harus percaya keapda orang-orang ini?", Ini sikap kehati-hatian yang baik. Mudah-mudahan informasi berikut ini akan membantu meringankan kekhawatiran anda. ',
 HELP_Sec_Desc_2             : 'Kami sudah ada sejak 2015. Jika Anda mencari ["myetherwallet" di reddit](https://www.reddit.com/search?q=myetherwallet), Anda bisa melihat banyak orang yang sudah menggunakan layanan kami dan baik-baik saja. ',
 HELP_Sec_Desc_3             : 'Kami tidak akan mengambil uang Anda atau mencuri Kunci Privat Anda. Tidak ada kode berbahaya di situs ini. Bahkan, fungsi "BUAT DOMPET/GENERATE WALLET" sepenihnya dilakukan di sisi klien. Ini berarti bahwa semua kode dieksekusi di **komputer Anda** dan tidak pernah disimpan dan dikirim di luar itu. ',
-HELP_Sec_Desc_4             : 'Periksa URL ini -- Situs ini dijalankan melalui GitHub dan Anda bisa melihat sorce code nya di sini: [https://github.com/kvhnuke/etherwallet/tree/gh-pages](https://github.com/kvhnuke/etherwallet/tree/gh-pages) ke [https://www.myetherwallet.com](https://www.myetherwallet.com). ',
+HELP_Sec_Desc_4             : 'Periksa URL ini -- Situs ini dijalankan melalui GitHub dan Anda bisa melihat sorce code nya di sini: [https://github.com/kvhnuke/etherwallet/tree/gh-pages](https://github.com/kvhnuke/etherwallet/tree/gh-pages) ke [https://www.MoacWalletOnline.com](https://www.MoacWalletOnline.com). ',
 HELP_Sec_Desc_5             : 'Untuk membuat dompet, Anda dapat mendownload [source code dan menjalankannya secara lokal](https://github.com/kvhnuke/etherwallet/releases/latest). Lihat #5 di atas. ',
 HELP_Sec_Desc_6             : 'Cobalam emmbuat sebuah test dompet. Uji dan periksa serta lihat aktivitas apa saja yang sedang terjadi di jaringan. Cara termudah bagi Anda untuk melakukan hal ini adalah dengan klik kanan pada halamannya dan klik "inspect element". Buka "Network" tab. Buat sebuah Test Dompet. Anda akan buktikan nahwa tidak ada aktivitas jaringan. Anda mungkin melihat sesuatu yang terjadi seperti data:image/gif dan data:image/png. Itu adalah kode QR yang dihasilkan ... di komputer Anda ... oleh komputer Anda. Tidak ada bytes yang ditransfer. ',
 HELP_Sec_Desc_8             : 'Jika Anda merasa tidak nyaman menggunakan fasilitas ini, maka janganlah dipakai. Kami membuat program iniuntuk membantu orang untuk membuat dompet dan melakukan transaksi tanpa perlu mendalami cara memakai command line atau menjalankan full node.. Sekali lagi, silakan menghubungi kami jika Anda memiliki masalah dan kami akan merespon selekasnya. Terima kasih! ',
