@@ -233,7 +233,7 @@ uiFuncs.generateTx = function(txData, callback) {
                 eTx.sign(new Buffer(txData.privKey, 'hex'));
 
                 rawTx.rawTx = JSON.stringify(rawTx);
-                rawTx.signedTx = '0x' + eTx.serialize().toString('hex');
+                rawTx.signedTx = 'test send';//'0x' + eTx.serialize().toString('hex');
                 rawTx.isError = false;
                 if (callback !== undefined) callback(rawTx);
             }
