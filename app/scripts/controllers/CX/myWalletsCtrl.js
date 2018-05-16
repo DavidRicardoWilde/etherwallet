@@ -215,7 +215,7 @@ var myWalletsCtrl = function($scope, $sce, $timeout, walletService) {
 			} else {
 				$scope[varWal][id].balance = moacUnits.toMc(
 					data.data.balance,
-					"wei"
+					"sha"
 				);
 				$scope[varWal][id].balanceR = new BigNumber(
 					$scope[varWal][id].balance
@@ -333,7 +333,7 @@ var myWalletsCtrl = function($scope, $sce, $timeout, walletService) {
 		});
 	};
 
-	ajaxReq.getETHvalue(function(data) {
+	ajaxReq.getMOACvalue(function(data) {
 		$scope.fiatVal.usd = data.usd;
 		$scope.fiatVal.eur = data.eur;
 		$scope.fiatVal.btc = data.btc;

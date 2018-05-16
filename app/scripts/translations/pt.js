@@ -257,10 +257,10 @@ GEN_Help_20                 : 'Cold Storage',
 GET_ConfButton              : 'I understand. Continue.',
 GEN_Label_5                 : 'Save Your `Private Key`. ',
 GEN_Unlock                  : 'Unlock your wallet to see your address',
-GAS_PRICE_Desc              : 'Gas Price is the amount you pay per unit of gas. `TX fee = gas price * gas limit` & is paid to miners for including your TX in a block. Higher the gas price = faster transaction, but more expensive. Default is `41 GWEI`.',
+GAS_PRICE_Desc              : 'Gas Price is the amount you pay per unit of gas. `TX fee = gas price * gas limit` & is paid to miners for including your TX in a block. Higher the gas price = faster transaction, but more expensive. Default is `41 GSHA`.',
 GAS_LIMIT_Desc              : 'Gas limit is the amount of gas to send with your TX. `TX fee` = gas price * gas limit & is paid to miners for including your TX in a block. Increasing this number will not get your TX mined faster. Sending ETH = `21000`. Sending Tokens = ~`200000`.',
 NONCE_Desc                  : 'The nonce is the number of transactions sent from a given address. It ensures transactions are sent in order & not more than once.',
-TXFEE_Desc                  : 'The TX Fee is paid to miners for including your TX in a block. Is is the `gas limit` * `gas price`. [You can convert GWEI -> ETH here](https://www.MoacWalletOnline.com/helpers.html)',
+TXFEE_Desc                  : 'The TX Fee is paid to miners for including your TX in a block. Is is the `gas limit` * `gas price`. [You can convert GSHA -> ETH here](https://www.MoacWalletOnline.com/helpers.html)',
 
 
 
@@ -569,7 +569,7 @@ ERROR_6                     : 'Please enter a valid password. ', // 6
 ERROR_7                     : 'Please enter valid decimals     (Must be integer, 0-18). ', // 7
 ERROR_8                     : 'Please enter a valid gas limit  (Must be integer. Try 21000-4000000). ', // 8
 ERROR_9                     : 'Please enter a valid data value (Must be hex). ', // 9
-ERROR_10                    : 'Please enter a valid gas price. (Must be integer. Try 20 GWEI (20000000000 WEI)',
+ERROR_10                    : 'Please enter a valid gas price. (Must be integer. Try 20 GSHA (20000000000 WEI)',
 ERROR_11                    : 'Please enter a valid nonce      (Must be integer).', // 11
 ERROR_12                    : 'Invalid signed transaction. ', // 12
 ERROR_13                    : 'A wallet with this nickname already exists. ', // 13
@@ -624,7 +624,7 @@ PARITY_Old                  : "Transaction nonce is too low. Try incrementing th
 PARITY_TooCheapToReplace    : "Transaction fee is too low. There is another transaction with same nonce in the queue. Try increasing the fee or incrementing the nonce.",
 PARITY_LimitReached         : "There are too many transactions in the queue. Your transaction was dropped due to limit. Try increasing the fee.",
 PARITY_InsufficientGasPrice : "Transaction fee is too low. It does not satisfy your node's minimal fee (minimal: {}, got: {}). Try increasing the fee.",
-PARITY_InsufficientBalance  : "Insufficient funds. Account you try to send transaction from does not have enough funds. Required {} wei and got: {} wei.",
+PARITY_InsufficientBalance  : "Insufficient funds. Account you try to send transaction from does not have enough funds. Required {} sha and got: {} sha.",
 PARITY_GasLimitExceeded     : "Transaction cost exceeds current gas limit. Limit: {}, got: {}. Try decreasing supplied gas.",
 PARITY_InvalidGasLimit      : "Supplied gas is beyond limit.",
 

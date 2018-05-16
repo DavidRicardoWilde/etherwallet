@@ -33,7 +33,7 @@ Token.prototype.getBalanceBN = function() {
 };
 
 Token.prototype.setBalance = function(callback) {
-    var balanceCall = ethFuncs.getDataObj(this.contractAddress, Token.balanceHex, [ethFuncs.getNakedAddress(this.userAddress)]);
+    var balanceCall = moacFuncs.getDataObj(this.contractAddress, Token.balanceHex, [moacFuncs.getNakedAddress(this.userAddress)]);
     var parentObj = this;
     ajaxReq.getEthCall(balanceCall, function(data) {
         try {
@@ -50,7 +50,7 @@ Token.prototype.setBalance = function(callback) {
 };
 
 Token.getTokenByAddress = function(toAdd) {
-    toAdd = ethFuncs.sanitizeHex(toAdd);
+    toAdd = moacFuncs.sanitizeHex(toAdd);
     for (var i = 0; i < Token.popTokens.length; i++) {
         if (toAdd.toLowerCase() == Token.popTokens[i].address.toLowerCase()) return Token.popTokens[i];
     }
@@ -63,10 +63,10 @@ Token.getTokenByAddress = function(toAdd) {
 };
 Token.prototype.getData = function(toAdd, value) {
     try {
-        if (!ethFuncs.validateEtherAddress(toAdd)) throw globalFuncs.errorMsgs[5];
+        if (!moacFuncs.validateMoacAddress(toAdd)) throw globalFuncs.errorMsgs[5];
         else if (!globalFuncs.isNumeric(value) || parseFloat(value) < 0) throw globalFuncs.errorMsgs[7];
-        var value = ethFuncs.padLeft(new BigNumber(value).times(new BigNumber(10).pow(this.getDecimal())).toString(16), 64);
-        var toAdd = ethFuncs.padLeft(ethFuncs.getNakedAddress(toAdd), 64);
+        var value = moacFuncs.padLeft(new BigNumber(value).times(new BigNumber(10).pow(this.getDecimal())).toString(16), 64);
+        var toAdd = moacFuncs.padLeft(moacFuncs.getNakedAddress(toAdd), 64);
         var data = Token.transferHex + toAdd + value;
         return {
             isError: false,

@@ -40,7 +40,7 @@ var utf8 = require('utf8');
 
 var unitMap = {
     'noether':      '0',    
-    'wei':          '1',
+    'sha':          '1',
     'kwei':         '1000',
     'Kwei':         '1000',
     'babbage':      '1000',
@@ -49,7 +49,7 @@ var unitMap = {
     'Mwei':         '1000000',
     'lovelace':     '1000000',
     'picoether':    '1000000',
-    'gwei':         '1000000000',
+    'gsha':         '1000000000',
     'Gwei':         '1000000000',
     'shannon':      '1000000000',
     'nanoether':    '1000000000',
@@ -293,13 +293,13 @@ var getValueOfUnit = function (unit) {
 };
 
 /**
- * Takes a number of wei and converts it to any other ether unit.
+ * Takes a number of sha and converts it to any other ether unit.
  *
  * Possible units are:
  *   SI Short   SI Full        Effigy       Other
  * - kwei       femtoether     babbage
  * - mwei       picoether      lovelace
- * - gwei       nanoether      shannon      nano
+ * - gsha       nanoether      shannon      nano
  * - --         microether     szabo        micro
  * - --         milliether     finney       milli
  * - ether      --             --
@@ -320,13 +320,13 @@ var fromWei = function(number, unit) {
 };
 
 /**
- * Takes a number of a unit and converts it to wei.
+ * Takes a number of a unit and converts it to sha.
  *
  * Possible units are:
  *   SI Short   SI Full        Effigy       Other
  * - kwei       femtoether     babbage
  * - mwei       picoether      lovelace
- * - gwei       nanoether      shannon      nano
+ * - gsha       nanoether      shannon      nano
  * - --         microether     szabo        micro
  * - --         microether     szabo        micro
  * - --         milliether     finney       milli

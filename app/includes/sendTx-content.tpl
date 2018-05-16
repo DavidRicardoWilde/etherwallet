@@ -97,8 +97,8 @@
             <ul class="dropdown-menu dropdown-menu-right"
                 ng-show="dropdownAmount && !tx.readOnly">
               <li>
-                <a ng-class="{true:'active'}[tx.sendMode=='ether']"
-                   ng-click="setSendMode('ether')">
+                <a ng-class="{true:'active'}[tx.sendMode=='mc']"
+                   ng-click="setSendMode('mc')">
                      {{ajaxReq.type}}
                 </a>
               </li>
@@ -184,7 +184,7 @@
 
       <!-- Data -->
       <section class="row form-group">
-        <div class="col-sm-11 clearfix" ng-show="tx.sendMode=='ether'">
+        <div class="col-sm-11 clearfix" ng-show="tx.sendMode=='mc'">
           <span class="account-help-icon">
             <img src="images/icon-help.svg" class="help-icon" />
             <p class="account-help-text" translate="OFFLINE_Step2_Label_6b">

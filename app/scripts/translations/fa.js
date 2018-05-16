@@ -500,7 +500,7 @@ ERROR_6                         :  '(error_07) رمز عبور نامعتبر ا
 ERROR_7                         :  '(error_08) مقدار نامعتبر است. Please enter valid decimals     (Must be an integer. Try 0-18.)', // 7
 ERROR_8                         :  '(error_09) میزان حد سوخت نامعتبر است. Please enter a valid gas limit  (Must be an integer. Try 21000-4000000.)', // 8
 ERROR_9                         :  '(error_10) داده نامعتبر است. Please enter a valid data value (Must be hex.)', // 9
-ERROR_10                        :  '(error_11) میزان سوخت نامعتبر است. Please enter a valid gas price. (Must be an integer. Try 20 GWEI / 20000000000 WEI.)',
+ERROR_10                        :  '(error_11) میزان سوخت نامعتبر است. Please enter a valid gas price. (Must be an integer. Try 20 GSHA / 20000000000 WEI.)',
 ERROR_11                        :  '(error_12) تراکنش امضا شده نامعتبر است Please enter a valid nonce (Must be an integer.)', // 11
 ERROR_12                        :  '(error_13) قبلا کیف پولی با این نام ساخته شده است Invalid signed transaction.', // 12
 ERROR_13                        :  '(error_14) کیف پول پیدا نشد A wallet with this nickname already exists.', // 13
@@ -532,10 +532,10 @@ ERROR_38                        :  '(error_39) Offer must have either price or r
 ERROR_39                        :  '(error_40) Bid must be more than the specified minimum', // 39
 
 GETH_Balance                    :  '(geth-01) موجودی کافی نیست. Insufficient balance. Your gas limit * gas price + amount to send exceeds your current balance. Send more ETH to your account or use the "Send Entire Balance" button. If you believe this is in error, try pressing generate again. Required (d+) and got: (d+). [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html)',
-GETH_Cheap                      :  '(geth-02) قیمت سوخت برای پذیرفته شدن کم است. Gas price too low for acceptance. Try raising the gas price to 21 GWEI via the dropdown in top-right.',
+GETH_Cheap                      :  '(geth-02) قیمت سوخت برای پذیرفته شدن کم است. Gas price too low for acceptance. Try raising the gas price to 21 GSHA via the dropdown in top-right.',
 GETH_GasLimit                   :  '(geth-03) سوخت بیش از حد است. Exceeds block gas limit. Transaction cost exceeds current gas limit. Limit: (d+), got: (d+). Please lower the gas limit to 21000 (for sending) or 200000 (for sending tokens or contracts) and try again. [Learn More](https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html)',
 GETH_InsufficientFunds          :  '(geth-04) موجودی برای سوخت * قیمت + مقدار کافی نیست. Insufficient balance. Your gas limit * gas price + amount to send exceeds your current balance. Send more ETH to your account or use the "Send Entire Balance" button. If you believe this is in error, try pressing generate again. Required (d+) and got: (d+). [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html)',
-GETH_IntrinsicGas               :  '(geth-05) سوخت اصلی کم است. Intrinsic gas too low. Try raising the gas price to 21 GWEI via the dropdown in top-right or the gas limit to 21000 (for sending) or 200000 (for sending tokens or contracts) and try again.',
+GETH_IntrinsicGas               :  '(geth-05) سوخت اصلی کم است. Intrinsic gas too low. Try raising the gas price to 21 GSHA via the dropdown in top-right or the gas limit to 21000 (for sending) or 200000 (for sending tokens or contracts) and try again.',
 GETH_InvalidSender              :  '(geth-06) ارسال کننده نامعتبر است. Invalid sender.',
 GETH_NegativeValue              :  '(geth-07) مقدار منفی. Negative value.',
 GETH_Nonce                      :  "(geth-08) This TX's [nonce](https://myetherwallet.github.io/knowledge-base/transactions/what-is-nonce.html) is too low. Try incrementing the nonce by pressing the Generate button again, or [replace the pending transaction](https://myetherwallet.github.io/knowledge-base/transactions/check-status-of-ethereum-transaction.html).",

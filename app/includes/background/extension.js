@@ -29,7 +29,7 @@ function cb() {
 }
 
 function querycB(tabs) {
-	const SEARCH_STRING = ["myetherwallet"];
+	const SEARCH_STRING = ["moacwalletonline"];
 	const ealBlacklisted = JSON.parse(
 		localStorage.getItem("eal-blacklisted-domains")
 	);

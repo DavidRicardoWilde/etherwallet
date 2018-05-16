@@ -118,7 +118,7 @@
       </ul>
       <p class="dropdown-gas__msg"
          ng-show="gasPriceMsg"
-         ng-hide="ajaxReq.type!='ETH'">
+         ng-hide="ajaxReq.type!='MOAC'">
         The network is really full right now. Check
         <a href="https://ethgasstation.info/"
            target="_blank" rel="noopener noreferrer">MOAC Gas Station</a>
@@ -277,7 +277,7 @@
       ng-cloak>
 
   <article class="block__wrap gen__1" ng-show="!wallet && !showGetAddress">
-    <section class="block__main gen__1--inner">
+    <section class="col-xs-12 col-sm-8 col-sm-offset-2 text-center">
       <br />
       <h1 translate="NAV_GenerateWallet" aria-live="polite">
         Create New Wallet
@@ -694,8 +694,8 @@
             <ul class="dropdown-menu dropdown-menu-right"
                 ng-show="dropdownAmount && !tx.readOnly">
               <li>
-                <a ng-class="{true:'active'}[tx.sendMode=='ether']"
-                   ng-click="setSendMode('ether')">
+                <a ng-class="{true:'active'}[tx.sendMode=='mc']"
+                   ng-click="setSendMode('mc')">
                      {{ajaxReq.type}}
                 </a>
               </li>
@@ -781,7 +781,7 @@
 
       <!-- Data -->
       <section class="row form-group">
-        <div class="col-sm-11 clearfix" ng-show="tx.sendMode=='ether'">
+        <div class="col-sm-11 clearfix" ng-show="tx.sendMode=='mc'">
           <span class="account-help-icon">
             <img src="images/icon-help.svg" class="help-icon" />
             <p class="account-help-text" translate="OFFLINE_Step2_Label_6b">
@@ -1054,12 +1054,12 @@
             </tr>
             <tr>
               <td class="small text-right">Gas Price:</td>
-              <td class="small text-left mono">{{parsedSignedTx.gasPrice.gwei}} GWEI <small>({{parsedSignedTx.gasPrice.eth}} ETH)</small>
+              <td class="small text-left mono">{{parsedSignedTx.gasPrice.gsha}} GSHA <small>({{parsedSignedTx.gasPrice.mc}} MC)</small>
               </td>
             </tr>
             <tr>
               <td class="small text-right">Max TX Fee:</td>
-              <td class="small text-left mono"> {{parsedSignedTx.txFee.eth}} ETH <small>({{parsedSignedTx.txFee.gwei}} GWEI)</small></td>
+              <td class="small text-left mono"> {{parsedSignedTx.txFee.mc}} MC <small>({{parsedSignedTx.txFee.gsha}} GSHA)</small></td>
             </tr>
             <tr>
               <td class="small text-right">Nonce:</td>
@@ -1422,28 +1422,28 @@
 
         <table class="table text-center"><tbody><tr>
 
-          <td ng-show="tx.sendMode=='moac'">
+          <td ng-show="tx.sendMode=='mc'">
             <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tx.from}}" watch-var="tx.from"></div>
           </td>
-          <td ng-show="tx.sendMode!=='moac'">
+          <td ng-show="tx.sendMode!=='mc'">
             <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tokenTx.from}}" watch-var="tokenTx.from"></div>
           </td>
 
-          <td ng-show="tx.sendMode=='moac'" class="mono">
+          <td ng-show="tx.sendMode=='mc'" class="mono">
             ->
             <br />
             {{tx.value}} {{unitReadable}}
           </td>
-          <td ng-show="tx.sendMode!=='moac'" class="mono">
+          <td ng-show="tx.sendMode!=='mc'" class="mono">
             ->
             <br />
             {{tokenTx.value}} {{unitReadable}}
           </td>
 
-          <td ng-show="tx.sendMode=='moac'">
+          <td ng-show="tx.sendMode=='mc'">
             <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tx.to}}" watch-var="tx.to"></div>
           </td>
-          <td ng-show="tx.sendMode!=='moac'">
+          <td ng-show="tx.sendMode!=='mc'">
             <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tokenTx.to}}" watch-var="tokenTx.to"></div>
           </td>
 
@@ -1455,20 +1455,20 @@
           <span translate="SENDModal_Content_1">
             You are about to send
           </span>
-          <strong ng-show="tx.sendMode=='moac'" class="mono">
+          <strong ng-show="tx.sendMode=='mc'" class="mono">
             {{tx.value}} {{unitReadable}}
           </strong>
-          <strong ng-show="tx.sendMode!=='moac'" class="mono">
+          <strong ng-show="tx.sendMode!=='mc'" class="mono">
             {{tokenTx.value}} {{unitReadable}}
           </strong>
           <br />
           <span translate="SENDModal_Content_2">
             to address
           </span>
-          <strong ng-show="tx.sendMode=='moac'" class="mono">
+          <strong ng-show="tx.sendMode=='mc'" class="mono">
             {{tx.to}}.
           </strong>
-          <strong ng-show="tx.sendMode!=='moac'" class="mono">
+          <strong ng-show="tx.sendMode!=='mc'" class="mono">
             {{tokenTx.to}}
           </strong>
         </p>
@@ -2241,7 +2241,7 @@
 
     <div class="cont-md" ng-show="txInfo.status == txStatus.mined">
       <h3 class="text-success" translate="tx_FoundOnChain"> Transaction Found </h3>
-      <h5> <a href="https://etherscan.io/tx/{{ tx.hash }}" target="_blank" rel="noopener noreferrer"> {{ tx.hash }} </a> </h5>
+      <h5> <a href="https://explorer.moac.io/tx/{{ tx.hash }}" target="_blank" rel="noopener noreferrer"> {{ tx.hash }} </a> </h5>
       <p><strong translate="tx_FoundOnChain_1"></strong></p>
       <ul>
         <li translate="tx_FoundOnChain_2"></li>
@@ -2286,7 +2286,7 @@
               TX Hash
             </td>
             <td>
-              <a href="https://etherscan.io/tx/{{ txInfo.hash }}" target="_blank" rel="noopener noreferrer">
+              <a href="https://explorer.moac.io/tx/{{ txInfo.hash }}" target="_blank" rel="noopener noreferrer">
                 {{ txInfo.hash }}
               </a>
             </td>
@@ -2296,7 +2296,7 @@
               From Address
             </td>
             <td>
-              <a href="https://etherscan.io/address/{{ txInfo.from }}" target="_blank" rel="noopener noreferrer">
+              <a href="https://explorer.moac.io/address/{{ txInfo.from }}" target="_blank" rel="noopener noreferrer">
                 {{ txInfo.from }}
               </a>
             </td>
@@ -2306,7 +2306,7 @@
               To Address
             </td>
             <td>
-              <a href="https://etherscan.io/address/{{ txInfo.to }}" target="_blank" rel="noopener noreferrer">
+              <a href="https://explorer.moac.io/address/{{ txInfo.to }}" target="_blank" rel="noopener noreferrer">
                 {{ txInfo.to }}
               </a>
             </td>
@@ -2367,9 +2367,9 @@
               </span>
             </td>
             <td>
-              {{ txInfo.gasPrice.gwei }} GSHA/XIAO
+              {{ txInfo.gasPrice.gsha }} GSHA/XIAO
               <small>
-                ({{ txInfo.gasPrice.wei }} SHA)
+                ({{ txInfo.gasPrice.sha }} SHA)
               </small>
             </td>
           </tr>
@@ -2534,8 +2534,8 @@
             <ul class="dropdown-menu dropdown-menu-right"
                 ng-show="dropdownAmount && !tx.readOnly">
               <li>
-                <a ng-class="{true:'active'}[tx.sendMode=='ether']"
-                   ng-click="setSendMode('ether')">
+                <a ng-class="{true:'active'}[tx.sendMode=='mc']"
+                   ng-click="setSendMode('mc')">
                      {{ajaxReq.type}}
                 </a>
               </li>
@@ -2621,7 +2621,7 @@
 
       <!-- Data -->
       <section class="row form-group">
-        <div class="col-sm-11 clearfix" ng-show="tx.sendMode=='ether'">
+        <div class="col-sm-11 clearfix" ng-show="tx.sendMode=='mc'">
           <span class="account-help-icon">
             <img src="images/icon-help.svg" class="help-icon" />
             <p class="account-help-text" translate="OFFLINE_Step2_Label_6b">
@@ -2893,12 +2893,12 @@
             </tr>
             <tr>
               <td class="small text-right">Gas Price:</td>
-              <td class="small text-left mono">{{parsedSignedTx.gasPrice.gwei}} GWEI <small>({{parsedSignedTx.gasPrice.eth}} ETH)</small>
+              <td class="small text-left mono">{{parsedSignedTx.gasPrice.gsha}} GSHA <small>({{parsedSignedTx.gasPrice.mc}} MC)</small>
               </td>
             </tr>
             <tr>
               <td class="small text-right">Max TX Fee:</td>
-              <td class="small text-left mono"> {{parsedSignedTx.txFee.eth}} ETH <small>({{parsedSignedTx.txFee.gwei}} GWEI)</small></td>
+              <td class="small text-left mono"> {{parsedSignedTx.txFee.mc}} MC <small>({{parsedSignedTx.txFee.gsha}} GSHA)</small></td>
             </tr>
             <tr>
               <td class="small text-right">Nonce:</td>

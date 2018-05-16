@@ -256,10 +256,10 @@ GEN_Help_20                 : 'Portafoglio offline',
 GET_ConfButton              : 'Ho capito. Continua.',
 GEN_Label_5                 : 'Salva la tua `chiave privata`. ',
 GEN_Unlock                  : 'Sblocca il portafoglio per vedere l\'indirizzo',
-GAS_PRICE_Desc              : 'Il prezzo gas è la somma che paghi per unità di gas. `Commissione transazione = prezzo gas * limite gas` e si paga ai *miner* perché includano la tua transazione in un blocco. Più alto il prezzo gas = più veloce la transazione, ma più costosa. Di default è `41 GWEI`.',
+GAS_PRICE_Desc              : 'Il prezzo gas è la somma che paghi per unità di gas. `Commissione transazione = prezzo gas * limite gas` e si paga ai *miner* perché includano la tua transazione in un blocco. Più alto il prezzo gas = più veloce la transazione, ma più costosa. Di default è `41 GSHA`.',
 GAS_LIMIT_Desc              : 'Il limite gas è la quantità di gas da inviare con la transazione. `Commissione transazione` = prezzo gas * limite gas e si paga ai *miner* perché includano la tua transazione in un blocco. Aumentare questo numero non farà in modo che la tua transazione sia inclusa prima. Invio di ETH = `21000`. Invio di token = ~`200000`.',
 NONCE_Desc                  : 'Il *nonce* è il numero di transazioni inviate da un certo indirizzo. Fa in modo che le transazioni siano inviate nel giusto ordine e non più di una volta.',
-TXFEE_Desc                  : 'La commissione transazione si paga ai *miner* perché includano la transazione in un blocco. Si calcola come `limite gas` * `prezzo gas`. [Puoi calcolare la conversione GWEI -> ETH qui](https://www.MoacWalletOnline.com/helpers.html)',
+TXFEE_Desc                  : 'La commissione transazione si paga ai *miner* perché includano la transazione in un blocco. Si calcola come `limite gas` * `prezzo gas`. [Puoi calcolare la conversione GSHA -> ETH qui](https://www.MoacWalletOnline.com/helpers.html)',
 
 
 
@@ -559,7 +559,7 @@ ERROR_6                     : 'Inserisci una password valida. ',
 ERROR_7                     : 'Inserisci dei decimali validi. (Deve essere un intero. Prova 0-18.) ', // 7
 ERROR_8                     : 'Inserisci un limite gas valido. (Deve essere un intero. Prova 21000-4000000.) ', // 8
 ERROR_9                     : 'Inserisci un valore valido per i dati. (Deve essere una stringa esadecimale.) ', // 9
-ERROR_10                    : 'Inserisci prezzo valido per il gas. (Deve essere un intero. Prova 20 GWEI / 20000000000 WEI.) ',
+ERROR_10                    : 'Inserisci prezzo valido per il gas. (Deve essere un intero. Prova 20 GSHA / 20000000000 WEI.) ',
 ERROR_11                    : 'Inserisci un nonce valido. (Deve essere un intero.) ', // 11
 ERROR_12                    : 'Transazione firmata non valida. ',
 ERROR_13                    : 'Esiste già un portafoglio con questo nome. ',
@@ -807,7 +807,7 @@ HELP_12_Desc_27             : 'A importazione conclusa positivamente, cancella `
 HELP_12_Desc_28             : 'Alla prossima apertura dell\'applicazione Ethereum Wallet, il tuo conto sarà mostrato sotto "Accounts". ',
 
 HELP_13_Title               : '13) Cosa significa "Fondi insufficienti. L\'account dal quale stai provando ad inviare la transazione non ha abbastanza fondi. Richiesti XXXXXXXXXXXXXXXXXXX ma presenti: XXXXXXXXXXXXXXXX."? ',
-HELP_13_Desc_1              : 'Significa che non hai abbastanza ether nel tuo conto per coprire il costo del gas. Tutte le transazioni (comprese quelle che riguardano token e contratti) richiedono gas, e il gas si paga in ether. Il numero indicato è l\'importo richiesto per coprire il costo della transazione in wei. Prendi quel numero, dividilo per `1000000000000000000`, e sottrai la quantità di ether che stavi provando ad inviare (se stavi provando ad inviare ether). Il risultato è la somma in ether che devi inviare a quel conto per poter eseguire la transazione. ',
+HELP_13_Desc_1              : 'Significa che non hai abbastanza ether nel tuo conto per coprire il costo del gas. Tutte le transazioni (comprese quelle che riguardano token e contratti) richiedono gas, e il gas si paga in ether. Il numero indicato è l\'importo richiesto per coprire il costo della transazione in sha. Prendi quel numero, dividilo per `1000000000000000000`, e sottrai la quantità di ether che stavi provando ad inviare (se stavi provando ad inviare ether). Il risultato è la somma in ether che devi inviare a quel conto per poter eseguire la transazione. ',
 
 HELP_14_Title               : '14) Certi siti inizializzano il generatore di numeri casuali per la generazione della chiave privata tramite i movimenti del mouse. MoacWalletOnline.com non lo fa. La generazione di numeri casuali di MyEtherWallet è sicura? ',
 HELP_14_Desc_1              : 'Sebbene usare i movimenti del mouse sia ingegnoso, e comprendiamo perché piaccia, la realtà è che window.crypto assicura maggiore entropia rispetto ai tuoi movimenti del mouse. Non che i movimenti del mouse siano insicuri, è solo che noi (e un sacco di altri critto-esperimenti) crediamo in window.crypto. Oltretutto, MoacWalletOnline.com può essere utilizzato su dispositivi touch. Qui c\'è una [conversazione fra un utente di reddit arrabbiato e Vitalik Buterin su movimenti del mouse contro window.crypto](https://www.reddit.com/r/ethereum/comments/2bilqg/note_there_is_a_paranoid_highsecurity_way_to/cj5sgrm) e qui c\'è [la specifica del w3 di window.crypto](https://dvcs.w3.org/hg/webcrypto-api/raw-file/tip/spec/Overview.html#dfn-GlobalCrypto). ',

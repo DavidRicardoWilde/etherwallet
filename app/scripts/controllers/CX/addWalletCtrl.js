@@ -178,9 +178,9 @@ var addWalletCtrl = function($scope, $sce) {
 
     }
     $scope.watchOnlyChange = function() {
-        if ($scope.addAccount.address != "" && $scope.addAccount.nickName != "" && $scope.nickNames.indexOf($scope.addAccount.nickName) == -1 && ethFuncs.validateEtherAddress($scope.addAccount.address)) $scope.showBtnAdd = true;
+        if ($scope.addAccount.address != "" && $scope.addAccount.nickName != "" && $scope.nickNames.indexOf($scope.addAccount.nickName) == -1 && moacFuncs.validateMoacAddress($scope.addAccount.address)) $scope.showBtnAdd = true;
         else $scope.showBtnAdd = false;
-        if ($scope.addAccount.address != "" && !ethFuncs.validateEtherAddress($scope.addAccount.address)) $scope.notifier.danger(globalFuncs.errorMsgs[5]);
+        if ($scope.addAccount.address != "" && !moacFuncs.validateMoacAddress($scope.addAccount.address)) $scope.notifier.danger(globalFuncs.errorMsgs[5]);
         else if ($scope.nickNames.indexOf($scope.addAccount.nickName) !== -1) $scope.notifier.danger(globalFuncs.errorMsgs[13]);
 
     }
@@ -264,13 +264,13 @@ var addWalletCtrl = function($scope, $sce) {
     $scope.setBalance = function() {
         ajaxReq.getBalance($scope.wallet.getAddressString(), function(data) {
             if (data.error) {
-                $scope.etherBalance = data.msg;
+                $scope.moacBalance = data.msg;
             } else {
-                $scope.etherBalance = moacUnits.toMc(data.data.balance, 'wei');
-                ajaxReq.getETHvalue(function(data) {
-                    $scope.usdBalance = moacUnits.toFiat($scope.etherBalance, 'mc', data.usd);
-                    $scope.eurBalance = moacUnits.toFiat($scope.etherBalance, 'mc', data.eur);
-                    $scope.btcBalance = moacUnits.toFiat($scope.etherBalance, 'mc', data.btc);
+                $scope.moacBalance = moacUnits.toMc(data.data.balance, 'sha');
+                ajaxReq.getMOACvalue(function(data) {
+                    $scope.usdBalance = moacUnits.toFiat($scope.moacBalance, 'mc', data.usd);
+                    $scope.eurBalance = moacUnits.toFiat($scope.moacBalance, 'mc', data.eur);
+                    $scope.btcBalance = moacUnits.toFiat($scope.moacBalance, 'mc', data.btc);
                 });
             }
         });

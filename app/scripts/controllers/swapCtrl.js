@@ -892,8 +892,8 @@ var swapCtrl = function ($scope, $sce, walletService) {
             var txData = uiFuncs.getTxData($scope);
 
             if (nonce && gasPrice) {
-                let newNonce = parseInt(ethFuncs.hexToDecimal(nonce));
-                txData.nonce = "0x" + ethFuncs.decimalToHex(newNonce + 1);
+                let newNonce = parseInt(moacFuncs.hexToDecimal(nonce));
+                txData.nonce = "0x" + moacFuncs.decimalToHex(newNonce + 1);
                 txData.gasPrice = gasPrice;
             } else txData.nonce = txData.gasPrice = null;
             $scope.generateKyberTransaction(txData, $scope.kyberStatus.token.prepareApprove);
@@ -909,8 +909,8 @@ var swapCtrl = function ($scope, $sce, walletService) {
             $scope.tx = $scope.buildTransactionObject($scope.kyber.getTradeData($scope.swapOrder, $scope.swapOrder.finalRate), $scope.kyber.getKyberNetworkAddress());
             var txData = uiFuncs.getTxData($scope);
             if (nonce) {
-                let newNonce = parseInt(ethFuncs.hexToDecimal(nonce));
-                txData.nonce = "0x" + ethFuncs.decimalToHex(newNonce + 1);
+                let newNonce = parseInt(moacFuncs.hexToDecimal(nonce));
+                txData.nonce = "0x" + moacFuncs.decimalToHex(newNonce + 1);
                 txData.gasPrice = gasPrice;
             } else {
                 txData.nonce = txData.gasPrice = null;
@@ -1226,12 +1226,12 @@ var swapCtrl = function ($scope, $sce, walletService) {
                 // Calculate Combined Values
                 $scope.parsedTx = {};
                 $scope.parsedTx.totalTxFee = {};
-                $scope.parsedTx.totalTxFee.wei = new BigNumber($scope.parsedKyberTx.txFee.wei).plus(new BigNumber($scope.parsedKyberTokenTx.txFee.wei)).plus(new BigNumber($scope.parsedKyberResetTokenTx.txFee.wei));
-                $scope.parsedTx.totalTxFee.gwei = new BigNumber($scope.parsedKyberTx.txFee.gwei).plus(new BigNumber($scope.parsedKyberTokenTx.txFee.gwei)).plus(new BigNumber($scope.parsedKyberResetTokenTx.txFee.gwei));
+                $scope.parsedTx.totalTxFee.sha = new BigNumber($scope.parsedKyberTx.txFee.sha).plus(new BigNumber($scope.parsedKyberTokenTx.txFee.sha)).plus(new BigNumber($scope.parsedKyberResetTokenTx.txFee.sha));
+                $scope.parsedTx.totalTxFee.gsha = new BigNumber($scope.parsedKyberTx.txFee.gsha).plus(new BigNumber($scope.parsedKyberTokenTx.txFee.gsha)).plus(new BigNumber($scope.parsedKyberResetTokenTx.txFee.gsha));
                 $scope.parsedTx.totalTxFee.eth = new BigNumber($scope.parsedKyberTx.txFee.eth).plus(new BigNumber($scope.parsedKyberTokenTx.txFee.eth)).plus(new BigNumber($scope.parsedKyberResetTokenTx.txFee.eth));
                 $scope.parsedTx.avgGasPrice = {};
-                $scope.parsedTx.avgGasPrice.wei = new BigNumber($scope.parsedKyberTx.gasPrice.wei).plus(new BigNumber($scope.parsedKyberTokenTx.gasPrice.wei)).plus(new BigNumber($scope.parsedKyberResetTokenTx.gasPrice.wei)).div(3);
-                $scope.parsedTx.avgGasPrice.gwei = new BigNumber($scope.parsedKyberTx.gasPrice.gwei).plus(new BigNumber($scope.parsedKyberTokenTx.gasPrice.gwei)).plus(new BigNumber($scope.parsedKyberResetTokenTx.gasPrice.gwei)).div(3);
+                $scope.parsedTx.avgGasPrice.sha = new BigNumber($scope.parsedKyberTx.gasPrice.sha).plus(new BigNumber($scope.parsedKyberTokenTx.gasPrice.sha)).plus(new BigNumber($scope.parsedKyberResetTokenTx.gasPrice.sha)).div(3);
+                $scope.parsedTx.avgGasPrice.gsha = new BigNumber($scope.parsedKyberTx.gasPrice.gsha).plus(new BigNumber($scope.parsedKyberTokenTx.gasPrice.gsha)).plus(new BigNumber($scope.parsedKyberResetTokenTx.gasPrice.gsha)).div(3);
                 $scope.parsedTx.avgGasPrice.eth = new BigNumber($scope.parsedKyberTx.gasPrice.eth).plus(new BigNumber($scope.parsedKyberTokenTx.gasPrice.eth)).plus(new BigNumber($scope.parsedKyberResetTokenTx.gasPrice.eth)).div(3);
                 $scope.parsedTx.totalGasLimit = new BigNumber($scope.parsedKyberTokenTx.gasLimit).plus(new BigNumber($scope.parsedKyberTx.gasLimit)).plus(new BigNumber($scope.parsedKyberResetTokenTx.gasLimit));
             } else {
@@ -1239,12 +1239,12 @@ var swapCtrl = function ($scope, $sce, walletService) {
                 // Calculate Combined Values
                 $scope.parsedTx = {};
                 $scope.parsedTx.totalTxFee = {};
-                $scope.parsedTx.totalTxFee.wei = new BigNumber($scope.parsedKyberTx.txFee.wei).plus(new BigNumber($scope.parsedKyberTokenTx.txFee.wei));
-                $scope.parsedTx.totalTxFee.gwei = new BigNumber($scope.parsedKyberTx.txFee.gwei).plus(new BigNumber($scope.parsedKyberTokenTx.txFee.gwei));
+                $scope.parsedTx.totalTxFee.sha = new BigNumber($scope.parsedKyberTx.txFee.sha).plus(new BigNumber($scope.parsedKyberTokenTx.txFee.sha));
+                $scope.parsedTx.totalTxFee.gsha = new BigNumber($scope.parsedKyberTx.txFee.gsha).plus(new BigNumber($scope.parsedKyberTokenTx.txFee.gsha));
                 $scope.parsedTx.totalTxFee.eth = new BigNumber($scope.parsedKyberTx.txFee.eth).plus(new BigNumber($scope.parsedKyberTokenTx.txFee.eth));
                 $scope.parsedTx.avgGasPrice = {};
-                $scope.parsedTx.avgGasPrice.wei = new BigNumber($scope.parsedKyberTx.gasPrice.wei).plus(new BigNumber($scope.parsedKyberTokenTx.gasPrice.wei)).div(2);
-                $scope.parsedTx.avgGasPrice.gwei = new BigNumber($scope.parsedKyberTx.gasPrice.gwei).plus(new BigNumber($scope.parsedKyberTokenTx.gasPrice.gwei)).div(2);
+                $scope.parsedTx.avgGasPrice.sha = new BigNumber($scope.parsedKyberTx.gasPrice.sha).plus(new BigNumber($scope.parsedKyberTokenTx.gasPrice.sha)).div(2);
+                $scope.parsedTx.avgGasPrice.gsha = new BigNumber($scope.parsedKyberTx.gasPrice.gsha).plus(new BigNumber($scope.parsedKyberTokenTx.gasPrice.gsha)).div(2);
                 $scope.parsedTx.avgGasPrice.eth = new BigNumber($scope.parsedKyberTx.gasPrice.eth).plus(new BigNumber($scope.parsedKyberTokenTx.gasPrice.eth)).div(2);
                 $scope.parsedTx.totalGasLimit = new BigNumber($scope.parsedKyberTokenTx.gasLimit).plus(new BigNumber($scope.parsedKyberTx.gasLimit));
             }
@@ -1274,18 +1274,18 @@ var swapCtrl = function ($scope, $sce, walletService) {
         parsedKyberTx.gasPrice = {}
         parsedKyberTx.txFee = {}
         parsedKyberTx.balance = $scope.walletKyber.getBalance()
-        parsedKyberTx.from = isJSON ? $scope.walletKyber.getChecksumAddressString() : ethFuncs.sanitizeHex(ethUtil.toChecksumAddress(txData.from.toString('hex')))
-        parsedKyberTx.to = ethFuncs.sanitizeHex(ethUtil.toChecksumAddress(txData.to.toString('hex')))
-        parsedKyberTx.value = (txData.value == '0x' || txData.value == '' || txData.value == null) ? '0' : moacUnits.toMc(new BigNumber(ethFuncs.sanitizeHex(txData.value.toString('hex'))).toString(), 'wei')
-        parsedKyberTx.gasLimit = new BigNumber(ethFuncs.sanitizeHex(txData.gasLimit.toString('hex'))).toString()
-        parsedKyberTx.gasPrice.wei = new BigNumber(ethFuncs.sanitizeHex(txData.gasPrice.toString('hex'))).toString()
-        parsedKyberTx.gasPrice.gwei = new BigNumber(ethFuncs.sanitizeHex(txData.gasPrice.toString('hex'))).div(moacUnits.getValueOfUnit('gwei')).toString()
-        parsedKyberTx.gasPrice.eth = moacUnits.toMc(new BigNumber(ethFuncs.sanitizeHex(txData.gasPrice.toString('hex'))).toString(), 'wei')
-        parsedKyberTx.txFee.wei = new BigNumber(parseInt(parsedKyberTx.gasLimit)).times(new BigNumber(parseInt(parsedKyberTx.gasPrice.wei)))
-        parsedKyberTx.txFee.gwei = new BigNumber(parsedKyberTx.txFee.wei).div(moacUnits.getValueOfUnit('gwei')).toString()
-        parsedKyberTx.txFee.eth = moacUnits.toMc(parseInt(parsedKyberTx.txFee.wei), 'wei').toString()
-        parsedKyberTx.nonce = (txData.nonce == '0x' || txData.nonce == '' || txData.nonce == null) ? '0' : new BigNumber(ethFuncs.sanitizeHex(txData.nonce.toString('hex'))).toString()
-        parsedKyberTx.data = (txData.data == '0x' || txData.data == '' || txData.data == null) ? '(none)' : ethFuncs.sanitizeHex(txData.data.toString('hex'))
+        parsedKyberTx.from = isJSON ? $scope.walletKyber.getChecksumAddressString() : moacFuncs.sanitizeHex(ethUtil.toChecksumAddress(txData.from.toString('hex')))
+        parsedKyberTx.to = moacFuncs.sanitizeHex(ethUtil.toChecksumAddress(txData.to.toString('hex')))
+        parsedKyberTx.value = (txData.value == '0x' || txData.value == '' || txData.value == null) ? '0' : moacUnits.toMc(new BigNumber(moacFuncs.sanitizeHex(txData.value.toString('hex'))).toString(), 'sha')
+        parsedKyberTx.gasLimit = new BigNumber(moacFuncs.sanitizeHex(txData.gasLimit.toString('hex'))).toString()
+        parsedKyberTx.gasPrice.sha = new BigNumber(moacFuncs.sanitizeHex(txData.gasPrice.toString('hex'))).toString()
+        parsedKyberTx.gasPrice.gsha = new BigNumber(moacFuncs.sanitizeHex(txData.gasPrice.toString('hex'))).div(moacUnits.getValueOfUnit('gsha')).toString()
+        parsedKyberTx.gasPrice.eth = moacUnits.toMc(new BigNumber(moacFuncs.sanitizeHex(txData.gasPrice.toString('hex'))).toString(), 'sha')
+        parsedKyberTx.txFee.sha = new BigNumber(parseInt(parsedKyberTx.gasLimit)).times(new BigNumber(parseInt(parsedKyberTx.gasPrice.sha)))
+        parsedKyberTx.txFee.gsha = new BigNumber(parsedKyberTx.txFee.sha).div(moacUnits.getValueOfUnit('gsha')).toString()
+        parsedKyberTx.txFee.eth = moacUnits.toMc(parseInt(parsedKyberTx.txFee.sha), 'sha').toString()
+        parsedKyberTx.nonce = (txData.nonce == '0x' || txData.nonce == '' || txData.nonce == null) ? '0' : new BigNumber(moacFuncs.sanitizeHex(txData.nonce.toString('hex'))).toString()
+        parsedKyberTx.data = (txData.data == '0x' || txData.data == '' || txData.data == null) ? '(none)' : moacFuncs.sanitizeHex(txData.data.toString('hex'))
         return parsedKyberTx;
     };
 

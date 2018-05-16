@@ -15,10 +15,10 @@ uiFuncs.getTxData = function($scope) {
     };
 }
 uiFuncs.isTxDataValid = function(txData) {
-    if (txData.to != "0xCONTRACT" && !ethFuncs.validateEtherAddress(txData.to)) throw globalFuncs.errorMsgs[5];
+    if (txData.to != "0xCONTRACT" && !moacFuncs.validateMoacAddress(txData.to)) throw globalFuncs.errorMsgs[5];
     else if (!globalFuncs.isNumeric(txData.value) || parseFloat(txData.value) < 0) throw globalFuncs.errorMsgs[0];
     else if (!globalFuncs.isNumeric(txData.gasLimit) || parseFloat(txData.gasLimit) <= 0) throw globalFuncs.errorMsgs[8];
-    else if (!ethFuncs.validateHexString(txData.data)) throw globalFuncs.errorMsgs[9];
+    else if (!moacFuncs.validateHexString(txData.data)) throw globalFuncs.errorMsgs[9];
     if (txData.to == "0xCONTRACT") txData.to = '';
 }
 uiFuncs.signTxTrezor = function(rawTx, txData, callback) {
@@ -33,7 +33,7 @@ uiFuncs.signTxTrezor = function(rawTx, txData, callback) {
             return;
         }
 
-        rawTx.v = "0x" + ethFuncs.decimalToHex(result.v);
+        rawTx.v = "0x" + moacFuncs.decimalToHex(result.v);
         rawTx.r = "0x" + result.r;
         rawTx.s = "0x" + result.s;
         var eTx = new ethUtil.Tx(rawTx);
@@ -45,12 +45,12 @@ uiFuncs.signTxTrezor = function(rawTx, txData, callback) {
 
     TrezorConnect.signEthereumTx(
         txData.path,
-        ethFuncs.getNakedAddress(rawTx.nonce),
-        ethFuncs.getNakedAddress(rawTx.gasPrice),
-        ethFuncs.getNakedAddress(rawTx.gasLimit),
-        ethFuncs.getNakedAddress(rawTx.to),
-        ethFuncs.getNakedAddress(rawTx.value),
-        ethFuncs.getNakedAddress(rawTx.data),
+        moacFuncs.getNakedAddress(rawTx.nonce),
+        moacFuncs.getNakedAddress(rawTx.gasPrice),
+        moacFuncs.getNakedAddress(rawTx.gasLimit),
+        moacFuncs.getNakedAddress(rawTx.to),
+        moacFuncs.getNakedAddress(rawTx.value),
+        moacFuncs.getNakedAddress(rawTx.data),
         rawTx.chainId,
         localCallback
     );
@@ -91,12 +91,12 @@ uiFuncs.signTxDigitalBitbox = function(eTx, rawTx, txData, callback) {
             return;
         }
         uiFuncs.notifier.info("The transaction was signed but not sent. Click the blue 'Send Transaction' button to continue.");
-        rawTx.v = ethFuncs.sanitizeHex(result['v']);
-        rawTx.r = ethFuncs.sanitizeHex(result['r']);
-        rawTx.s = ethFuncs.sanitizeHex(result['s']);
+        rawTx.v = moacFuncs.sanitizeHex(result['v']);
+        rawTx.r = moacFuncs.sanitizeHex(result['r']);
+        rawTx.s = moacFuncs.sanitizeHex(result['s']);
         var eTx_ = new ethUtil.Tx(rawTx);
         rawTx.rawTx = JSON.stringify(rawTx);
-        rawTx.signedTx = ethFuncs.sanitizeHex(eTx_.serialize().toString('hex'));
+        rawTx.signedTx = moacFuncs.sanitizeHex(eTx_.serialize().toString('hex'));
         rawTx.isError = false;
         if (callback !== undefined) callback(rawTx);
     }
@@ -116,13 +116,13 @@ uiFuncs.signTxSecalot = function(eTx, rawTx, txData, callback) {
             return;
         }
         uiFuncs.notifier.info("The transaction was signed but not sent. Click the blue 'Send Transaction' button to continue.");
-        rawTx.v = ethFuncs.sanitizeHex(result['v']);
-        rawTx.r = ethFuncs.sanitizeHex(result['r']);
-        rawTx.s = ethFuncs.sanitizeHex(result['s']);
+        rawTx.v = moacFuncs.sanitizeHex(result['v']);
+        rawTx.r = moacFuncs.sanitizeHex(result['r']);
+        rawTx.s = moacFuncs.sanitizeHex(result['s']);
 
         var eTx_ = new ethUtil.Tx(rawTx);
         rawTx.rawTx = JSON.stringify(rawTx);
-        rawTx.signedTx = ethFuncs.sanitizeHex(eTx_.serialize().toString('hex'));
+        rawTx.signedTx = moacFuncs.sanitizeHex(eTx_.serialize().toString('hex'));
         rawTx.isError = false;
         if (callback !== undefined) callback(rawTx);
     }
@@ -166,12 +166,12 @@ uiFuncs.generateTx = function(txData, callback) {
 
         var genTxWithInfo = function(inData) {
             var rawTx = {
-                nonce: ethFuncs.sanitizeHex(inData.nonce),
-                gasPrice: inData.isOffline ? ethFuncs.sanitizeHex(inData.gasprice) : ethFuncs.sanitizeHex(ethFuncs.addTinyMoreToGas(data.gasprice)),
-                gasLimit: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(txData.gasLimit)),
-                to: ethFuncs.sanitizeHex(txData.to),
-                value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(moacUnits.toSha(txData.value, txData.unit))),
-                data: ethFuncs.sanitizeHex(txData.data)
+                nonce: moacFuncs.sanitizeHex(inData.nonce),
+                gasPrice: inData.isOffline ? moacFuncs.sanitizeHex(inData.gasprice) : moacFuncs.sanitizeHex(moacFuncs.addTinyMoreToGas(data.gasprice)),
+                gasLimit: moacFuncs.sanitizeHex(moacFuncs.decimalToHex(txData.gasLimit)),
+                to: moacFuncs.sanitizeHex(txData.to),
+                value: moacFuncs.sanitizeHex(moacFuncs.decimalToHex(moacUnits.toSha(txData.value, txData.unit))),
+                data: moacFuncs.sanitizeHex(txData.data)
             }
             if (ajaxReq.eip155) rawTx.chainId = '0x'+moacFuncs.decimalToHex(ajaxReq.chainId);
             //If 
@@ -217,7 +217,7 @@ var mTx = new moacTx(rawTx);
             //     // wait for the confirmation dialogue / sendTx method
             //     var txParams = Object.assign({
             //         from: txData.from,
-            //         gas: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(txData.gasLimit)) // MetaMask and Web3 v1.0 use 'gas' not 'gasLimit'
+            //         gas: moacFuncs.sanitizeHex(moacFuncs.decimalToHex(txData.gasLimit)) // MetaMask and Web3 v1.0 use 'gas' not 'gasLimit'
             //     }, rawTx)
             //     rawTx.rawTx = JSON.stringify(rawTx);
             //     rawTx.signedTx = JSON.stringify(txParams);
@@ -242,6 +242,7 @@ var mTx = new moacTx(rawTx);
             // }
         }//end genTxWithInfo
 
+        console.log("genTx:txData:", txData);
         if (txData.nonce || txData.gasPrice) {
             var data = {
                 nonce: txData.nonce,
@@ -312,7 +313,7 @@ uiFuncs.transferAllBalance = function(fromAdd, gasLimit, callback) {
         ajaxReq.getTransactionData(fromAdd, function(data) {
             if (data.error) throw data.msg;
             data = data.data;
-            var gasPrice = new BigNumber(ethFuncs.sanitizeHex(ethFuncs.addTinyMoreToGas(data.gasprice))).times(gasLimit);
+            var gasPrice = new BigNumber(moacFuncs.sanitizeHex(moacFuncs.addTinyMoreToGas(data.gasprice))).times(gasLimit);
             var maxVal = new BigNumber(data.balance).minus(gasPrice);
             maxVal = moacUnits.toMc(maxVal, 'sha') < 0 ? 0 : moacUnits.toMc(maxVal, 'sha');
             if (callback !== undefined) callback({

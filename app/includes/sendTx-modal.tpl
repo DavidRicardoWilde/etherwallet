@@ -96,12 +96,12 @@
             </tr>
             <tr>
               <td class="small text-right">Gas Price:</td>
-              <td class="small text-left mono">{{parsedSignedTx.gasPrice.gwei}} GWEI <small>({{parsedSignedTx.gasPrice.eth}} ETH)</small>
+              <td class="small text-left mono">{{parsedSignedTx.gasPrice.gsha}} GSHA <small>({{parsedSignedTx.gasPrice.mc}} MC)</small>
               </td>
             </tr>
             <tr>
               <td class="small text-right">Max TX Fee:</td>
-              <td class="small text-left mono"> {{parsedSignedTx.txFee.eth}} ETH <small>({{parsedSignedTx.txFee.gwei}} GWEI)</small></td>
+              <td class="small text-left mono"> {{parsedSignedTx.txFee.mc}} MC <small>({{parsedSignedTx.txFee.gsha}} GSHA)</small></td>
             </tr>
             <tr>
               <td class="small text-right">Nonce:</td>

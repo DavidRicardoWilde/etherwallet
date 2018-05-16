@@ -4,7 +4,7 @@ var globalService = function($http, $httpParamSerializerJQLike) {
   globalFuncs.checkAndRedirectHTTPS()
   ajaxReq.http = $http
   ajaxReq.postSerializer = $httpParamSerializerJQLike
-  ajaxReq.getETHvalue = nodes.ethPrice.getETHvalue
+  ajaxReq.getMOACvalue = nodes.ethPrice.getMOACvalue
   ajaxReq.getRates = nodes.ethPrice.getRates
 
   var tabs = {

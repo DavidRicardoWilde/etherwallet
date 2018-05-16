@@ -178,7 +178,7 @@ var signMsgCtrl = function($scope, $sce, walletService) {
     $scope.verifySignedMessage = function() {
         try {
             var json = JSON.parse($scope.verifyMsg.signedMsg)
-            var sig = new Buffer(ethFuncs.getNakedAddress(json.sig), 'hex')
+            var sig = new Buffer(moacFuncs.getNakedAddress(json.sig), 'hex')
             if (sig.length != 65) throw globalFuncs.errorMsgs[12]
             sig[64] = sig[64] == 0 || sig[64] == 1 ? sig[64] + 27 : sig[64]
             var hash = ethUtil.hashPersonalMessage(ethUtil.toBuffer(json.msg))
@@ -192,7 +192,7 @@ var signMsgCtrl = function($scope, $sce, walletService) {
                 hash = ethUtil.sha3(json.msg)
             }
             var pubKey = ethUtil.ecrecover(hash, sig[64], sig.slice(0, 32), sig.slice(32, 64))
-            if (ethFuncs.getNakedAddress(json.address) != ethUtil.pubToAddress(pubKey).toString('hex')) throw globalFuncs.errorMsgs[12]
+            if (moacFuncs.getNakedAddress(json.address) != ethUtil.pubToAddress(pubKey).toString('hex')) throw globalFuncs.errorMsgs[12]
             else {
                 $scope.notifier.success(globalFuncs.successMsgs[6])
                 $scope.verifiedMsg = {

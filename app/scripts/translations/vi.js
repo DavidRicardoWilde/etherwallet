@@ -255,10 +255,10 @@ GEN_Help_20                 : 'Cold Storage',
 GET_ConfButton              : 'I understand. Continue.',
 GEN_Label_5                 : 'Save Your `Private Key`. ',
 GEN_Unlock                  : 'Unlock your wallet to see your address',
-GAS_PRICE_Desc              : 'Gas Price is the amount you pay per unit of gas. `TX fee = gas price * gas limit` & is paid to miners for including your TX in a block. Higher the gas price = faster transaction, but more expensive. Default is `41 GWEI`.',
+GAS_PRICE_Desc              : 'Gas Price is the amount you pay per unit of gas. `TX fee = gas price * gas limit` & is paid to miners for including your TX in a block. Higher the gas price = faster transaction, but more expensive. Default is `41 GSHA`.',
 GAS_LIMIT_Desc              : 'Gas limit is the amount of gas to send with your TX. `TX fee` = gas price * gas limit & is paid to miners for including your TX in a block. Increasing this number will not get your TX mined faster. Sending ETH = `21000`. Sending Tokens = ~`200000`.',
 NONCE_Desc                  : 'The nonce is the number of transactions sent from a given address. It ensures transactions are sent in order & not more than once.',
-TXFEE_Desc                  : 'The TX Fee is paid to miners for including your TX in a block. Is is the `gas limit` * `gas price`. [You can convert GWEI -> ETH here](https://www.MoacWalletOnline.com/helpers.html)',
+TXFEE_Desc                  : 'The TX Fee is paid to miners for including your TX in a block. Is is the `gas limit` * `gas price`. [You can convert GSHA -> ETH here](https://www.MoacWalletOnline.com/helpers.html)',
 
 
 
@@ -572,7 +572,7 @@ ERROR_6                     : 'Mật khẩu không hợp lệ. ',
 ERROR_7                     : 'Tổng số không hợp lệ. (Must be integer. Try 0-18.) ', // 7
 ERROR_8                     : 'Giới hạn gas không hợp lệ. (Must be integer. Try 21000-4000000.) ', // 8
 ERROR_9                     : 'Dữ liệu không hợp lệ. (Must be hex.) ', // 9
-ERROR_10                    : 'Tổng số gas không hợp lệ. (Must be integer. Try 20 GWEI / 20000000000 WEI.) ',
+ERROR_10                    : 'Tổng số gas không hợp lệ. (Must be integer. Try 20 GSHA / 20000000000 WEI.) ',
 ERROR_11                    : 'Nonce không hợp lệ. (Must be integer.) ', // 11
 ERROR_12                    : 'Chữ ký giao dịch không hợp lệ. ',
 ERROR_13                    : 'Tên gọi này đã được sữ dụng. ',

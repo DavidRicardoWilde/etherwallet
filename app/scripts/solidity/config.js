@@ -38,7 +38,7 @@
 var BigNumber = require('bignumber.js');
 
 var ETH_UNITS = [
-    'wei',
+    'sha',
     'kwei',
     'Mwei',
     'Gwei',

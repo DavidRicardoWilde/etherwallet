@@ -310,7 +310,7 @@
       <ul class="account-info">
         <li>
           <strong>
-            {{etherBalance}}
+            {{moacBalance}}
           </strong>
           ETH
         </li>

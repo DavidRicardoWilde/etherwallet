@@ -7,7 +7,7 @@ var tabsCtrl = function($scope, globalService, $translate, $sce) {
     $scope.Validator = Validator;
     $scope.nodeList = nodes.nodeList;
     $scope.defaultNodeKey = 'moac';
-    $scope.customNode = { options: 'eth', name: '', url: '', port: '', httpBasicAuth: null, eip155: false, chainId: '' };
+    $scope.customNode = { options: 'moac', name: '', url: '', port: '', httpBasicAuth: null, eip155: false, chainId: '' };
     $scope.customNodeCount = 0;
     $scope.nodeIsConnected = true;
     $scope.gasPriceMsg = false;
@@ -35,8 +35,8 @@ var tabsCtrl = function($scope, globalService, $translate, $sce) {
     var gasPriceKey = "gasPrice";
     $scope.gasChanged = function() {
         globalFuncs.localStorage.setItem(gasPriceKey, $scope.gas.value);
-        ethFuncs.gasAdjustment = $scope.gas.value;
-        $scope.gasPriceMsg = ethFuncs.gasAdjustment < 41 ? true : false
+        moacFuncs.gasAdjustment = $scope.gas.value;
+        $scope.gasPriceMsg = moacFuncs.gasAdjustment < 41 ? true : false
     }
     var setGasValues = function() {
         $scope.gas = {
@@ -49,8 +49,8 @@ var tabsCtrl = function($scope, globalService, $translate, $sce) {
 
         var curNode = globalFuncs.localStorage.getItem('curNode', null);
 
-        ethFuncs.gasAdjustment = $scope.gas.value;
-        $scope.gasPriceMsg = ethFuncs.gasAdjustment < 41 ? true : false
+        moacFuncs.gasAdjustment = $scope.gas.value;
+        $scope.gasPriceMsg = moacFuncs.gasAdjustment < 41 ? true : false
     }
     setGasValues();
     $scope.gasChanged();

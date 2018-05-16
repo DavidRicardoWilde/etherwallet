@@ -255,10 +255,10 @@ GEN_Help_20                 : 'Cold Storage',
 GET_ConfButton              : 'Je comprends. Continuer.',
 GEN_Label_5                 : 'Sauvegardez votre `clé privée`. ',
 GEN_Unlock                  : 'Déverouillez votre portefeuille pour voir votre adresse.',
-GAS_PRICE_Desc              : 'Le prix du Gas est le montant que vous payez par unité de Gas. `frais de transaction = prix du GAS x GAS limite` est payé aux mineurs pour inclure votre transaction dans un bloc. Prix de GAS plus haut = transaction plus rapide, mais plus coûteuse. Le prix par défaut est de `21 GWEI`.',
+GAS_PRICE_Desc              : 'Le prix du Gas est le montant que vous payez par unité de Gas. `frais de transaction = prix du GAS x GAS limite` est payé aux mineurs pour inclure votre transaction dans un bloc. Prix de GAS plus haut = transaction plus rapide, mais plus coûteuse. Le prix par défaut est de `21 GSHA`.',
 GAS_LIMIT_Desc              : 'Le GAS limite est le montant de GAS à envoyer avec votre transaction. `frais de transaction = prix du GAS * GAS limite` est payé aux mineurs pour inclure votre transaction dans un bloc. Augmenter ce nombre n\'exécutera pas votre transaction plus rapidement. Envoyer ETH : `21000`. Envoyer des Tokens : ~`200000`.',
 NONCE_Desc                  : 'Le nonce est le nombre de transactions envoyées depuis une adresse. Il fait en sorte que les transactions sont envoyées en ordre et pas plus d\'une fois.',
-TXFEE_Desc                  : 'Les frais de transaction sont payés aux mineurs pour inclure votre transaction dans un bloc. Cela représente le `GAS limite` * le `prix du GAS`. [Vous pouvez convertir GWEI -> ETH ici.](https://www.MoacWalletOnline.com/helpers.html)',
+TXFEE_Desc                  : 'Les frais de transaction sont payés aux mineurs pour inclure votre transaction dans un bloc. Cela représente le `GAS limite` * le `prix du GAS`. [Vous pouvez convertir GSHA -> ETH ici.](https://www.MoacWalletOnline.com/helpers.html)',
 
 
 /* Navigation*/
@@ -574,7 +574,7 @@ ERROR_6                     : '(error_07) Please enter a valid password. Veuille
 ERROR_7                     : '(error_08) Please enter valid decimals     (Must be an integer. Try 0-18.) Veuillez entrer un montant valide. (Must be integer. Try 0-18.) ', // 7
 ERROR_8                     : '(error_09) Please enter a valid gas limit  (Must be an integer. Try 21000-4000000.) Veuillez entrer une limite de Gas valide. (Must be integer. Try 21000-4000000.) ', // 8
 ERROR_9                     : '(error_10) Please enter a valid data value (Must be hex.) Veuillez entrer des donnnées valides (en héxadécimal).', // 9
-ERROR_10                    : '(error_11) Please enter a valid gas price. (Must be an integer. Try 20 GWEI / 20000000000 WEI.) Veuillez entrer un montant de Gas valide (une valeur entière. Essayez 20 Gwei, soit 20000000000 wei).',
+ERROR_10                    : '(error_11) Please enter a valid gas price. (Must be an integer. Try 20 GSHA / 20000000000 WEI.) Veuillez entrer un montant de Gas valide (une valeur entière. Essayez 20 Gwei, soit 20000000000 sha).',
 ERROR_11                    : '(error_12) Please enter a valid nonce (Must be an integer.) Veuillez entrer un nonce valide (nombre entier).', // 11
 ERROR_12                    : '(error_13) Invalid signed transaction. Transaction signée invalide.',
 ERROR_13                    : '(error_14) A wallet with this nickname already exists. Un portefeuille portant ce nom existe déjà.',
@@ -616,10 +616,10 @@ SUCCESS_7                   : 'Signature du message vérifiée !',
 WARN_Send_Link              : 'Vous avez suivi un lien qui a rempli l\'adresse, le montant, le Gas ou les champs de données pour vous. Vous pouvez modifier toutes ces informations avant l\'envoi. Débloquez votre portefeuille pour démarrer.',
 
 GETH_Balance                : '(geth-01) Insufficient balance. Your gas limit * gas price + amount to send exceeds your current balance. Send more ETH to your account or use the "Send Entire Balance" button. If you believe this is in error, try pressing generate again. Required (d+) and got: (d+). [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html). Solde insuffisant',
-GETH_Cheap                  : '(geth-02) Gas price too low for acceptance. Try raising the gas price to 21 GWEI via the dropdown in top-right. Prix du Gas trop bas pour être accepté',
+GETH_Cheap                  : '(geth-02) Gas price too low for acceptance. Try raising the gas price to 21 GSHA via the dropdown in top-right. Prix du Gas trop bas pour être accepté',
 GETH_GasLimit               : '(geth-03) Exceeds block gas limit. Transaction cost exceeds current gas limit. Limit: (d+), got: (d+). Please lower the gas limit to 21000 (for sending) or 200000 (for sending tokens or contracts) and try again. [Learn More](https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html). Limite de Gas dépassée',
 GETH_InsufficientFunds      : '(geth-04) Insufficient balance. Your gas limit * gas price + amount to send exceeds your current balance. Send more ETH to your account or use the "Send Entire Balance" button. If you believe this is in error, try pressing generate again. Required (d+) and got: (d+). [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html). Fonds insuffisants pour (Gas * prix) + valeur',
-GETH_IntrinsicGas           : '(geth-05) Intrinsic gas too low. Try raising the gas price to 21 GWEI via the dropdown in top-right or the gas limit to 21000 (for sending) or 200000 (for sending tokens or contracts) and try again. Gas intrinsèque trop bas',
+GETH_IntrinsicGas           : '(geth-05) Intrinsic gas too low. Try raising the gas price to 21 GSHA via the dropdown in top-right or the gas limit to 21000 (for sending) or 200000 (for sending tokens or contracts) and try again. Gas intrinsèque trop bas',
 GETH_InvalidSender          : '(geth-06) Invalid sender. Expéditeur invalide',
 GETH_NegativeValue          : '(geth-07) Negative value. Valeur négative',
 GETH_Nonce                  : '(geth-08) This TX\'s [nonce](https://myetherwallet.github.io/knowledge-base/transactions/what-is-nonce.html) is too low. Try incrementing the nonce by pressing the Generate button again, or [replace the pending transaction](https://myetherwallet.github.io/knowledge-base/transactions/check-status-of-ethereum-transaction.html). Nonce trop bas',

@@ -143,7 +143,7 @@ var ensCtrl = function($scope, $sce, walletService) {
                 names.forEach((name) => {
                     $scope.objSub.validNames.push({
                         available: name.data[0] != "",
-                        EthVal: moacUnits.toMc(name.data[1].toString(), 'wei'),
+                        EthVal: moacUnits.toMc(name.data[1].toString(), 'sha'),
                         weiBN: name.data[1],
                         fullName: $scope.objSub.name + "." + name.domain.name + "." + tld,
                         domain: name.domain,
@@ -209,7 +209,7 @@ var ensCtrl = function($scope, $sce, walletService) {
                         case $scope.ensModes.reveal:
                             $scope.objENS.bidValue = 0;
                             $scope.objENS.secret = '';
-                            $scope.objENS.highestBid = moacUnits.toMc($scope.objENS.highestBid.toString(), 'wei');
+                            $scope.objENS.highestBid = moacUnits.toMc($scope.objENS.highestBid.toString(), 'sha');
                             clearInterval($scope.objENS.timer);
                             $scope.objENS.timer = setInterval(() => timeRem($scope.objENS.registrationDate), 1000);
                             break;
@@ -225,7 +225,7 @@ var ensCtrl = function($scope, $sce, walletService) {
             $scope.objENS.revealObject = null;
             var tObj = JSON.parse($scope.longJsonString.replace(/\\/g, ''));
             $scope.objENS.revealObject = tObj;
-            if (tObj.value) $scope.objENS.bidValue = Number(moacUnits.toMc(tObj.value, "wei"));
+            if (tObj.value) $scope.objENS.bidValue = Number(moacUnits.toMc(tObj.value, "sha"));
             if (tObj.secret) $scope.objENS.secret = tObj.secret;
             if (tObj.name && ens.normalise(tObj.name) != $scope.objENS.name) { // check if correct name
                 $scope.notifier.danger(globalFuncs.errorMsgs[34]);

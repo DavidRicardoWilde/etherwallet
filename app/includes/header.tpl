@@ -118,7 +118,7 @@
       </ul>
       <p class="dropdown-gas__msg"
          ng-show="gasPriceMsg"
-         ng-hide="ajaxReq.type!='ETH'">
+         ng-hide="ajaxReq.type!='MOAC'">
         The network is really full right now. Check
         <a href="https://ethgasstation.info/"
            target="_blank" rel="noopener noreferrer">MOAC Gas Station</a>

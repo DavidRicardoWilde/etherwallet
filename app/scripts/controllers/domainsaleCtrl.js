@@ -139,7 +139,7 @@ var domainsaleCtrl = function($scope, $sce, walletService) {
                         $scope.objDomainSale.status = $scope.domainsaleModes.ineligible;
                         updateScope();
                     } else {
-                        $scope.objDomainSale.valueEth = Number(moacUnits.toMc($scope.objDomainSale.value.toString(), 'wei'))
+                        $scope.objDomainSale.valueEth = Number(moacUnits.toMc($scope.objDomainSale.value.toString(), 'sha'))
                         ENS.getDeedOwner($scope.objDomainSale.deed, function(data) {
                             $scope.objDomainSale.deedOwner = data.data;
                             if (data.data.toLowerCase() != DomainSale.getContractAddress().toLowerCase()) {

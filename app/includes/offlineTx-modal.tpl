@@ -12,28 +12,28 @@
 
         <table class="table text-center"><tbody><tr>
 
-          <td ng-show="tx.sendMode=='moac'">
+          <td ng-show="tx.sendMode=='mc'">
             <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tx.from}}" watch-var="tx.from"></div>
           </td>
-          <td ng-show="tx.sendMode!=='moac'">
+          <td ng-show="tx.sendMode!=='mc'">
             <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tokenTx.from}}" watch-var="tokenTx.from"></div>
           </td>
 
-          <td ng-show="tx.sendMode=='moac'" class="mono">
+          <td ng-show="tx.sendMode=='mc'" class="mono">
             ->
             <br />
             {{tx.value}} {{unitReadable}}
           </td>
-          <td ng-show="tx.sendMode!=='moac'" class="mono">
+          <td ng-show="tx.sendMode!=='mc'" class="mono">
             ->
             <br />
             {{tokenTx.value}} {{unitReadable}}
           </td>
 
-          <td ng-show="tx.sendMode=='moac'">
+          <td ng-show="tx.sendMode=='mc'">
             <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tx.to}}" watch-var="tx.to"></div>
           </td>
-          <td ng-show="tx.sendMode!=='moac'">
+          <td ng-show="tx.sendMode!=='mc'">
             <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tokenTx.to}}" watch-var="tokenTx.to"></div>
           </td>
 
@@ -45,20 +45,20 @@
           <span translate="SENDModal_Content_1">
             You are about to send
           </span>
-          <strong ng-show="tx.sendMode=='moac'" class="mono">
+          <strong ng-show="tx.sendMode=='mc'" class="mono">
             {{tx.value}} {{unitReadable}}
           </strong>
-          <strong ng-show="tx.sendMode!=='moac'" class="mono">
+          <strong ng-show="tx.sendMode!=='mc'" class="mono">
             {{tokenTx.value}} {{unitReadable}}
           </strong>
           <br />
           <span translate="SENDModal_Content_2">
             to address
           </span>
-          <strong ng-show="tx.sendMode=='moac'" class="mono">
+          <strong ng-show="tx.sendMode=='mc'" class="mono">
             {{tx.to}}.
           </strong>
-          <strong ng-show="tx.sendMode!=='moac'" class="mono">
+          <strong ng-show="tx.sendMode!=='mc'" class="mono">
             {{tokenTx.to}}
           </strong>
         </p>

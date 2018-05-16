@@ -38,8 +38,8 @@ const kyberFuncs = function() {
 };
 kyberFuncs.defaultValues = {
     gasLimit: 300000,
-    gasPrice: 2000000000, // 2 Gwei
-    maxGasPrice: 30000000000 // 30 Gwei
+    gasPrice: 2000000000, // 2 GSHA
+    maxGasPrice: 30000000000 // 30 GSHA
 };
 kyberFuncs.priceLoaded = false;
 kyberFuncs.currRates = {};
@@ -124,7 +124,7 @@ kyberFuncs.prototype.getTokenList = function () {
 
 kyberFuncs.prototype.getDataString = function (func, inputs) {
     var fullFuncName = ethUtil.solidityUtils.transformToFullName(func);
-    var funcSig = ethFuncs.getFunctionSignature(fullFuncName);
+    var funcSig = moacFuncs.getFunctionSignature(fullFuncName);
     var typeName = ethUtil.solidityUtils.extractTypeName(fullFuncName);
     var types = typeName.split(',');
     types = types[0] == "" ? [] : types;
@@ -229,7 +229,7 @@ kyberFuncs.prototype.convertToTokenBase = function (_value, _token) {
 
         return numnum;
     } else {
-        return moacUnits.toMc(_value, "wei");
+        return moacUnits.toMc(_value, "sha");
     }
 };
 
@@ -249,7 +249,7 @@ kyberFuncs.prototype.getBalance = async function (_token, userAddress, callback)
                 return i.type;
             });
 
-            // console.log(ethFuncs.hexToDecimal(data.data)); //todo remove dev item
+            // console.log(moacFuncs.hexToDecimal(data.data)); //todo remove dev item
             console.log(data.data);
             // was returning a number rounded, thus
             // data.data = ethUtil.solidityCoder.decodeParams(outTypes, data.data.replace('0x', ''))[0].toNumber();

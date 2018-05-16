@@ -30,13 +30,13 @@ var quickSendCtrl = function($scope, $sce, darkList) {
 			if (data.error) {
 				$scope[varWal][id].balance = data.msg;
 			} else {
-				$scope[varWal][id].balance = moacUnits.toMc(data.data.balance, 'wei');
+				$scope[varWal][id].balance = moacUnits.toMc(data.data.balance, 'sha');
 				$scope[varWal][id].balanceR = new BigNumber($scope[varWal][id].balance).toPrecision(5);
 			}
 		});
 	};
 	$scope.validateAddress = function() {
-		if (ethFuncs.validateEtherAddress($scope.tx.to)) {
+		if (moacFuncs.validateMoacAddress($scope.tx.to)) {
 			for(let i = 0; i < Darklist.length; i++) {
 				if($scope.tx.to.length > 0 && $scope.tx.to.toLowerCase() === Darklist[i].address.toLowerCase()) {
 					$scope.validateAddressStatus = Darklist[i].comment !== ""? $sce.trustAsHtml(globalFuncs.getDangerText(`${globalFuncs.phishingWarning[0] + Darklist[i].comment}`)) : $sce.trustAsHtml(globalFuncs.getDangerText(globalFuncs.phishingWarning[1]));
@@ -65,7 +65,7 @@ var quickSendCtrl = function($scope, $sce, darkList) {
 	}
 	$scope.prepTX = function() {
 		try {
-			if (!ethFuncs.validateEtherAddress($scope.tx.to)) throw globalFuncs.errorMsgs[5];
+			if (!moacFuncs.validateMoacAddress($scope.tx.to)) throw globalFuncs.errorMsgs[5];
 			else if (!globalFuncs.isNumeric($scope.tx.value) || parseFloat($scope.tx.value) < 0) throw globalFuncs.errorMsgs[0];
 			$scope.showConfirm = true;
 		} catch (e) {

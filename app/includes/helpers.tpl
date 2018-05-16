@@ -1,20 +1,20 @@
 <div class="" ng-controller="helpersCtrl">
 
   <h1>
-    Convert Ethererum Units (e.g. Ether <-> Wei)
+    Convert MOAC Units (e.g. MOAC <-> SHA)
   </h1>
 
   <h2 class="p">
-    Ether Wei Converter
+    MOAC SHA Converter
   </h2>
 
   <section class="mono">
 
     <div class="input-group form-group">
-      <input class="form-control" type="text" ng-model="units.wei" ng-change="convertUnit('wei')" />
+      <input class="form-control" type="text" ng-model="units.sha" ng-change="convertUnit('sha')" />
       <div class="input-group-btn">
         <a class="btn btn-default" style="min-width: 170px;">
-          wei
+          sha
         </a>
       </div>
     </div>
@@ -38,10 +38,10 @@
     </div>
 
     <div class="input-group form-group">
-      <input class="form-control" type="text" ng-model="units.gwei" ng-change="convertUnit('gwei')" />
+      <input class="form-control" type="text" ng-model="units.gsha" ng-change="convertUnit('gsha')" />
       <div class="input-group-btn">
         <a class="btn btn-default" style="min-width: 170px;">
-          gwei <small>(shannon)
+          gsha <small>(shannon)
         </small>
       </a>
 
@@ -70,7 +70,7 @@
       <input class="form-control" type="text" ng-model="units.ether" ng-change="convertUnit('ether')" />
       <div class="input-group-btn">
         <a class="btn btn-primary" style="min-width: 170px;">
-          ether
+          moac
         </a>
       </div>
     </div>
@@ -353,7 +353,7 @@
     <tr>
       <td>
         <strong>
-          wei
+          sha
         </strong>
       </td>
       <td>
@@ -417,7 +417,7 @@
     <tr>
       <td>
         <strong>
-          gwei
+          gsha
         </strong>
       </td>
       <td>

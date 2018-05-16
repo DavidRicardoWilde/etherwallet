@@ -95,11 +95,11 @@ globalFuncs.successMsgs = [
 globalFuncs.gethErrors = {
     '(geth-06) Invalid sender\\.' : 'GETH_InvalidSender',
     "(geth-08) This TX's [nonce](https://myetherwallet.github.io/knowledge-base/transactions/what-is-nonce.html) is too low\\. Try incrementing the nonce by pressing the Generate button again, or [replace the pending transaction](https://myetherwallet.github.io/knowledge-base/transactions/check-status-of-ethereum-transaction.html)\\.": "GETH_Nonce",
-    '(geth-02) Gas price too low for acceptance\\. Try raising the gas price to 21 GWEI via the dropdown in top-right\\.' : 'GETH_Cheap',
+    '(geth-02) Gas price too low for acceptance\\. Try raising the gas price to 21 GSHA via the dropdown in top-right\\.' : 'GETH_Cheap',
     '(geth-01) Insufficient balance\\. Your gas limit * gas price + amount to send exceeds your current balance\\. Send more ETH to your account or use the "Send Entire Balance" button\\. If you believe this is in error, try pressing generate again\\. Required (d+) WEI and got: (d+) WEI\\. [Learn More](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html)': 'GETH_Balance',
     '(geth-09) Account does not exist or account balance too low\\.' : 'GETH_NonExistentAccount',
     '(geth-04) Insufficient balance\\. Your gas limit * gas price + amount to send exceeds your current balance\\. Send more ETH to your account or use the "Send Entire Balance" button\\. If you believe this is in error, try pressing generate again\\. Required (d+) WEI and got: (d+) WEI\\. [Learn More](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html)': 'GETH_InsufficientFunds',
-    '(geth-05) Intrinsic gas too low\\. Try raising the gas price to 21 GWEI via the dropdown in top-right or the gas limit to 21000 (for sending) or 200000 (for sending tokens or contracts) and try again.' : 'GETH_IntrinsicGas',
+    '(geth-05) Intrinsic gas too low\\. Try raising the gas price to 21 GSHA via the dropdown in top-right or the gas limit to 21000 (for sending) or 200000 (for sending tokens or contracts) and try again.' : 'GETH_IntrinsicGas',
     '(geth-03) Exceeds block gas limit\\. Transaction cost exceeds current gas limit\\. Limit: (d+) WEI, got: (d+) WEI\\. Please lower the gas limit to 21000 (for sending) or 200000 (for sending tokens or contracts) and try again\\. [Learn More](https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html)' : 'GETH_GasLimit',
     '(geth-07) Negative value\\.': 'GETH_NegativeValue'
 };
@@ -158,7 +158,7 @@ globalFuncs.scrypt = {
 };
 globalFuncs.postDelay = 300;
 globalFuncs.kdf = "scrypt";
-globalFuncs.defaultTxGasLimit = 21000;
+globalFuncs.defaultTxGasLimit = 1000;
 globalFuncs.defaultTokenGasLimit = 200000;
 globalFuncs.donateAddress = "0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D";
 globalFuncs.isNumeric = function(n) {
@@ -304,7 +304,7 @@ globalFuncs.doesTokenExistInDefaultTokens = function(token, defaultTokensAndNetw
 
 globalFuncs.saveTokenToLocal = function(localToken, callback) {
     try {
-        if (!ethFuncs.validateEtherAddress(localToken.contractAdd)) {throw globalFuncs.errorMsgs[5]}
+        if (!moacFuncs.validateMoacAddress(localToken.contractAdd)) {throw globalFuncs.errorMsgs[5]}
         else if (!globalFuncs.isNumeric(localToken.decimals) || parseFloat(localToken.decimals) < 0) {throw globalFuncs.errorMsgs[7]}
         else if (globalFuncs.isAlphaNumericOrSpec(localToken.symbol) || localToken.symbol === "") {throw globalFuncs.errorMsgs[19]}
         var storedTokens = globalFuncs.localStorage.getItem("localTokens", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localTokens")) : [];

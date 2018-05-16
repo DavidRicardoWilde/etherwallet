@@ -281,7 +281,7 @@ ens.prototype.getSetOwnerData = function(name, owner) {
 };
 ens.prototype.getDataString = function(func, inputs) {
     var fullFuncName = ethUtil.solidityUtils.transformToFullName(func);
-    var funcSig = ethFuncs.getFunctionSignature(fullFuncName);
+    var funcSig = moacFuncs.getFunctionSignature(fullFuncName);
     var typeName = ethUtil.solidityUtils.extractTypeName(fullFuncName);
     var types = typeName.split(',');
     types = types[0] == "" ? [] : types;

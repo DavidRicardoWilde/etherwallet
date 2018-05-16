@@ -70,19 +70,19 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
     }
     $scope.setTokens();
     $scope.getWalletInfo = function() {
-        if (ethFuncs.validateEtherAddress($scope.tx.from)) {
+        if (moacFuncs.validateMoacAddress($scope.tx.from)) {
             ajaxReq.getTransactionData($scope.tx.from, function(data) {
                 if (data.error) throw data.msg;
                 data = data.data;
-                $scope.gasPriceDec = ethFuncs.hexToDecimal(ethFuncs.sanitizeHex(ethFuncs.addTinyMoreToGas(data.gasprice)));
-                $scope.nonceDec = ethFuncs.hexToDecimal(data.nonce);
+                $scope.gasPriceDec = moacFuncs.hexToDecimal(moacFuncs.sanitizeHex(moacFuncs.addTinyMoreToGas(data.gasprice)));
+                $scope.nonceDec = moacFuncs.hexToDecimal(data.nonce);
                 $scope.showWalletInfo = true;
             });
         }
     }
     $scope.$watch('gasPriceDef', function(newValue, oldValue) {
         if(newValue == "SHA" && oldValue == "GSHA") $scope.gasPriceDec = moacUnits.toSha($scope.gasPriceDec, 'gsha');
-        else if(newValue == "GWEI" && oldValue == "SHA") $scope.gasPriceDec = moacUnits.toGsha($scope.gasPriceDec,'sha');
+        else if(newValue == "GSHA" && oldValue == "SHA") $scope.gasPriceDec = moacUnits.toGsha($scope.gasPriceDec,'sha');
         else $scope.gasPriceDec = 0;
     });
     $scope.$watch('tx', function() {
@@ -118,7 +118,7 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
     }
     $scope.validateAddress = function(address, status) {
         $scope.customGasMsg = ''
-        if (ethFuncs.validateEtherAddress(address)) {
+        if (moacFuncs.validateMoacAddress(address)) {
             for (var i in CustomGasMessages) {
                 if ($scope.tx.to.toLowerCase() == CustomGasMessages[i].to.toLowerCase()) {
                     $scope.customGasMsg = CustomGasMessages[i].msg != '' ? CustomGasMessages[i].msg : ''
@@ -130,20 +130,25 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
         }
     }
     $scope.generateTx = function() {
-        if (!ethFuncs.validateEtherAddress($scope.tx.to)) {
+        if (!moacFuncs.validateMoacAddress($scope.tx.to)) {
             $scope.notifier.danger(globalFuncs.errorMsgs[5]);
             return;
         }
         var txData = uiFuncs.getTxData($scope);
-        console.log("txdata:", txData);
+
+        console.log("token id", $scope.tokenTx.id);
         txData.isOffline = true;
-        txData.nonce = ethFuncs.sanitizeHex(ethFuncs.decimalToHex($scope.nonceDec));
-        txData.gasPrice = ethFuncs.sanitizeHex(ethFuncs.decimalToHex($scope.convertPrice($scope.gasPriceDec)));
+        txData.nonce = moacFuncs.sanitizeHex(moacFuncs.decimalToHex($scope.nonceDec));
+        txData.gasPrice = moacFuncs.sanitizeHex(moacFuncs.decimalToHex($scope.convertPrice($scope.gasPriceDec)));
+        console.log("txdata:", txData);
+        console.log("scope.gasPriceDec", $scope.gasPriceDec);
         if ($scope.tokenTx.id != 'mc') {
             txData.data = $scope.tokenObjs[$scope.tokenTx.id].getData($scope.tx.to, $scope.tx.value).data;
             txData.to = $scope.tokenObjs[$scope.tokenTx.id].getContractAddress();
             txData.value = '0x00';
         }
+        //generate the signed TX
+
         uiFuncs.generateTx(txData, function(rawTx) {
             if (!rawTx.isError) {
                 $scope.rawTx = rawTx.rawTx;
@@ -158,22 +163,24 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
     }
     $scope.confirmSendTx = function() {
         try {
-            if ($scope.signedTx == "" || !ethFuncs.validateHexString($scope.signedTx)) throw globalFuncs.errorMsgs[12];
+            
+            if ($scope.signedTx == "" || !moacFuncs.validateHexString($scope.signedTx)) throw globalFuncs.errorMsgs[12];
             var eTx = new ethUtil.Tx($scope.signedTx);
-            if (eTx.data.length && Token.transferHex == ethFuncs.sanitizeHex(eTx.data.toString('hex').substr(0, 8))) {
-                var token = Token.getTokenByAddress(ethFuncs.sanitizeHex(eTx.to.toString('hex')));
-                var decoded = ethUtil.solidityCoder.decodeParams(["address", "uint256"], ethFuncs.sanitizeHex(eTx.data.toString('hex').substr(10)));
+            //This may need to be changed to moacTX
+            if (eTx.data.length && Token.transferHex == moacFuncs.sanitizeHex(eTx.data.toString('hex').substr(0, 8))) {
+                var token = Token.getTokenByAddress(moacFuncs.sanitizeHex(eTx.to.toString('hex')));
+                var decoded = ethUtil.solidityCoder.decodeParams(["address", "uint256"], moacFuncs.sanitizeHex(eTx.data.toString('hex').substr(10)));
                 $scope.tx.sendMode = 'token';
                 $scope.tokenTx.value = decoded[1].div(new BigNumber(10).pow(token.decimal)).toString();
                 $scope.tokenTx.to = decoded[0];
                 $scope.unitReadable = token.symbol;
-                $scope.tokenTx.from = ethFuncs.sanitizeHex(eTx.getSenderAddress().toString('hex'));
+                $scope.tokenTx.from = moacFuncs.sanitizeHex(eTx.getSenderAddress().toString('hex'));
             } else {
                 $scope.tx.sendMode = 'mc';
-                $scope.tx.value = eTx.value.length ? moacUnits.toMc(ethFuncs.sanitizeHex(eTx.value.toString('hex')), 'wei') : 0;
+                $scope.tx.value = eTx.value.length ? moacUnits.toMc(moacFuncs.sanitizeHex(eTx.value.toString('hex')), 'sha') : 0;
                 $scope.unitReadable = ajaxReq.type;
-                $scope.tx.from = ethFuncs.sanitizeHex(eTx.getSenderAddress().toString('hex'));
-                $scope.tx.to = ethFuncs.sanitizeHex(eTx.to.toString('hex'));
+                $scope.tx.from = moacFuncs.sanitizeHex(eTx.getSenderAddress().toString('hex'));
+                $scope.tx.to = moacFuncs.sanitizeHex(eTx.to.toString('hex'));
             }
             new Modal(document.getElementById('sendTransactionOffline')).open();
         } catch (e) {
@@ -186,7 +193,7 @@ var offlineTxCtrl = function($scope, $sce, walletService) {
             if (data.error) {
                 $scope.notifier.danger(data.msg);
             } else {
-                $scope.notifier.success(globalFuncs.successMsgs[2] + "<a href='http://etherscan.io/tx/" + data.data + "' target='_blank' rel='noopener'>" + data.data + "</a>");
+                $scope.notifier.success(globalFuncs.successMsgs[2] + "<a href='http://explorer.moac.io/tx/" + data.data + "' target='_blank' rel='noopener'>" + data.data + "</a>");
             }
         });
     }

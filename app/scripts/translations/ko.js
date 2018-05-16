@@ -255,10 +255,10 @@ GEN_Help_20                 : 'Cold Storage',
 GET_ConfButton              : 'I understand. Continue.',
 GEN_Label_5                 : 'Save Your `Private Key`. ',
 GEN_Unlock                  : 'Unlock your wallet to see your address',
-GAS_PRICE_Desc              : 'Gas Price is the amount you pay per unit of gas. `TX fee = gas price * gas limit` & is paid to miners for including your TX in a block. Higher the gas price = faster transaction, but more expensive. Default is `41 GWEI`.',
+GAS_PRICE_Desc              : 'Gas Price is the amount you pay per unit of gas. `TX fee = gas price * gas limit` & is paid to miners for including your TX in a block. Higher the gas price = faster transaction, but more expensive. Default is `41 GSHA`.',
 GAS_LIMIT_Desc              : 'Gas limit is the amount of gas to send with your TX. `TX fee` = gas price * gas limit & is paid to miners for including your TX in a block. Increasing this number will not get your TX mined faster. Sending ETH = `21000`. Sending Tokens = ~`200000`.',
 NONCE_Desc                  : 'The nonce is the number of transactions sent from a given address. It ensures transactions are sent in order & not more than once.',
-TXFEE_Desc                  : 'The TX Fee is paid to miners for including your TX in a block. Is is the `gas limit` * `gas price`. [You can convert GWEI -> ETH here](https://www.MoacWalletOnline.com/helpers.html)',
+TXFEE_Desc                  : 'The TX Fee is paid to miners for including your TX in a block. Is is the `gas limit` * `gas price`. [You can convert GSHA -> ETH here](https://www.MoacWalletOnline.com/helpers.html)',
 
 
 
@@ -559,7 +559,7 @@ ERROR_6                     : '잘못된 비밀번호입니다. ',
 ERROR_7                     : '잘못된 수량입니다. (Must be integer. Try 0-18.) ', // 7
 ERROR_8                     : '잘못된 가스 한도입니다. (Must be integer. Try 21000-4000000.) ', // 8
 ERROR_9                     : '잘못된 데이터입니다. (Must be hex.) ', // 9
-ERROR_10                    : '잘못된 가스 수량입니다. (Must be integer. Try 20 GWEI / 20000000000 WEI.) ',
+ERROR_10                    : '잘못된 가스 수량입니다. (Must be integer. Try 20 GSHA / 20000000000 WEI.) ',
 ERROR_11                    : '잘못된 nonce 입니다. (Must be integer.) ', // 11
 ERROR_12                    : '잘못된 서명 트랜잭션입니다. ',
 ERROR_13                    : '이미 같은 닉네임의 지갑이 존재합니다. ',
@@ -614,7 +614,7 @@ PARITY_Old                  : "트랜잭션 Nonce가 너무 낮습니다. Nonce�
 PARITY_TooCheapToReplace    : "트랜잭션 수수료가 너무 낮습니다. 동일한 nonce를 가진 다른 트랜잭션이 대기열에 있습니다. 수수료를 늘리거나 nonce를 늘려보세요. ",
 PARITY_LimitReached         : "대기열에 트랜잭션이 너무 많습니다. 트랜잭션이 한도를 초과하여 해당 트랜잭션이 제외되었습니다. 수수료를 늘려보세요. " ,
 PARITY_InsufficientGasPrice : "트랜잭션 수수료가 너무 낮습니다. 노드의 최소 수수료 (최소 : {}, 획득 : {})를 충족시키지 못합니다. 수수료를 늘려보세요. ",
-PARITY_InsufficientBalance  : "자금이 부족합니다. 트랜잭션을 전송하려는 계좌에 충분한 자금이 없습니다. 필요량: {}, 현재 : {} wei. ",
+PARITY_InsufficientBalance  : "자금이 부족합니다. 트랜잭션을 전송하려는 계좌에 충분한 자금이 없습니다. 필요량: {}, 현재 : {} sha. ",
 PARITY_GasLimitExceeded     : "트랜잭션 비용이 현재 가스 한도를 초과합니다. 제한 : {}, 획득 : {}. 가스 공급량을 줄이고 다시 시도해보세요. ",
 PARITY_InvalidGasLimit      : "공급 된 가스가 한도를 초과했습니다. ",
 

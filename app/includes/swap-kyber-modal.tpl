@@ -104,7 +104,7 @@
                     </tr>
                     <tr>
                         <td class="small text-right">Avg. Gas Price:</td>
-                        <td class="small text-left mono">{{parsedTx.avgGasPrice.gwei}} GWEI
+                        <td class="small text-left mono">{{parsedTx.avgGasPrice.gsha}} GSHA
                             <small>({{parsedTx.avgGasPrice.eth}} ETH)</small>
                             <!-- todo: get eth value to display as a decimal not as an exponent-->
                         </td>
@@ -112,7 +112,7 @@
                     <tr>
                         <td class="small text-right">Max Combined TX Fee:</td>
                         <td class="small text-left mono"> {{parsedTx.totalTxFee.eth}} ETH
-                            <small>({{parsedTx.totalTxFee.gwei}} GWEI)</small>
+                            <small>({{parsedTx.totalTxFee.gsha}} GSHA)</small>
                         </td>
                     </tr>
                     <tr>
@@ -175,14 +175,14 @@
                         </tr>
                         <tr>
                             <td class="small text-right">Gas Price:</td>
-                            <td class="small text-left mono">{{parsedKyberTx.gasPrice.gwei}} GWEI
-                                <small>({{parsedKyberTx.gasPrice.eth}} ETH)</small>
+                            <td class="small text-left mono">{{parsedKyberTx.gasPrice.gsha}} GSHA
+                                <small>({{parsedKyberTx.gasPrice.mc}} MC)</small>
                             </td>
                         </tr>
                         <tr>
                             <td class="small text-right">Max TX Fee:</td>
-                            <td class="small text-left mono"> {{parsedKyberTx.txFee.eth}} ETH
-                                <small>({{parsedKyberTx.txFee.gwei}} GWEI)</small>
+                            <td class="small text-left mono"> {{parsedKyberTx.txFee.mc}} MC
+                                <small>({{parsedKyberTx.txFee.gsha}} GSHA)</small>
                             </td>
                         </tr>
                         <tr>
@@ -210,7 +210,7 @@
                         </tr>
                         <tr>
                             <td class="small text-right">Amount to Send:</td>
-                            <td class="small text-left mono">{{parsedKyberTokenTx.value}} ETH</td>
+                            <td class="small text-left mono">{{parsedKyberTokenTx.value}} MC</td>
                         </tr>
                         <tr>
                             <td class="small text-right">Account Balance:</td>
@@ -226,14 +226,14 @@
                         </tr>
                         <tr>
                             <td class="small text-right">Gas Price:</td>
-                            <td class="small text-left mono">{{parsedKyberTokenTx.gasPrice.gwei}} GWEI
-                                <small>({{parsedKyberTokenTx.gasPrice.eth}} ETH)</small>
+                            <td class="small text-left mono">{{parsedKyberTokenTx.gasPrice.gsha}} GSHA
+                                <small>({{parsedKyberTokenTx.gasPrice.mc}} MC)</small>
                             </td>
                         </tr>
                         <tr>
                             <td class="small text-right">Max TX Fee:</td>
-                            <td class="small text-left mono"> {{parsedKyberTokenTx.txFee.eth}} ETH
-                                <small>({{parsedKyberTokenTx.txFee.gwei}} GWEI)</small>
+                            <td class="small text-left mono"> {{parsedKyberTokenTx.txFee.mc}} MC
+                                <small>({{parsedKyberTokenTx.txFee.gsha}} GSHA)</small>
                             </td>
                         </tr>
                         <tr>
@@ -282,14 +282,14 @@
                         </tr>
                         <tr ng-show="kyberTransaction.tokenNeedsReset">
                             <td class="small text-right">Gas Price:</td>
-                            <td class="small text-left mono">{{parsedKyberResetTokenTx.gasPrice.gwei}} GWEI
-                                <small>({{parsedKyberResetTokenTx.gasPrice.eth}} ETH)</small>
+                            <td class="small text-left mono">{{parsedKyberResetTokenTx.gasPrice.gsha}} GSHA
+                                <small>({{parsedKyberResetTokenTx.gasPrice.mc}} MC)</small>
                             </td>
                         </tr>
                         <tr ng-show="kyberTransaction.tokenNeedsReset">
                             <td class="small text-right">Max TX Fee:</td>
-                            <td class="small text-left mono"> {{parsedKyberTokenTx.txFee.eth}} ETH
-                                <small>({{parsedKyberResetTokenTx.txFee.gwei}} GWEI)</small>
+                            <td class="small text-left mono"> {{parsedKyberTokenTx.txFee.mc}} MC
+                                <small>({{parsedKyberResetTokenTx.txFee.gsha}} GSHA)</small>
                             </td>
                         </tr>
                         <tr ng-show="kyberTransaction.tokenNeedsReset">
@@ -351,14 +351,14 @@
                     </tr>
                     <tr>
                         <td class="small text-right">Gas Price:</td>
-                        <td class="small text-left mono">{{parsedKyberTx.gasPrice.gwei}} GWEI
+                        <td class="small text-left mono">{{parsedKyberTx.gasPrice.gsha}} GSHA
                             <small>({{parsedKyberTx.gasPrice.eth}} ETH)</small>
                         </td>
                     </tr>
                     <tr>
                         <td class="small text-right">Max TX Fee:</td>
                         <td class="small text-left mono"> {{parsedKyberTx.txFee.eth}} ETH
-                            <small>({{parsedKyberTx.txFee.gwei}} GWEI)</small>
+                            <small>({{parsedKyberTx.txFee.gsha}} GSHA)</small>
                         </td>
                     </tr>
                     <tr>

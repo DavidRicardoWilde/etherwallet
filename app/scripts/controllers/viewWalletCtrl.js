@@ -4,7 +4,7 @@ var viewWalletCtrl = function($scope, walletService) {
     $scope.gbpBalance = "loading";
     $scope.eurBalance = "loading";
     $scope.btcBalance = "loading";
-    $scope.etherBalance = "loading";
+    $scope.moacBalance = "loading";
     $scope.tokenVisibility = "hidden";
     $scope.pkeyVisible = false;
 

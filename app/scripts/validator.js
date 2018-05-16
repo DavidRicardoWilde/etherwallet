@@ -4,11 +4,11 @@ var validator = function() {}
 validator.isValidAddress = function(address) {
     if (address && address == "0x0000000000000000000000000000000000000000") return false;
     if (address)
-        return ethFuncs.validateEtherAddress(address);
+        return moacFuncs.validateMoacAddress(address);
     return false;
 }
 validator.isChecksumAddress = function(address) {
-    return ethFuncs.isChecksumAddress(address);
+    return moacFuncs.isChecksumAddress(address);
 }
 validator.isValidENSorEtherAddress = function(address) {
     return (validator.isValidAddress(address) || validator.isValidENSAddress(address));
@@ -41,7 +41,7 @@ validator.isPositiveNumber = function(value) {
     return globalFuncs.isNumeric(value) && parseFloat(value) >= 0;
 }
 validator.isValidHex = function(hex) {
-    return ethFuncs.validateHexString(hex);
+    return moacFuncs.validateHexString(hex);
 }
 validator.isValidPrivKey = function(privkeyLen) {
     return privkeyLen == 64 || privkeyLen == 66 || privkeyLen == 128 || privkeyLen == 132;

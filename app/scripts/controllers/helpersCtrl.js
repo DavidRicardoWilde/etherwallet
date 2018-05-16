@@ -2,7 +2,7 @@
 var helpersCtrl = function($scope) {
     var ENS = new ens();
 
-    var unitNames = ['wei', 'kwei', 'mwei', 'gwei', 'szabo', 'finney', 'mc', 'kether', 'mether', 'gether', 'tether']
+    var unitNames = ['sha', 'kwei', 'mwei', 'gsha', 'szabo', 'finney', 'mc', 'kether', 'mether', 'gether', 'tether']
 
     $scope.units = {
         mc: 1
@@ -20,17 +20,17 @@ var helpersCtrl = function($scope) {
     }
 
     $scope.decimalToHex = function() {
-        $scope.hexNumber = $scope.decimalNumber ? ethFuncs.decimalToHex($scope.decimalNumber) : '';
+        $scope.hexNumber = $scope.decimalNumber ? moacFuncs.decimalToHex($scope.decimalNumber) : '';
         $scope.hexToPaddedHex();
     }
 
     $scope.hexToDecimal = function() {
-        $scope.decimalNumber = $scope.hexNumber ? ethFuncs.hexToDecimal($scope.hexNumber) : '';
+        $scope.decimalNumber = $scope.hexNumber ? moacFuncs.hexToDecimal($scope.hexNumber) : '';
         $scope.hexToPaddedHex();
     }
 
     $scope.hexToPaddedHex = function() {
-        $scope.hexPaddedLeft = $scope.hexNumber ? ethFuncs.padLeft($scope.hexNumber, 64, '0') : '';
+        $scope.hexPaddedLeft = $scope.hexNumber ? moacFuncs.padLeft($scope.hexNumber, 64, '0') : '';
     }
 
     $scope.toSHA3 = function() {
@@ -55,12 +55,12 @@ var helpersCtrl = function($scope) {
     }
 
     $scope.toBidEth = function() {
-        $scope.bidEth = $scope.bidWei ? Number(moacUnits.toMc($scope.bidWei, 'wei')) : '';
+        $scope.bidEth = $scope.bidWei ? Number(moacUnits.toMc($scope.bidWei, 'sha')) : '';
         $scope.toBidHex();
     }
 
     $scope.toBidHex = function() {
-        $scope.bidHex = $scope.bidWei ? ethFuncs.padLeft(ethFuncs.decimalToHex($scope.bidWei), 64, '0') : '';
+        $scope.bidHex = $scope.bidWei ? moacFuncs.padLeft(moacFuncs.decimalToHex($scope.bidWei), 64, '0') : '';
         $scope.allTheThings();
     }
 

@@ -1,14 +1,14 @@
 'use strict';
 var moacUnits = function() {};
 moacUnits.unitMap = {
-	'wei': '1',
+	'sha': '1',
 	'kwei': '1000',
 	'ada': '1000',
 	'femtoether': '1000',
 	'mwei': '1000000',
 	'babbage': '1000000',
 	'picoether': '1000000',
-	'gwei': '1000000000',
+	'gsha': '1000000000',
 	'shannon': '1000000000',
 	'nanoether': '1000000000',
 	'nano': '1000000000',
@@ -49,7 +49,7 @@ moacUnits.toMc = function(number, unit) {
 	return returnValue.toString(10);
 };
 moacUnits.toGsha = function(number, unit) {
-	var returnValue = new BigNumber(this.toSha(number, unit)).div(this.getValueOfUnit('gwei'));
+	var returnValue = new BigNumber(this.toSha(number, unit)).div(this.getValueOfUnit('gsha'));
 	return returnValue.toString(10);
 };
 moacUnits.toSha = function(number, unit) {

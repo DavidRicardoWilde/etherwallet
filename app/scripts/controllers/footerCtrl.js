@@ -15,7 +15,7 @@ var footerCtrl = function($scope, globalService) {
     $scope.curLang = globalFuncs.curLang;
     $scope.gasChanged = function() {
         globalFuncs.localStorage.setItem(gasPriceKey, $scope.gas.value);
-        ethFuncs.gasAdjustment = $scope.gas.value;
+        moacFuncs.gasAdjustment = $scope.gas.value;
     }
     var setGasValues = function() {
         $scope.gas = {
@@ -25,7 +25,7 @@ var footerCtrl = function($scope, globalService) {
             min: 1,
             step: 1
         }
-        ethFuncs.gasAdjustment = $scope.gas.value;
+        moacFuncs.gasAdjustment = $scope.gas.value;
     }
     setGasValues();
     $scope.gasChanged();
