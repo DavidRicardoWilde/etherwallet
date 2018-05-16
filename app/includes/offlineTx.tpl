@@ -4,19 +4,12 @@
       ng-cloak>
 
   <h1 translate="OFFLINE_Title">
-    Generate &amp; Send Offline Transaction
+    Generate &amp; Send Offline MOAC Transaction
   </h1>
 
-  @@if (site === 'mew' ) { @@include( './offlineTx-1.tpl',     { "site": "mew" } ) }
-  @@if (site === 'cx'  ) { @@include( './offlineTx-1.tpl',     { "site": "cx"  } ) }
-
-  @@if (site === 'mew' ) { @@include( './offlineTx-2.tpl',     { "site": "mew" } ) }
-  @@if (site === 'cx'  ) { @@include( './offlineTx-2.tpl',     { "site": "cx"  } ) }
-
-  @@if (site === 'mew' ) { @@include( './offlineTx-3.tpl',     { "site": "mew" } ) }
-  @@if (site === 'cx'  ) { @@include( './offlineTx-3.tpl',     { "site": "cx"  } ) }
-
-  @@if (site === 'mew' ) { @@include( './offlineTx-modal.tpl', { "site": "mew" } ) }
-  @@if (site === 'cx'  ) { @@include( './offlineTx-modal.tpl', { "site": "cx"  } ) }
+  @@if (site === 'moac') {  @@include( './offlineTx-1.tpl', { "site": "mew" } )   }
+  @@if (site === 'moac') {  @@include( './offlineTx-2.tpl', { "site": "mew" } )   }
+  @@if (site === 'moac') {  @@include( './offlineTx-3.tpl', { "site": "mew" } )   }
+  @@if (site === 'moac') {  @@include( './offlineTx-modal.tpl', { "site": "mew" } )   }
 
 </main>

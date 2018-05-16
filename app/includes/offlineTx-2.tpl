@@ -74,7 +74,7 @@
          rel="noopener noreferrer">
         <img src="images/icon-help.svg" class="help-icon" />
         <p class="account-help-text" translate="OFFLINE_Step2_Label_4b">
-          21000 is the default gas limit.
+          1000 is the default gas limit.
         </p>
       </a>
       <label translate="OFFLINE_Step2_Label_4">
