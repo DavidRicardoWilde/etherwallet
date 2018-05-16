@@ -34,7 +34,7 @@ nodes.nodeList = {
         'tokenList': require('./tokens/moacTokens.json'),
         'abiList': require('./abiDefinitions/moacAbi.json'),
         'service': 'MOAC MAIN',
-        'lib': new nodes.customNode('http://18.23.236.89.236', '8545')
+        'lib': new nodes.customNode('http://18.236.89.236', '8545')
     },
     'moac_test': {
         'name': 'MOAC TestNet',
