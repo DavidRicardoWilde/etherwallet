@@ -280,16 +280,21 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
         }
     }
 
+    //Need to update the signed TX format
+    //to use MOAC transaction with extra fields
+    //
     $scope.parseSignedTx = function( signedTx ) {
       var txData = {}
       var isJSON =  false;
       $scope.parsedSignedTx = {}
       if(Validator.isJSON(signedTx)){
-        txData = new ethUtil.Tx(JSON.parse(signedTx));
+        // txData = new ethUtil.Tx(JSON.parse(signedTx));
+        xData = new moacTx(JSON.parse(signedTx))
         isJSON = true;
       } else {
         if( signedTx.slice(0,2)=="0x" ) signedTx = signedTx.slice(2, signedTx.length )
-        txData = new ethUtil.Tx(signedTx)
+        // txData = new ethUtil.Tx(signedTx)
+        txData = new moacTx(signedTx)
       }
       $scope.parsedSignedTx.gasPrice      = {}
       $scope.parsedSignedTx.txFee         = {}
