@@ -9,11 +9,11 @@ Thumbs.db
 node_modules/
 deploy/
 json_relay_node/node_modules/
-dist/node_modules/
+dist/
+chrome-extension/
 _ens/
 *.zip
+*.tar.gz
 cert.pem
 key.pem
 .idea/
-chrome-extension/
-dist/
