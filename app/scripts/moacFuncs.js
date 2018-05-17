@@ -78,7 +78,7 @@ moacFuncs.getFunctionSignature = function(name) {
 moacFuncs.estimateGas = function(dataObj, callback) {
     var adjustGas = function(gasLimit) {
         if (gasLimit == "0x5209") return "21000";
-        if (new BigNumber(gasLimit).gt(4000000)) return "-1";
+        if (new BigNumber(gasLimit).gt(9000000)) return "-1";//moac block gas limit is 9000000
         return new BigNumber(gasLimit).toString();
     }
     ajaxReq.getEstimatedGas(dataObj, function(data) {

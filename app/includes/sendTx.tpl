@@ -35,7 +35,7 @@
 
     @@if (site === 'mew' ) { @@include( './sendTx-modal.tpl',   { "site": "mew" } ) }
     @@if (site === 'cx'  ) { @@include( './sendTx-modal.tpl',   { "site": "cx"  } ) }
-    @@if (site === 'moac'  ) { @@include( './sendTx-modal.tpl',   { "site": "moac"  } ) }
+    @@if (site === 'moac'  ) { @@include( './sendTx-modal.tpl',   { "site": "mew"  } ) }
   </article>
 
 

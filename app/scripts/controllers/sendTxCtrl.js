@@ -39,6 +39,7 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
 
     $scope.setSendMode = function(sendMode, tokenId = '', tokensymbol = '') {
         $scope.tx.sendMode = sendMode;
+        console.log("$scope.tx.sendMode", sendMode, "tokenId", tokenId);
         $scope.unitReadable = '';
         if ( globalFuncs.urlGet('tokensymbol') != null ) {
             $scope.unitReadable = $scope.tx.tokensymbol;
@@ -220,6 +221,9 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
         if (txData.gasPrice && txData.nonce) txData.isOffline = true;
 
         console.log("Scope.tx.gasPrice",$scope.tx.gasPrice);
+        // if (txData.gasPrice == null){
+            txData.gasPrice = '0x77359400';
+        // }
         console.log("txData.gasPrice:", txData);
         if ($scope.tx.sendMode == 'token') {
             // if the amount of tokens you are trying to send > tokens you have, throw error
