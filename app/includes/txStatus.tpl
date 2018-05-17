@@ -220,6 +220,7 @@
       <div ng-show="!wd">
           @@if (site === 'mew' ) {  <wallet-decrypt-drtv></wallet-decrypt-drtv>         }
           @@if (site === 'cx' )  {  <cx-wallet-decrypt-drtv></cx-wallet-decrypt-drtv>   }
+          @@if (site === 'moac' )  {  <wallet-decrypt-drtv></wallet-decrypt-drtv>  }
       </div>
     </section>
   </section>
@@ -230,9 +231,11 @@
     <div ng-show="wallet.getChecksumAddressString() == txInfo.from">
       @@if (site === 'mew' ) { @@include( './sendTx-content.tpl', { "site": "mew" } ) }
       @@if (site === 'cx'  ) { @@include( './sendTx-content.tpl', { "site": "cx"  } ) }
+      @@if (site === 'moac' ) { @@include( './sendTx-content.tpl', { "site": "moac" } ) }
 
       @@if (site === 'mew' ) { @@include( './sendTx-modal.tpl',   { "site": "mew" } ) }
       @@if (site === 'cx'  ) { @@include( './sendTx-modal.tpl',   { "site": "cx"  } ) }
+      @@if (site === 'moac' ) { @@include( './sendTx-modal.tpl',   { "site": "moac" } ) }
     </div>
     <div class="col-xs-12 block block--danger" ng-show="wallet.getChecksumAddressString()!=txInfo.from">
       <h5 translate="ENS_WrongAddress_2">
