@@ -13,6 +13,7 @@ dist/
 chrome-extension/
 _ens/
 *.zip
+*.tar.gz
 cert.pem
 key.pem
 .idea/
