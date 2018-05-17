@@ -181,6 +181,6 @@
      ng-mouseleave="scrollHoverOut()">&#187;</a>
 </nav>
 
-@@if (site === 'moac' ) { @@include( './header-node-modal.tpl', { "site": "moac" } ) }
+@@if (site === 'moac' ) { @@include( './header-node-modal.tpl', { "site": "mew" } ) }
 
 </header>

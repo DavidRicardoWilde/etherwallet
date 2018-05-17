@@ -243,16 +243,20 @@ var mTx = new moacTx(rawTx);
         }//end genTxWithInfo
 
         console.log("genTx:txData:", txData);
+        txData.nonce = 24;
+        txData.gasPrice = "0x77359400";
         if (txData.nonce || txData.gasPrice) {
             var data = {
                 nonce: txData.nonce,
                 gasprice: txData.gasPrice
             }
             data.isOffline = txData.isOffline ? txData.isOffline : false;
+            console.log("Offline?",data);
             genTxWithInfo(data);
         } else {
             //Not sure where data is come from in the callback function
             //Maybe from the interface.
+            console.log("No nonce nor gasPrice");
             ajaxReq.getTransactionData(txData.from, function(data) {
                 if (data.error && callback !== undefined) {
                     callback({
@@ -276,6 +280,7 @@ var mTx = new moacTx(rawTx);
 //Actual send the TX
 uiFuncs.sendTx = function(signedTx, callback) {
     // check for web3 late signed tx
+    console.log("Send TX using web3.eth.sendTransaction!");
     if (signedTx.slice(0, 2) !== '0x') {
         var txParams = JSON.parse(signedTx)
         window.web3.eth.sendTransaction(txParams, function(err, txHash) {
@@ -291,7 +296,7 @@ uiFuncs.sendTx = function(signedTx, callback) {
         });
         return
     }
-
+    console.log("Send sendRawTx!", signedTx);
     ajaxReq.sendRawTx(signedTx, function(data) {
         var resp = {};
         if (data.error) {

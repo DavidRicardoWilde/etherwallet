@@ -20,37 +20,37 @@
                      watch-var="wallet.getAddressString()">
                 </div>
                 <p>
-                  <strong ng-show="tx.sendMode=='ether'" class="send-modal__addr">
+                  <strong ng-show="tx.sendMode=='mc'" class="send-modal__addr">
                     {{wallet.getChecksumAddressString()}}
                   </strong>
                 </p>
               </td>
-              <td ng-show="tx.sendMode=='ether'" class="mono">
+              <td ng-show="tx.sendMode=='mc'" class="mono">
                 ->
                 <br />
                 <h4 class="text-danger">
                   {{tx.value}} {{unitReadable}}
                 </h4>
               </td>
-              <td ng-show="tx.sendMode!=='ether'" class="mono">
+              <td ng-show="tx.sendMode!=='mc'" class="mono">
                 ->
                 <br />
                 <h4 class="text-primary">
                   {{tx.value}} {{unitReadable}}
                 </h4>
               </td>
-              <td ng-show="tx.sendMode=='ether'">
+              <td ng-show="tx.sendMode=='mc'">
                 <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tx.to}}" watch-var="tx.to"></div>
                 <p>
-                  <strong ng-show="tx.sendMode=='ether'" class="send-modal__addr">
+                  <strong ng-show="tx.sendMode=='mc'" class="send-modal__addr">
                     {{tx.to}}
                   </strong>
                 </p>
               </td>
-              <td ng-show="tx.sendMode!=='ether'">
+              <td ng-show="tx.sendMode!=='mc'">
                 <div class="addressIdenticon med" title="Address Indenticon" blockie-address="{{tokenTx.to}}" watch-var="tokenTx.to"></div>
                 <p>
-                  <strong ng-show="tx.sendMode=='ether'" class="send-modal__addr">
+                  <strong ng-show="tx.sendMode=='mc'" class="send-modal__addr">
                     {{tokenTx.to}}
                   </strong>
                 </p>
@@ -76,7 +76,7 @@
             </tr>
             <tr>
               <td class="small text-right">Amount to Send:</td>
-              <td class="small text-left mono">{{parsedSignedTx.value}} ETH</td>
+              <td class="small text-left mono">{{parsedSignedTx.value}} MC</td>
             </tr>
             <tr>
               <td class="small text-right">Account Balance:</td>
@@ -119,11 +119,11 @@
       <div class="modal-footer">
         <h4 class="text-center">
           <span translate="SENDModal_Content_1">You are about to send</span>
-          <strong ng-show="tx.sendMode=='ether'" class="mono">{{tx.value}} {{unitReadable}}</strong>
-          <strong ng-show="tx.sendMode!=='ether'" class="mono">{{tokenTx.value}} {{unitReadable}}</strong>
+          <strong ng-show="tx.sendMode=='mc'" class="mono">{{tx.value}} {{unitReadable}}</strong>
+          <strong ng-show="tx.sendMode!=='mc'" class="mono">{{tokenTx.value}} {{unitReadable}}</strong>
           <span translate="SENDModal_Content_2">to address</span>
-          <strong ng-show="tx.sendMode=='ether'" class="mono">{{tx.to}}.</strong>
-          <strong ng-show="tx.sendMode!=='ether'" class="mono">{{tokenTx.to}}</strong>
+          <strong ng-show="tx.sendMode=='mc'" class="mono">{{tx.to}}.</strong>
+          <strong ng-show="tx.sendMode!=='mc'" class="mono">{{tokenTx.to}}</strong>
         </h4>
         <p translate="SENDModal_Content_3">
           Are you sure you want to do this?
