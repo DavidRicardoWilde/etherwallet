@@ -5,8 +5,7 @@ nodes.infuraNode = require('./nodeHelpers/infura');
 nodes.metamaskNode = require('./nodeHelpers/metamask');
 nodes.nodeTypes = {
     MOAC: "MOAC",
-    MOAC_TEST: "MOAC TestNet",
-    ETH: "ETH"
+    Custom: "CUSTOM"
 };
 nodes.ensNodeTypes = [nodes.nodeTypes.ETH, nodes.nodeTypes.Ropsten];
 nodes.ensSubNodeTypes = [nodes.nodeTypes.ETH];
@@ -40,7 +39,7 @@ nodes.nodeList = {
         'name': 'MOAC TestNet',
         'blockExplorerTX': 'http://47.75.144.55:3000/tx/[[txHash]]',
         'blockExplorerAddr': 'http://47.75.144.55:3000/addr/[[address]]',
-        'type': nodes.nodeTypes.MOAC_TEST,
+        'type': nodes.nodeTypes.MOAC,
         'eip155': true,
         'chainId': 101,
         'tokenList': require('./tokens/moacTestTokens.json'),

@@ -243,7 +243,7 @@ var mTx = new moacTx(rawTx);
         }//end genTxWithInfo
 
         console.log("genTx:txData:", txData);
-        txData.nonce = 24;
+        txData.nonce = "0x18";
         txData.gasPrice = "0x77359400";
         if (txData.nonce || txData.gasPrice) {
             var data = {

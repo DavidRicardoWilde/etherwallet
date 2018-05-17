@@ -31,7 +31,7 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
         unit: "mc",
         value: globalFuncs.urlGet('value') == null ? "" : globalFuncs.urlGet('value'),
         nonce: null,
-        gasPrice: globalFuncs.urlGet('gasprice') == null ? null : globalFuncs.urlGet('gasprice'),
+        gasPrice: globalFuncs.urlGet('gasPrice') == null ? null : globalFuncs.urlGet('gasPrice'),
         donate: false,
         tokensymbol: globalFuncs.urlGet('tokensymbol') == null ? false : globalFuncs.urlGet('tokensymbol'),
     }
@@ -220,10 +220,10 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
         // if false, replace gas price and nonce. gas price from slider. nonce from server.
         if (txData.gasPrice && txData.nonce) txData.isOffline = true;
 
-        console.log("Scope.tx.gasPrice",$scope.tx.gasPrice);
-        // if (txData.gasPrice == null){
-            txData.gasPrice = '0x77359400';
-        // }
+        // console.log("Scope.tx.gasPrice",$scope.tx.gasPrice);
+        // // if (txData.gasPrice == null){
+        //     txData.gasPrice = '0x77359400';
+        // // }
         console.log("txData.gasPrice:", txData);
         if ($scope.tx.sendMode == 'token') {
             // if the amount of tokens you are trying to send > tokens you have, throw error
@@ -235,12 +235,13 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
             txData.data = $scope.wallet.tokenObjs[$scope.tokenTx.id].getData($scope.tokenTx.to, $scope.tokenTx.value).data;
             txData.value = '0x00';
         }
-        uiFuncs.generateTx(txData, function(rawTx) {
+        uiFuncs.generateTx(txData, function(rawTx) {            
             if (!rawTx.isError) {
                 $scope.rawTx = rawTx.rawTx;
                 $scope.signedTx = rawTx.signedTx;
                 $rootScope.rootScopeShowRawTx = true;
             } else {
+                console.log(rawTx.error);
                 $rootScope.rootScopeShowRawTx = false;
                 $scope.notifier.danger(rawTx.error);
             }
