@@ -62,7 +62,7 @@ var globalService = function($http, $httpParamSerializerJQLike) {
     url: "contracts",
     mew: true,
     cx: true,
-    moac: true
+    moac: false
   },
   ens: {
     id:7,
