@@ -4,8 +4,8 @@ nodes.customNode = require('./nodeHelpers/customNode');
 nodes.infuraNode = require('./nodeHelpers/infura');
 nodes.metamaskNode = require('./nodeHelpers/metamask');
 nodes.nodeTypes = {
-    MOAC: "MOAC",
-    MOAC_TEST: "MOAC TestNet",
+    MOAC: "MC",
+    MOAC_TEST: "MC",
     Custom: "MC"
 };
 nodes.ensNodeTypes = [nodes.nodeTypes.ETH, nodes.nodeTypes.Ropsten];

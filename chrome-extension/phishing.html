@@ -36,7 +36,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="/images/myetherwallet-logo-banner.png" />
 <meta property="og:image" content="/images/moacwallet-logo.png" />
-<meta property="og:image" content="/images/myetherwallet-logo-square.png" />
+<meta property="og:image" content="/images/moacwallet-logo-square.png" />
 <meta property="og:image" content="/images/myetherwallet-banner-fun.jpg" />
 <meta name="twitter:image" content="/images/myetherwallet-logo-twitter.png">
 <meta name="twitter:card" content="summary_large_image">
