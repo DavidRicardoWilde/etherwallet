@@ -14,7 +14,7 @@ customNode.prototype.config = {
 
 customNode.prototype.getCurrentBlock = function(callback) {
     this.post({
-        method: 'eth_blockNumber'
+        method: 'mc_blockNumber'
     }, function(data) {
         if (data.error) callback({ error: true, msg: data.error.message, data: '' });
         else callback({ error: false, msg: '', data: new BigNumber(data.result).toString() });
@@ -30,7 +30,7 @@ customNode.prototype.getChainId = function(callback) {
 }
 customNode.prototype.getBalance = function(addr, callback) {
     this.post({
-        method: 'eth_getBalance',
+        method: 'mc_getBalance',
         params: [addr, 'pending']
     }, function(data) {
         if (data.error) callback({ error: true, msg: data.error.message, data: '' });
@@ -39,7 +39,7 @@ customNode.prototype.getBalance = function(addr, callback) {
 }
 customNode.prototype.getTransaction = function(txHash, callback) {
     this.post({
-        method: 'eth_getTransactionByHash',
+        method: 'mc_getTransactionByHash',
         params: [txHash]
     }, function(data) {
         if (data.error) callback({ error: true, msg: data.error.message, data: '' });
@@ -50,11 +50,14 @@ customNode.prototype.getTransactionData = function(addr, callback) {
     var response = { error: false, msg: '', data: { address: addr, balance: '', gasprice: '', nonce: '' } };
     var parentObj = this;
     var reqObj = [
-        { "id": parentObj.getRandomID(), "jsonrpc": "2.0", "method": "eth_getBalance", "params": [addr, 'pending'] },
-        { "id": parentObj.getRandomID(), "jsonrpc": "2.0", "method": "eth_gasPrice", "params": [] },
-        { "id": parentObj.getRandomID(), "jsonrpc": "2.0", "method": "eth_getTransactionCount", "params": [addr, 'pending'] }
+        { "id": parentObj.getRandomID(), "jsonrpc": "2.0", "method": "mc_getBalance", "params": [addr, 'pending'] },
+        { "id": parentObj.getRandomID(), "jsonrpc": "2.0", "method": "mc_gasPrice", "params": [] },
+        { "id": parentObj.getRandomID(), "jsonrpc": "2.0", "method": "mc_getTransactionCount", "params": [addr, 'pending'] }
     ];
+    console.log("Post obj", reqObj);
+    
     this.rawPost(reqObj, function(data) {
+        console.log("Custom node:rawPost:",data);
         for (var i in data) {
             if (data[i].error) {
                 callback({ error: true, msg: data[i].error.message, data: '' });
@@ -64,12 +67,13 @@ customNode.prototype.getTransactionData = function(addr, callback) {
         response.data.balance = new BigNumber(data[0].result).toString();
         response.data.gasprice = data[1].result;
         response.data.nonce = data[2].result;
+        console.log("Response data:", response.data);
         callback(response);
     });
 }
 customNode.prototype.sendRawTx = function(rawTx, callback) {
     this.post({
-        method: 'eth_sendRawTransaction',
+        method: 'mc_sendRawTransaction',
         params: [rawTx]
     }, function(data) {
         if (data.error) callback({ error: true, msg: data.error.message, data: '' });
@@ -79,7 +83,7 @@ customNode.prototype.sendRawTx = function(rawTx, callback) {
 customNode.prototype.getEstimatedGas = function(txobj, callback) {
     txobj.value = ethFuncs.trimHexZero(txobj.value);
     this.post({
-        method: 'eth_estimateGas',
+        method: 'mc_estimateGas',
         params: [{ from: txobj.from, to: txobj.to, value: txobj.value, data: txobj.data }]
     }, function(data) {
         if (data.error) callback({ error: true, msg: data.error.message, data: '' });
@@ -106,7 +110,7 @@ customNode.prototype.getEthCall = function(txobj, callback) {
             });
         }, 500);
     }
-    ethCallArr.calls.push({ "id": parentObj.getRandomID(), "jsonrpc": "2.0", "method": "eth_call", "params": [{ to: txobj.to, data: txobj.data }, 'pending'] });
+    ethCallArr.calls.push({ "id": parentObj.getRandomID(), "jsonrpc": "2.0", "method": "mc_call", "params": [{ to: txobj.to, data: txobj.data }, 'pending'] });
     ethCallArr.callbacks.push(callback);
 }
 customNode.prototype.getTraceCall = function(txobj, callback) {
@@ -119,7 +123,9 @@ customNode.prototype.getTraceCall = function(txobj, callback) {
     });
 }
 customNode.prototype.rawPost = function(data, callback) {
+    console.log("Post to:", this.SERVERURL);
     ajaxReq.http.post(this.SERVERURL, JSON.stringify(data), this.config).then(function(data) {
+        console.log("get http.post back:", data);
         callback(data.data);
     }, function(data) {
         callback({ error: true, msg: "connection error", data: "" });

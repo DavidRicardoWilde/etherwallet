@@ -6,7 +6,7 @@ nodes.metamaskNode = require('./nodeHelpers/metamask');
 nodes.nodeTypes = {
     MOAC: "MOAC",
     MOAC_TEST: "MOAC TestNet",
-    ETH: "ETH"
+    Custom: "MC"
 };
 nodes.ensNodeTypes = [nodes.nodeTypes.ETH, nodes.nodeTypes.Ropsten];
 nodes.ensSubNodeTypes = [nodes.nodeTypes.ETH];
