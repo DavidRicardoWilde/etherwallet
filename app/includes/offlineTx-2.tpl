@@ -44,7 +44,7 @@
              class="btn btn-default dropdown-toggle"
              ng-click="dropdownAmount = !dropdownAmount"
              ng-class="dropdownEnabled ? '' : 'disabled'">
-                {{unitReadable}}
+                MC
                 <i class="caret"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-right" ng-show="dropdownAmount">

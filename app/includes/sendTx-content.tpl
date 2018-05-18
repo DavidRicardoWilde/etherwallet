@@ -88,7 +88,7 @@
                ng-click="dropdownAmount = !dropdownAmount"
                ng-class="dropdownEnabled ? '' : 'disabled'">
                 <strong>
-                  {{unitReadable}}
+                  MC
                   <i class="caret"></i>
                 </strong>
             </a>
