@@ -88,7 +88,7 @@
                ng-click="dropdownAmount = !dropdownAmount"
                ng-class="dropdownEnabled ? '' : 'disabled'">
                 <strong>
-                  MC
+                  {{unitReadable}}
                   <i class="caret"></i>
                 </strong>
             </a>
@@ -112,7 +112,7 @@
                      ng-click="setSendMode('token', $index, token.getSymbol())" >
                       {{token.getSymbol()}}
                   </a>
-              </li> 
+              </li>
             </ul>
 
           </div>
@@ -162,7 +162,7 @@
         </label>
         <input type="text"
                class="form-control"
-               placeholder="21000"
+               placeholder="1000"
                ng-model="tx.gasLimit"
                ng-change="gasLimitChanged=true"
                ng-disabled="tx.readOnly || checkTxReadOnly"
@@ -293,7 +293,7 @@
 
       <div class="col-sm-6">
         <label translate="SEND_raw">
-          Raw Transaction
+          Raw Transaction in JSON
         </label>
         <textarea class="form-control" rows="4" readonly>{{rawTx}}</textarea>
       </div>

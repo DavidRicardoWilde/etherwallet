@@ -87,7 +87,7 @@
         <li translate="HELP_2a_Desc_3"></li>
         <ul>
           <li><strong translate="x_Keystore">Keystore/JSON File (Recommended · Encrypted · Mist/Geth Format):</strong> <span translate="x_KeystoreDesc">This Keystore / JSON file matches the format used by Mist & Geth so you can easily import it in the future. It is the recommended file to download and back up.</span></li>
-          <li><strong translate="x_Json">JSON File (unencrypted):</strong> <span translate="x_JsonDesc">This is the unencrypted, JSON format of your private key. This means you do not need the password but anyone who finds your JSON can access your wallet & Ether without the password.</span></li>
+          <li><strong translate="x_Json">JSON File (unencrypted):</strong> <span translate="x_JsonDesc">This is the unencrypted, JSON format of your private key. This means you do not need the password but anyone who finds your JSON can access your wallet & Moac without the password.</span></li>
           <li><strong translate="x_PrivKey">Private Key (unencrypted):</strong> <span translate="x_PrivKeyDesc">This is the unencrypted text version of your private key, meaning no password is necessary. If someone were to find your unencrypted private key, they could access your wallet without a password. For this reason, encrypted versions are typically recommended.</span></li>
         </ul>
 
@@ -104,7 +104,7 @@
   <article class="collapse-container">
     <div ng-click="h2b = !h2b">
       <a class="collapse-button" ><span ng-show="!h2b">+</span><span ng-show="h2b">-</span></a>
-      <h4 translate="HELP_2b_Title"> 2b. How do I safely / offline / cold storage with MyEtherWallet? </h4>
+      <h4 translate="HELP_2b_Title"> 2b. How do I safely / offline / cold storage with MoacWalletOnline? </h4>
     </div>
     <div ng-show="h2b">
       <ol>
@@ -130,7 +130,7 @@
       <h4 translate="HELP_3_Title"> 3. How do I verify I have access to my new wallet? </h4>
     </div>
     <div ng-show="h3">
-      <p translate="HELP_3_Desc_1">**Before you send any Ether to your new wallet**, you should ensure you have access to it.</p>
+      <p translate="HELP_3_Desc_1">**Before you send any Moac to your new wallet**, you should ensure you have access to it.</p>
       <ol>
         @@if (site === 'mew' ) {
         <li translate="HELP_3_Desc_2"> Navigate to the "View Wallet Info" page. </li>
@@ -153,12 +153,12 @@
   <article class="collapse-container">
     <div ng-click="h4 = !h4">
       <a class="collapse-button" ><span ng-show="!h4">+</span><span ng-show="h4">-</span></a>
-      <h4 translate="HELP_4_Title"> 4. How do I send Ether from one wallet to another? </h4>
+      <h4 translate="HELP_4_Title"> 4. How do I send Moac from one wallet to another? </h4>
     </div>
     <div ng-show="h4">
-      <p translate="HELP_4_Desc_1">If you plan to move a large amount of ether, you should test sending a small amount to your wallet first to ensure everything goes as planned.</p>
+      <p translate="HELP_4_Desc_1">If you plan to move a large amount of Moac, you should test sending a small amount to your wallet first to ensure everything goes as planned.</p>
       <ol>
-        <li translate="HELP_4_Desc_2"> Navigate to the "Send Ether" page. </li>
+        <li translate="HELP_4_Desc_2"> Navigate to the "Send Moac" page. </li>
         <li translate="HELP_4_Desc_3"> Select your wallet file -or- your private key and unlock your wallet.</li>
         <li translate="HELP_4_Desc_4"> If the wallet is encrypted, a text box will automatically appear. Enter the password. </li>
         <li translate="HELP_4_Desc_5"> Click the "Unlock Wallet" button. </li>
@@ -180,10 +180,10 @@
   <article class="collapse-container">
     <div ng-click="h4cx = !h4cx">
       <a class="collapse-button" ><span ng-show="!h4cx">+</span><span ng-show="h4cx">-</span></a>
-      <h4 translate="HELP_4CX_Title">4. How do I send Ether using MyEtherWallet CX? </h4>
+      <h4 translate="HELP_4CX_Title">4. How do I send Moac using MoacWalletOnline CX? </h4>
     </div>
     <div ng-show="h4cx">
-      <p translate="HELP_4CX_Desc_1">First, you need to add a wallet. Once you have done that, you have 2 options: the "QuickSend" functionality from the Chrome Extension icon or the "Send Ether" page.</p>
+      <p translate="HELP_4CX_Desc_1">First, you need to add a wallet. Once you have done that, you have 2 options: the "QuickSend" functionality from the Chrome Extension icon or the "Send Moac" page.</p>
       <p translate="HELP_4CX_Desc_2" class="strong"> QuickSend: </p>
       <ol>
         <li translate="HELP_4CX_Desc_3"> Click the Chrome Extension Icon. </li>
@@ -196,9 +196,9 @@
         <li translate="HELP_4CX_Desc_10"> Enter the password for that wallet. </li>
         <li translate="HELP_4CX_Desc_11"> Click "Send Transaction." </li>
       </ol>
-      <p class="strong" translate="HELP_4CX_Desc_12"> Using "Send Ether" Page: </p>
+      <p class="strong" translate="HELP_4CX_Desc_12"> Using "Send Moac" Page: </p>
       <ol>
-        <li translate="HELP_4_Desc_2"> Navigate to the "Send Ether" page. </li>
+        <li translate="HELP_4_Desc_2"> Navigate to the "Send Moac" page. </li>
         <li translate="HELP_4_Desc_3"> Select your wallet file -or- your private key and unlock your wallet.</li>
         <li translate="HELP_4_Desc_4"> If the wallet is encrypted, a text box will automatically appear. Enter the password. </li>
         <li translate="HELP_4_Desc_5"> Click the "Unlock Wallet" button. </li>
@@ -231,7 +231,7 @@
       <li translate="HELP_2b_Desc_4">Unzip it and double-click `index.html`.</li>
       <li translate="HELP_5_Desc_7">MoacWalletOnline.com is now running entirely on your computer.</li>
     </ol>
-    <p translate="HELP_5_Desc_8"> In case you are not familiar, you need to keep the entire folder in order to run the website, not just index.html. Don't touch or move anything around in the folder. If you are storing a backup of the MyEtherWallet repo for the future, we recommend just storing the ZIP so you can be sure the folder contents stay intact.</p>
+    <p translate="HELP_5_Desc_8"> In case you are not familiar, you need to keep the entire folder in order to run the website, not just index.html. Don't touch or move anything around in the folder. If you are storing a backup of the MoacWalletOnline repo for the future, we recommend just storing the ZIP so you can be sure the folder contents stay intact.</p>
     <p translate="HELP_5_Desc_9"> As we are constantly updating MoacWalletOnline.com, we recommend you periodically update your saved version of the repo. </p>
     </div>
   </article>
@@ -269,7 +269,7 @@
       <ul>
         <li> Verify the URL you entered is correct. </li>
         <li> Verify the port you entered is correct. </li>
-        <li> Verify that if you are connecting to an http:// node you are running MyEtherWallet locally (NOT over https://). </li>
+        <li> Verify that if you are connecting to an http:// node you are running MoacWalletOnline locally (NOT over https://). </li>
         <li> Verify geth is running with <code>geth --rpc --rpccorsdomain "null" --keystore "dont_put_secret_files_here_ever"</code> or parity is running with <code>parity --rpccorsdomain "*" --keys-path "dont_put_secret_files_here_ever"</code> </li>
         <li> Verify your node is actually up and running. </li>
         <li> Try removing the node and adding it again. </li>
@@ -316,10 +316,10 @@
       <h4 translate="HELP_8_Title">8. What happens if your site goes down? </h4>
     </div>
     <div ng-show="h8">
-      <p translate="HELP_8_Desc_1">MyEtherWallet is not a web wallet. You don't have a login and nothing ever gets saved to our servers. It is simply an interface that allows you interact with the blockchain.</p>
-      <p translate="HELP_8_Desc_2">If MoacWalletOnline.com goes down, you would have to find another way (like geth or Ethereum Wallet / Mist) to do what we are doing. But you wouldn't have to "get" your Ether out of MyEtherWallet because it's not in MyEtherWallet. It's in whatever wallet your generated via our site.</p>
+      <p translate="HELP_8_Desc_1">MoacWalletOnline is not a web wallet. You don't have a login and nothing ever gets saved to our servers. It is simply an interface that allows you interact with the blockchain.</p>
+      <p translate="HELP_8_Desc_2">If MoacWalletOnline.com goes down, you would have to find another way (like geth or Ethereum Wallet / Mist) to do what we are doing. But you wouldn't have to "get" your Moac out of MoacWalletOnline because it's not in MoacWalletOnline. It's in whatever wallet your generated via our site.</p>
       <p translate="HELP_8_Desc_3"> You can import your unencrypted private key and your Geth/Mist Format (encrypted) files directly into geth / Ethereum Wallet / Mist very easily now. See question #10 below. </p>
-      <p translate="HELP_8_Desc_4">In addition, the likelihood of us taking MyEtherWallet down is slim to none. It costs us almost nothing to maintain as we aren't storing any information. If we do take the domain down, it still is, and always will be, publicly available at <a href="https://github.com/kvhnuke/etherwallet/tree/gh-pages" target="_blank" rel="noopener noreferrer">https://github.com/kvhnuke/etherwallet</a>. You can download the ZIP there and run it locally. </p>
+      <p translate="HELP_8_Desc_4">In addition, the likelihood of us taking MoacWalletOnline down is slim to none. It costs us almost nothing to maintain as we aren't storing any information. If we do take the domain down, it still is, and always will be, publicly available at <a href="https://github.com/kvhnuke/etherwallet/tree/gh-pages" target="_blank" rel="noopener noreferrer">https://github.com/kvhnuke/etherwallet</a>. You can download the ZIP there and run it locally. </p>
     </div>
   </article>
 }
@@ -330,12 +330,12 @@
   <article class="collapse-container">
     <div  ng-click="h8cx = !h8cx">
       <a class="collapse-button"><span ng-show="!h8cx">+</span><span ng-show="h8cx">-</span></a>
-      <h4 translate="HELP_8CX_Title">8. What happens if MyEtherWallet CX disappears? </h4>
+      <h4 translate="HELP_8CX_Title">8. What happens if MoacWalletOnline CX disappears? </h4>
     </div>
     <div ng-show="h8cx">
       <p translate="HELP_8CX_Desc_1">First, all data is saved on your computer, not our servers. I know it can be confusing, but when you look at the Chrome Extension, you are NOT looking at stuff saved on our servers somewhere - it's all saved on your own computer.</p>
-      <p translate="HELP_8CX_Desc_2"> That said, it is **very important** that you back up all your information for any new wallets generated with MyEtherWallet CX. That way if anything happens to MyEtherWallet CX or your computer, you still have all the information necessary to access your Ether. See the #2a for how to back up your wallets.</p>
-      <p translate="HELP_8CX_Desc_3"> If for some reason MyEtherWallet CX disappears from the Chrome Store, you can find the source on Github and load it manually. See #5 above.</p>
+      <p translate="HELP_8CX_Desc_2"> That said, it is **very important** that you back up all your information for any new wallets generated with MoacWalletOnline CX. That way if anything happens to MoacWalletOnline CX or your computer, you still have all the information necessary to access your Moac. See the #2a for how to back up your wallets.</p>
+      <p translate="HELP_8CX_Desc_3"> If for some reason MoacWalletOnline CX disappears from the Chrome Store, you can find the source on Github and load it manually. See #5 above.</p>
     </div>
   </article>
 }
@@ -372,7 +372,7 @@
         <li translate="HELP_10_Desc_8"> Select your wallet file -or- your private key and unlock your wallet.</li>
         <li translate="HELP_10_Desc_9"> Press the "GENERATE SIGNED TRANSACTION" button.</li>
         <li translate="HELP_10_Desc_10"> The data field below this button will populate with your signed transaction. Copy this and move it back to your online computer. </li>
-        <li translate="HELP_10_Desc_11"> On your online computer, paste the signed transaction into the text field in step #3 and click "SEND Ether". This will broadcast your transaction.</li>
+        <li translate="HELP_10_Desc_11"> On your online computer, paste the signed transaction into the text field in step #3 and click "SEND Moac". This will broadcast your transaction.</li>
       </ol>
     </div>
   </article>
@@ -382,10 +382,10 @@
   <article class="collapse-container">
     <div ng-click="h12 = !h12">
       <a class="collapse-button" ><span ng-show="!h12">+</span><span ng-show="h12">-</span></a>
-      <h4 translate="HELP_12_Title">12. How do I import a wallet created with MyEtherWallet into geth / Ethereum Wallet / Mist?</h4>
+      <h4 translate="HELP_12_Title">12. How do I import a wallet created with MoacWalletOnline into geth / Ethereum Wallet / Mist?</h4>
     </div>
     <div ng-show="h12">
-      <p class="strong" translate="HELP_12_Desc_1"> Using an Geth/Mist JSON file from MyEtherWallet v2+....</p>
+      <p class="strong" translate="HELP_12_Desc_1"> Using an Geth/Mist JSON file from MoacWalletOnline v2+....</p>
       <ol>
         @@if (site === 'mew' ) {
           <li translate="HELP_12_Desc_2"> Go to the "View Wallet Info" page.</li>
@@ -438,7 +438,7 @@
         <h4 translate="HELP_13_Title">13. What does "Gas Limit Too Low" Mean?</h4>
       </div>
       <div ng-show="h13">
-        <p translate="HELP_13_Desc_1"> Most likely, this means you are attempting to send Ether to a contract. Sending to a contract requires a bit more data and therefore a bit more gas. On the "Send Ether" page, click the "+ Advanced: Add More Gas or Data" button below the amount field. This will display two additional fields that you can use to increase the gas above the default 21000, or add data to your transaction. </p>
+        <p translate="HELP_13_Desc_1"> Most likely, this means you are attempting to send Moac to a contract. Sending to a contract requires a bit more data and therefore a bit more gas. On the "Send Moac" page, click the "+ Advanced: Add More Gas or Data" button below the amount field. This will display two additional fields that you can use to increase the gas above the default 21000, or add data to your transaction. </p>
       </div>
   </article>
 
@@ -447,7 +447,7 @@
   <article class="collapse-container">
     <div ng-click="h14 = !h14" >
       <a class="collapse-button"><span ng-show="!h14">+</span><span ng-show="h14">-</span></a>
-        <h4 translate="HELP_14_Title"> 14. Some sites randomize (seed) the private key generation via mouse movements. MoacWalletOnline.com doesn't do this. Is the random number generation for MyEtherWallet safe?</h4>
+        <h4 translate="HELP_14_Title"> 14. Some sites randomize (seed) the private key generation via mouse movements. MoacWalletOnline.com doesn't do this. Is the random number generation for MoacWalletOnline safe?</h4>
       </div>
       <div ng-show="h14">
         <p translate="HELP_14_Desc_1">While the mouse moving thing is clever and we understand why people like it, the reality is window.crypto ensures more entropy than your mouse movements. The mouse movements aren't unsafe, it's just that we (and tons of other crypto experments) believe in window.crypto. In addition, MoacWalletOnline.com can be used on touch devices. Here's a <a href="https://www.reddit.com/r/ethereum/comments/2bilqg/note_there_is_a_paranoid_highsecurity_way_to/cj5sgrm" target="_blank" rel="noopener noreferrer">conversation between an angry redditor and Vitalik Buterin regarding mouse movements v. window.crypto</a> and here is the <a href="https://dvcs.w3.org/hg/webcrypto-api/raw-file/tip/spec/Overview.html#dfn-GlobalCrypto" target="_blank" rel="noopener noreferrer">the window.crypto w3 spec</a>.</p>
@@ -462,7 +462,7 @@
         <h4 translate="HELP_15_Title">15. Why hasn't the wallet I just created show up in the blockchain explorer? (ie: etherchain, etherscan) </h4>
       </div>
       <div ng-show="h15">
-        <p translate="HELP_15_Desc_1"> Addresses will only show up in a blockchain explorer once the account has activity on it&mdash;for example, once you have transferred some Ether to it. </p>
+        <p translate="HELP_15_Desc_1"> Addresses will only show up in a blockchain explorer once the account has activity on it&mdash;for example, once you have transferred some Moac to it. </p>
     </div>
   </article>
 
@@ -556,7 +556,7 @@
   <article class="collapse-container">
     <div ng-click="hSecCX = !hSecCX">
       <a class="collapse-button" ><span ng-show="!hSecCX">+</span><span ng-show="hSecCX">-</span></a>
-      <h4 translate="HELP_SecCX_Title">Security - MyEtherWallet CX </h4>
+      <h4 translate="HELP_SecCX_Title">Security - MoacWalletOnline CX </h4>
     </div>
     <div ng-show="hSecCX">
       <h6 translate="HELP_SecCX_Desc_1"> Where is this extension saving my information?</h6>

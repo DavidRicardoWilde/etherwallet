@@ -6,7 +6,7 @@ var getValue = function(arr, pair) {
         if (arr[i].pair == pair) return arr[i].rate;
 }
 var BITYRATEAPI = "https://bity.com/api/v1/rate2/";
-var CCRATEAPI = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,EUR,GBP,BTC,CHF,REP";
+var CCRATEAPI = "https://min-api.cryptocompare.com/data/price?fsym=MOAC&tsyms=USD,EUR,GBP,BTC,CHF,REP";
 ethPrice.getETHvalue = function(callback) {
     ajaxReq.http.get(CCRATEAPI).then(function(data) {
         data = data['data'];
