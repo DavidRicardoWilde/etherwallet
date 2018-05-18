@@ -80,7 +80,7 @@
     @@if (site === 'moac' ) {
       <a class="brand" href="/" aria-label="Go to homepage">
         <img src="images/moacwallet-logo.png"   height="64px" width="245px" alt="MoacWalletOnline" />
-        <p class="small visible-xs">3.21.11</p>
+        <p class="small visible-xs">0.1.0</p>
       </a>
     }
     <div class="tagline">
