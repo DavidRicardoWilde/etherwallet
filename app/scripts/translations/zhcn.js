@@ -110,9 +110,9 @@ ONBOARD_welcome_title           :  '欢迎使用 MoacWalletOnline.com',
 ONBOARD_welcome_content__1      :  '为了你能安全地使用, 请先认真阅读本指南. 🙏',
 ONBOARD_welcome_content__2      :  '如果你不重视本指引中的警示信息, 那你的资金可能存在被盗的风险.',
 ONBOARD_welcome_content__3      :  '很抱歉, 我们也知道这样的弹窗提示很讨厌.',
-ONBOARD_welcome_content__4      :  '什么是 MEW? ',
+ONBOARD_welcome_content__4      :  '什么是 MoacWalletOnline? ',
 ONBOARD_welcome_content__5      :  'MoacWalletOnline 是一款免费, 开源的钱包客户端.',
-ONBOARD_welcome_content__6      :  '你可以通过MEW来与区块链网络进行直接交互, 同时完全保留对私钥和资金的完全控制权.',
+ONBOARD_welcome_content__6      :  '你可以通过MoacWalletOnline来与墨客区块链网络进行直接交互, 同时完全保留对私钥和资金的完全控制权.',
 ONBOARD_welcome_content__7      :  '**你** 并且 **只有你** 才能能对你的账户安全负责.',
 ONBOARD_welcome_content__8      :  '如果你不幸访问钓鱼网站或者丢失了私钥, 我们没有任何途径可以恢复或者冻结你的账户.',
 ONBOARD_bank_title              :  'MoacWalletOnline 不是银行',
@@ -123,24 +123,24 @@ ONBOARD_bank_content__4         :  '银行允许你使用支票或者借记卡�
 ONBOARD_bank_content__5         :  '当你使用银行或交易所的账户来交易时, 交易的数额, 转出地址都有可能受到这些机构的限制, 并且还存在审核流程. 带来这些限制的同时还会收取你额外的手续费用.',
 ONBOARD_welcome_title__alt      :  'Introduction',
 ONBOARD_interface_title         :  'MoacWalletOnline 只是操作接口',
-ONBOARD_interface_content__1    :  '当你在MyEtherWallet创建账户的时候, 实际上只是生成了一对具备密码学意义的数字串: 你账户的私钥和公钥(地址).',
+ONBOARD_interface_content__1    :  '当你在MoacWalletOnline创建账户的时候, 实际上只是生成了一对具备密码学意义的数字串: 你账户的私钥和公钥(地址).',
 ONBOARD_interface_content__2    :  '生成这些密钥的整个过程都是发生在你本地电脑的浏览器内部.',
 ONBOARD_interface_content__3    :  '我们绝不会转发, 接收或者保存你的私钥, 密码以及任何账户信息.',
 ONBOARD_interface_content__4    :  '我们绝对不会收取任何手续费用.',
 ONBOARD_interface_content__5    :  '简单来说, 你只是使用本 **操作接口** 来 **直接与区块链网络进行交互**.',
 ONBOARD_interface_content__6    :  '如果你将 *公钥(地址)* 提供给别人, 那么对方就能给你发送ETH或者代币. 👍',
 ONBOARD_interface_content__7    :  '如果你将 *私钥* 提供给别人, 那么对方就完全掌控了你的账户和资金. 👎',
-ONBOARD_bank_title__alt         :  'MEW 不是银行',
+ONBOARD_bank_title__alt         :  'MoacWalletOnline 不是银行',
 ONBOARD_blockchain_title__alt   :  '什么是区块链?',
 ONBOARD_blockchain_skip         :  '我已经知道什么是区块链了...',
 ONBOARD_blockchain_title        :  '等等, 什么是区块链?',
-ONBOARD_blockchain_content__1   :  '区块链有点像是一个巨大的, 全球范围并且去中心化的记账簿.',
+ONBOARD_blockchain_content__1   :  '区块链有点像是一个数字加密的, 全球范围并且去中心化的记账簿.',
 ONBOARD_blockchain_content__2   :  '它用来记录一个人给另一个人发送了多少货币, 以及跟踪所有账户的余额.',
 ONBOARD_blockchain_content__3   :  '它是由全球成千上万拥有特殊计算机的人(我们也叫他们矿工)来进行记录和维护的.',
-ONBOARD_blockchain_content__4   :  '区块链中的区块是由许多笔交易记录组成的, 这些交易从与跟MEW类似的操作接口发送出来, 比如MetaMask, Exodus, Mist, Geth, Parity等.',
-ONBOARD_blockchain_content__5   :  '当你使用 MoacWalletOnline.com 查看余额, 或者使用 [etherscan.io](https://etherscan.io)查看交易详细信息时, 这些显示的信息都是直接来自区块链网络, 而不是来自MEW的独立系统.',
+ONBOARD_blockchain_content__4   :  '区块链中的区块是由许多笔交易记录组成的, 这些交易从与跟MoacWalletOnline类似的操作接口发送出来, 比如MetaMask, Exodus, Mist, Geth, Parity等.',
+ONBOARD_blockchain_content__5   :  '当你使用 MoacWalletOnline.com 查看余额, 或者使用 [explorer.moac.io](https://explorer.moac.io)查看交易详细信息时, 这些显示的信息都是直接来自区块链网络, 而不是来自MoacWalletOnline的系统.',
 ONBOARD_blockchain_content__6   :  '再次申明: **MoacWalletOnline不是银行**.',
-ONBOARD_interface_title__alt    :  'MEW 只是操作接口',
+ONBOARD_interface_title__alt    :  'MoacWalletOnline只是操作接口',
 ONBOARD_why_title__alt          :  '但是为啥呢?',
 ONBOARD_why_title               :  '为什么我需要了解刚才这些信息?',
 ONBOARD_why_content__1          :  '因为我们必须要让您知道我们 **绝对不会**...',
@@ -215,12 +215,12 @@ x_TXFee                     : '交易费用',
 x_TxHash                    : '交易哈希值（HASH）',
 
 /* Check TX Status */
-NAV_CheckTxStatus           : 'Check TX Status',
-NAV_TxStatus                : 'TX Status',
-tx_Details                  : 'Transaction Details',
-tx_Summary                  : 'During times of high volume (like during ICOs) transactions can be pending for hours, if not days. This tool aims to give you the ability to find and "cancel" / replace these TXs. ** This is not typically something you can do. It should not be relied upon & will only work when the TX Pools are full. [Please, read about this tool here.](https://myetherwallet.github.io/knowledge-base/transactions/check-status-of-ethereum-transaction.html)**',
-tx_notFound                 : 'Transaction Not Found',
-tx_notFound_1               : 'This TX cannot be found in the TX Pool of the node you are connected to.',
+NAV_CheckTxStatus           : '查看交易情况',
+NAV_TxStatus                : '交易情况',
+tx_Details                  : '交易详细信息',
+tx_Summary                  : '当区块链的写入信息很多时，交易可能会等待数小时甚至更长。 此工具旨在让您能够查找和替换这些交易。**请注意，提交的交易通常不可以替换，只有当系统拥堵或者交易费用过低时可以尝试这个操作。[请在这里找到更详细信息](https://myetherwallet.github.io/knowledge-base/transactions/check-status-of-ethereum-transaction.html)**',
+tx_notFound                 : '没找到交易记录',
+tx_notFound_1               : '这个交易在当前连接的区块链节点上没有记录',
 tx_notFound_2               : 'If you just sent the transaction, please wait 15 seconds and press the "Check TX Status" button again. ',
 tx_notFound_3               : 'It could still be in the TX Pool of a different node, waiting to be mined.',
 tx_notFound_4               : 'Please use the dropdown in the top-right & select a different MOAC node and check again.',
@@ -228,8 +228,8 @@ tx_foundInPending           : 'Pending Transaction Found',
 tx_foundInPending_1         : 'Your transaction was located in the TX Pool of the node you are connected to. ',
 tx_foundInPending_2         : 'It is currently pending (waiting to be mined). ',
 tx_foundInPending_3         : 'There is a chance you can "cancel" or replace this transaction. Unlock your wallet below.',
-tx_FoundOnChain             : 'Transaction Found',
-tx_FoundOnChain_1           : 'Your transaction was successfully mined and is on the blockchain.',
+tx_FoundOnChain             : '交易记录查到了',
+tx_FoundOnChain_1           : '你的交易成功被写入区块链了',
 tx_FoundOnChain_2           : '**If you see a red `( ! )`, a `BAD INSTRUCTION` or `OUT OF GAS` error message**, it means that the transaction was not successfully *sent*. You cannot cancel or replace this transaction. Instead, send a new transaction. If you received an "Out of Gas" error, you should double the gas limit you specified originally.',
 tx_FoundOnChain_3           : '**If you do not see any errors, your transaction was successfully sent.** Your ETH or Tokens are where you sent them. If you cannot see this ETH or Tokens credited in your other wallet / exchange account, and it has been 24+ hours since you sent, please [contact that service](https://myetherwallet.github.io/knowledge-base/diving-deeper/ethereum-list-of-support-and-communities.html). Send them the *link* to your transaction and ask them, nicely, to look into your situation.',
 
@@ -271,24 +271,25 @@ NAV_BulkGenerate            : '批量生成 ',
 NAV_Contact                 : '联系我们 ',
 NAV_Contracts               : '合同 ',
 NAV_DeployContract          : '部署合约 ',
+NAV_DomainSale              : 'DomainSale',
 NAV_ENS                     : 'ENS',
-NAV_GenerateWallet_alt      : 'New Wallet ',
-NAV_GenerateWallet          : '生成钱包 ',
+NAV_GenerateWallet_alt      : '创建新钱包 ',
+NAV_GenerateWallet          : '新钱包 ',
 NAV_Help                    : '帮助 ',
-NAV_InteractContract        : 'Interact with Contract ',
-NAV_Multisig                : 'Multisig ',
+NAV_InteractContract        : '使用智能合约 ',
+NAV_Multisig                : '多重签名 ',
 NAV_MyWallets               : '我的钱包 ',
 NAV_Offline                 : '离线发送 ',
-NAV_SendEther               : '发送墨客币 / 发送代币 ', //combined these tabs
-NAV_SendTokens              : 'Send Tokens ',
-NAV_SignMsg                 : 'Sign Message ',
+NAV_SendEther               : '发送墨客和代币 ', //combined these tabs
+NAV_SendTokens              : '发送代币 ',
+NAV_SignMsg                 : '签名 ',
 NAV_Swap                    : 'Swap ',
 NAV_ViewWallet              : '查看钱包信息 ',
 NAV_YourWallets             : '你的钱包 ',
 
 /* General */
 x_Access                    : 'Access ',
-x_AddessDesc                : 'Your Address can also be known as you `Account #` or your `Public Key`. It is what you share with people so they can send you Moac or Tokens. Find the colorful address icon. Make sure it matches your paper wallet & whenever you enter your address somewhere. 你可以把地址理解为你的“账户”或者“公钥”。你将地址告诉别人，他们就可以向你发送墨客。那个图标有助于判别你的地址。 ',
+x_AddessDesc                : 'Your Address can also be known as you `Account #` or your `Public Key`. It is what you share with people so they can send you Moac or Tokens. Find the colorful address icon. Make sure it matches your paper wallet & whenever you enter your address somewhere. 你可以把地址理解为你的“账户”或者“公钥”。你将地址告诉别人，他们就可以向你发送墨客。那个图标有助于判别你的地址，确保这个图标在你每次使用地址时都一样。 ',
 x_Address                   : '你的地址 ',
 x_Cancel                    : '拒绝 ',
 x_CSV                       : 'CSV文件（未加密） ',
@@ -299,7 +300,7 @@ x_Keystore                  : 'Keystore File (UTC / JSON · 推荐加密的) ',
 x_Keystore2                 : 'Keystore File (UTC / JSON) ',
 x_KeystoreDesc              : '这个Keystore/JSON文件和Mist、Geth使用的钱包文件是一样的，所以将来你可以非常容易地导入。 It is the recommended file to download and back up.推荐下载和备份这个文件。 ',
 x_MetaMask                  : 'MetaMask / Mist ',
-x_Mnemonic                  : 'Mnemonic Phrase ',
+x_Mnemonic                  : '助记词（Mnemonic Phrase） ',
 x_ParityPhrase              : 'Parity Phrase ',
 x_Password                  : '密码 ',
 x_Print                     : '打印纸钱包 ',
@@ -332,7 +333,7 @@ sidebar_AccountBal          : '账户余额： ',
 sidebar_TokenBal            : '代币余额： ',
 sidebar_Equiv               : '价值： ',
 sidebar_TransHistory        : '交易历史： ',
-sidebar_donation            : 'MyEtherWallet是保护你的隐私和安全的免费、开源服务。 我们收到的捐赠越多，我们开发新特性、听取你的反馈的时间就越多。我们只是两个尝试改变世界的两个开发者。您能帮助我们吗？ ',
+sidebar_donation            : 'MoacWalletOnline是保护你的隐私和安全的免费、开源服务。 我们收到的捐赠越多，我们开发新特性、听取你的反馈的时间就越多。我们只是尝试改变世界的两个开发者。您能帮助我们吗？ ',
 sidebar_donate              : '捐赠 ',
 sidebar_thanks              : '感谢你！！！ ',
 sidebar_DisplayOnTrezor     : 'Display address on TREZOR',
@@ -430,25 +431,25 @@ TRANSModal_Yes              : '明白了。 ',
 TRANSModal_No               : '还没搞清。 ',
 
 /* Offline Transaction */
-OFFLINE_Title               : '生成、发送离线交易 ',
+OFFLINE_Title               : '生成并发送离线交易 ',
 OFFLINE_Desc                : '生成离线交易需要3个步骤。步骤1和步骤3在连网的电脑上完成，步骤2在离线电脑上完成。这确保了你的私钥不会接触到联网设备。 ',
 OFFLLINE_Step1_Title        : '步骤1：生成信息（联网电脑） ',
 OFFLINE_Step1_Button        : '生成信息 ',
-OFFLINE_Step1_Label_1       : '发自地址： ',
+OFFLINE_Step1_Label_1       : '源地址（发起交易地址）： ',
 OFFLINE_Step1_Label_2       : '注意：这是发自地址，不是发往地址。 Nonce是从起始账户生成的。如果使用一台隔离电脑，它就是冷存储的账户地址。 ',
 OFFLINE_Step2_Title         : '步骤2：生成交易（离线电脑） ',
-OFFLINE_Step2_Label_1       : '发往地址： ',
+OFFLINE_Step2_Label_1       : '发往地址（接收交易）： ',
 OFFLINE_Step2_Label_2       : '发送数额 ',
 OFFLINE_Step2_Label_3       : 'Gas价格 ',
 OFFLINE_Step2_Label_3b      : '在你的连网电脑的第1步骤中显示了。 ',
 OFFLINE_Step2_Label_4       : 'Gas限制 ',
 OFFLINE_Step2_Label_4b      : '1000是默认的gas限制。当你发送合约或者添加数据时，gas限制可能会不同。没使用的gas将返回给你。 ',
-OFFLINE_Step2_Label_5       : 'Nonce ',
+OFFLINE_Step2_Label_5       : '交易标识号（Nonce）',
 OFFLINE_Step2_Label_5b      : '在你的连网电脑的第1步中显示了。 ',
 OFFLINE_Step2_Label_6       : '数据 ',
 OFFLINE_Step2_Label_6b      : '这是可选项。当你向合约发送交易时，往往需要用到数据。 ',
 OFFLINE_Step2_Label_7       : '输入/选择你的私钥文件/JSON ',
-OFFLINE_Step3_Title         : '步骤3：发送/公开交易（连网电脑） ',
+OFFLINE_Step3_Title         : '步骤3：发送交易到区块链网络（联网电脑） ',
 OFFLINE_Step3_Label_1       : '将步骤2的签名交易粘贴到这里，点击“发送交易”按钮。 ',
 
 /* Deploy Contracts */
@@ -475,7 +476,7 @@ MYWAL_Content_2             : '确保在移除以前你已经保存了私钥和K
 MYWAL_Content_3             : '如果你想将来在MoacWallet插件中使用该钱包，你需要手动添加私钥/JSON文件和密码。 ',
 
 /* View Wallet Details */
-VIEWWALLET_Subtitle         : '这允许你下载不同格式的私钥和重新打印你的纸钱包。为了将[你的账户导入到MOAC/Mist](http://ethereum.stackexchange.com/questions/465/how-to-import-a-plain-private-key-into-geth/)，你可能需要这个操作。如果你想查看你的余额，我们推荐使用区块浏览器，例如[etherscan.io](https://etherscan.io/)。 ',
+VIEWWALLET_Subtitle         : '这允许你下载不同格式的私钥和重新打印你的纸钱包。为了将[你的账户导入到MOAC/Mist](http://ethereum.stackexchange.com/questions/465/how-to-import-a-plain-private-key-into-geth/)，你可能需要这个操作。如果你想查看你的余额和交易记录，可以使用区块浏览器，例如[explorer.moac.io](https://explorer.moac.io/)。 ',
 VIEWWALLET_Subtitle_Short   : '这允许你下载不同格式的私钥和重新打印你的纸钱包。 ',
 VIEWWALLET_SuccessMsg       : '成功！这是你的钱包细节！ ',
 VIEWWALLET_ShowPrivKey      : '(show)',
@@ -575,10 +576,10 @@ ERROR_4                     : 'This unit doesn\'t exists, please use the one of 
 ERROR_5                     : '无效地址。 ',
 ERROR_6                     : '无效密码。 ',
 ERROR_7                     : '无效数额。(Must be integer. Try 0-18.) ', // 7
-ERROR_8                     : '无效gas上限。(Must be integer. Try 21000-4000000.) ', // 8
-ERROR_9                     : '无效数据值。(Must be hex.) ', // 9
-ERROR_10                    : '无效gas数额。(Must be integer. Try 20 GWEI / 20000000000 WEI.)',
-ERROR_11                    : '无效nonce。(Must be integer.)', // 11
+ERROR_8                     : '无效gas上限，需要输入整数。(Must be integer. Try 1000-4000000.) ', // 8
+ERROR_9                     : '无效数据值，需要输入16进制整数。(Must be hex.) ', // 9
+ERROR_10                    : '无效gas数额，需要输入整数。(Must be integer. Try 20 GSHA / 20000000000 SHA.)',
+ERROR_11                    : '无效nonce，需要非负整数。(Must be integer.)', // 11
 ERROR_12                    : '无效签名交易。 ',
 ERROR_13                    : '已经有一个钱包使用该昵称。 ',
 ERROR_14                    : '找不到钱包。 ',
@@ -587,7 +588,7 @@ ERROR_16                    : '这个地址钱包已经存在于存储中。请�
 ERROR_17                    : '你的账户需要至少0.01墨客，已支付gas费用。请添加一些墨客，再次尝试。 ',
 ERROR_18                    : '所有的gas将用于这笔交易。 这意味着你已经对这个提议进行投票或者辩论期已经结束。 ',
 ERROR_19                    : '无效符号 ',
-ERROR_20                    : 'Not a valid ERC-20 token', // 20
+ERROR_20                    : '无效ERC-20代币', // 20
 ERROR_21                    : 'Could not estimate gas. There are not enough funds in the account, or the receiving contract address would throw an error. Feel free to manually set the gas and proceed. The error message upon sending may be more informative.', // 21
 ERROR_22                    : 'Please enter a valid node name', // 22
 ERROR_23                    : 'Please enter a valid URL. If you are on https, your URL must be https', // 23
@@ -596,15 +597,18 @@ ERROR_25                    : 'Please enter a valid chain ID. ', // 25
 ERROR_26                    : 'Please enter a valid ABI. ', // 26
 ERROR_27                    : 'Minimum amount: 0.01. Max amount: ', // 27
 ERROR_28                    : '将来使用钱包时，你需要Keystore文件或者私钥。 请做好保存和备份。 如果你没有保存，没有办法恢复钱包。 请阅读[帮助页面](https://www.MoacWalletOnline.com/#help)，获得更多信息。 ',
-ERROR_29                    : 'Please enter a valid user and password. ', // 29
+ERROR_29                    : '请输入正确的用户和密码', // 29
 ERROR_30                    : 'Please enter a valid name (7+ characters, limited punctuation) ', // 30
 ERROR_31                    : 'Please enter a valid secret phrase. ', // 31
 ERROR_32                    : 'Could not connect to the node. Refresh your page, try a different node (upper right corner), check your firewall settings. If custom node, check your configs.', // 32
 ERROR_33                    : 'The wallet you have unlocked does not match the owner\'s address. ', // 33
 ERROR_34                    : 'The name you are attempting to reveal does not match the name you have entered. ', // 34
-ERROR_35                    : 'Input address is not checksummed. <a href="https://myetherwallet.github.io/knowledge-base/addresses/not-checksummed-shows-when-i-enter-an-address.html" target="_blank" rel="noopener noreferrer"> More info</a>', // 35
-ERROR_36                    : 'Enter valid TX hash', // 36
-ERROR_37                    : 'Enter valid hex string (0-9, a-f)', // 37
+ERROR_35                    : '输入地址没有校验 <a href="https://support.mycrypto.com/send/not-checksummed-shows-when-i-enter-an-address.html" target="_blank" rel="noopener noreferrer"> More info</a>', // 35
+ERROR_36                    : '输入有效交易哈希值（HASH）', // 36
+ERROR_37                    : '输入有效的16进制字符串 (0-9, a-f)', // 37
+ERROR_38                    :  '(error_39) Offer must have either price or reserve set to more than 0',
+ERROR_39                    :  '(error_40) 出价需要高于设定的最小值',
+ERROR_40                    :  '(error_41) 私钥无效',
 
 SUCCESS_1                   : '有效地址 ',
 SUCCESS_2                   : '钱包解密成功 ',
@@ -637,8 +641,8 @@ PARITY_GasLimitExceeded     : "Transaction cost exceeds current gas limit. Limit
 PARITY_InvalidGasLimit      : "Supplied gas is beyond limit.",
 
 /* Tranlsation Info */
-translate_version           : '0.3 ',
-Translator_Desc             : '感谢中文译者： ',
+translate_version           : '0.1.0 ',
+Translator_Desc             : '中文译者： ',
 TranslatorName_1            : '[ Shaoping@ethfans.org （少平）]((https://www.MoacWalletOnline.com/?gaslimit=21000&to=0x4dF5698B1B0195FC44Fe1D2d6037CE33F215c740&value=1.0#send-transaction)) ',
 TranslatorAddr_1            : '0x4dF5698B1B0195FC44Fe1D2d6037CE33F215c740 ',
 /* Translator 1             : Insert Comments Here */
@@ -835,7 +839,7 @@ HELP_15_Title               : '15) Why hasn\'t the account I just created show u
 HELP_15_Desc_1              : 'Accounts will only show up in a blockchain explorer once the account has activity on it&mdash;for example, once you have transferred some Moac to it. ',
 
 HELP_16_Title               : '16) How do I check the balance of my account? ',
-HELP_16_Desc_1              : 'You can use a blockchain explorer like [etherscan.io](https://etherscan.io/). Paste your address into the search bar and it will pull up your address and transaction history. For example, here\'s what our [donation account](https://etherscan.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D) looks like on etherscan.io ',
+HELP_16_Desc_1              : 'You can use a blockchain explorer like [explorer.moac.io](https://explorer.moac.io/). Paste your address into the search bar and it will pull up your address and transaction history. For example, here\'s what our [donation account](https://etherscan.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D) looks like on etherscan.io ',
 
 HELP_17_Title               : '17) Why isn\'t my balance showing up when I unlock my wallet? ',
 HELP_17_Desc_1              : 'This is most likely due to the fact that you are behind a firewall. The API that we use to get the balance and convert said balance is often blocked by firewalls for whatever reason. You will still be able to send transactions, you just need to use a different method to see said balance, like etherscan.io ',
@@ -868,12 +872,14 @@ HELP_SecCX_Desc_6           : 'If we were to encrypt these items, you would need
 
 HELP_Sec_Title              : 'Security安全 ',
 HELP_Sec_Desc_1             : 'If one of your first questions is "Why should I trust these people?", that is a good thing. Hopefully the following will help ease your fears. ',
-HELP_Sec_Desc_2             : 'We\'ve been up and running since August 2015. If you search for ["myetherwallet" on reddit](https://www.reddit.com/search?q=myetherwallet), you can see numerous people who use us with great success. ',
+HELP_Sec_Desc_2             : 'We\'ve worked hard to develop MOAC since Jan 2017. If you search for ["MOAC" on reddit](https://www.reddit.com/search?q=MOAC), you can see numerous information about us. ',
 HELP_Sec_Desc_3             : 'We aren\'t going to take your money or steal your private key(s). There is no malicious code on this site. In fact the "GENERATE WALLET" pages are completely client-side. That means that all the code is executed on ** your computer** and it is never saved and transmitted anywhere. ',
 HELP_Sec_Desc_4             : 'Check the URL -- This site is being served through GitHub and you can see the source code here: [https://github.com/kvhnuke/etherwallet/tree/gh-pages](https://github.com/kvhnuke/etherwallet/tree/gh-pages) to [https://www.MoacWalletOnline.com](https://www.MoacWalletOnline.com). ',
 HELP_Sec_Desc_5             : 'For generating wallets, you can download the [source code and run it locally](https://github.com/kvhnuke/etherwallet/releases/latest). See #5 above. ',
 HELP_Sec_Desc_6             : 'Generate a test wallet and check and see what network activity is happening. The easiest way for you to do this is to right click on the page and click "inspect element". Go to the "Network" tab. Generate a test wallet. You will see there is no network activity. You may see something happening that looks like data:image/gif and data:image/png. Those are the QR codes being generated...on your computer...by your computer. No bytes were transferred. ',
 HELP_Sec_Desc_8             : 'If you do not feel comfortable using this tool, then by all means, do not use it. We created this tool as a helpful way for people to generate wallets and make transactions without needing to dive into command line or run a full node. Again, feel free to reach out if you have concerns and we will respond as quickly as possible. Thanks! ',
+PHISHING_Warning_1          :  '这个地址是标注过的危险地址: ',
+PHISHING_Warning_2          :  '我们的钓鱼地址列表中有这个地址，请确定你发送的地址是正确地址',
 
 HELP_FAQ_Title              : 'More Helpful Answers to Frequent Questions 常见问题的更多有用回答 ',
 HELP_Contact_Title          : 'Ways to Get in Touch 联系方式'
