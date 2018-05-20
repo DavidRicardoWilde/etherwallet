@@ -132,7 +132,7 @@ if (IS_CX) {
 }
 var app = angular.module('mewApp', ['pascalprecht.translate', 'ngSanitize','ngAnimate']);
 app.config(['$compileProvider', function($compileProvider) {
-  $compileProvider.aHrefSanitizationWhitelist(/^\s*(|blob|https|mailto):/);
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(|blob|https|http|mailto):/);
 }]);
 app.config(['$translateProvider', function($translateProvider) {
   $translateProvider.useMissingTranslationHandlerLog();
