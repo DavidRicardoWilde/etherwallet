@@ -110,7 +110,7 @@
         <div class="input-group-btn">
           <span class="dropdown dropdown-gprice" ng-cloak>
             <a tabindex="0" style="min-width: 170px"  aria-haspopup="true" aria-expanded="false" aria-label="gas price" class="dropdown-toggle btn btn-default" ng-click="gpDropdown = !gpDropdown">
-              {{ gasPriceDef }}
+              GSHA
               <i class="caret"></i>
             </a>
             <ul class="dropdown-menu" ng-show="gpDropdown">
