@@ -4,19 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>MoacWalletOnline.com</title>
-<meta property="og:title" content="MoacWalletOnline.com: Your Key to Ethereum">
-<meta property="og:site_name" content="MoacWalletOnline.com: Your Key to Ethereum">
-<meta name="twitter:title" content="MoacWalletOnline.com: Your Key to Ethereum">
-<meta name="apple-mobile-web-app-title" content="MoacWalletOnline.com: Your Key to Ethereum">
+<meta property="og:title" content="MoacWalletOnline.com: Your Key to Moac">
+<meta property="og:site_name" content="MoacWalletOnline.com: Your Key to Moac">
+<meta name="twitter:title" content="MoacWalletOnline.com: Your Key to Moac">
+<meta name="apple-mobile-web-app-title" content="MoacWalletOnline.com: Your Key to Moac">
 <link href="https://www.MoacWalletOnline.com" rel="canonical">
-<meta content="https://www.MoacWalletOnline.com" property="og:url">
-<meta content="https://www.MoacWalletOnline.com" name="twitter:url">
 <link rel="stylesheet" href="css/etherwallet-master.min.css">
 <script type="text/javascript" src="js/etherwallet-static.min.js"></script>
 <script type="text/javascript" src="js/etherwallet-master.js"></script>
-<meta name="description" content="MyEtherWallet (MEW) is a free, open-source, client-side interface for generating Ethereum wallets & more. Interact with the Ethereum blockchain easily & securely.">
-<meta property="og:description"  content="Free, open-source, client-side Ethereum wallet. Enabling you to interact with the blockchain easily & securely.">
-<meta name="twitter:description" content="Free, open-source, client-side Ethereum wallet. Enabling you to interact with the blockchain easily & securely.">
 <meta name="robots" content="index,follow">
 <meta name="googlebot" content="index,follow">
 <meta name="google-site-verification" content="IpChQ00NYUQuNs_7Xs6xlnSdzalOlTUYbBsr8f7OpvM" />
