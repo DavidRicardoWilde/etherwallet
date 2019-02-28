@@ -34,7 +34,7 @@ nodes.nodeList = {
         'tokenList': require('./tokens/moacTokens.json'),
         'abiList': require('./abiDefinitions/moacAbi.json'),
         'service': 'MOAC MAIN',
-        'lib': new nodes.customNode('https://www.moacwalletonline.com/main', '')
+        'lib': new nodes.customNode('https://gateway.moac.io/mainnet', '')
     },
     'moac_test': {
         'name': 'MOAC TestNet',
@@ -46,7 +46,7 @@ nodes.nodeList = {
         'tokenList': require('./tokens/moacTestTokens.json'),
         'abiList': require('./abiDefinitions/moacTestAbi.json'),
         'service': 'MOAC TEST',
-        'lib': new nodes.customNode('https://www.moacwalletonline.com/test', '')
+        'lib': new nodes.customNode('https://gateway.moac.io/testnet', '')
     }
 };
 
