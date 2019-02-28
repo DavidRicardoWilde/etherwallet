@@ -17,3 +17,5 @@ _ens/
 cert.pem
 key.pem
 .idea/
+
+build.sh
