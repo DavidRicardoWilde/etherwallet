@@ -93,4 +93,120 @@ ethFuncs.estimateGas = function(dataObj, callback) {
         }
     });
 }
+//Sign the rawTX with input private key
+ethFuncs.signTransaction = function (tx, privateKey) {
+
+    //Check the input fiels of the tx
+          if (tx.chainId < 1) {
+              return new Error('"Chain ID" is invalid');
+          }
+  
+          if (!tx.gas && !tx.gasLimit) {
+             return new Error('"gas" is missing');
+          }
+  
+          if (tx.nonce  < 0 ||
+              tx.gasLimit  < 0 ||
+              tx.gasPrice  < 0 ||
+              tx.chainId  < 0) {
+              return new Error('Gas, gasPrice, nonce or chainId is lower than 0');
+          }
+  
+  
+          //Sharding Flag only accept the 
+          //If input has not sharding flag, set it to 0 as global TX.
+          if (tx.shardingFlag == undefined){
+              // console.log("Set default sharding to 0");
+              tx.shardingFlag = 0;
+          }
+  
+          // if (tx.shardingFlag != 0 && tx.shardingFlag != 1){
+          //     return new Error('"Sharding Flag" is invalid');
+          // }
+  
+          try {
+              //Make sure all the number fields are in HEX format
+  
+              var transaction = tx;
+              transaction.to = tx.to || '0x';//Can be zero, for contract creation
+              transaction.data = tx.data || '0x';//can be zero for general TXs
+              transaction.value = tx.value || '0x';//can be zero for contract call
+              transaction.chainId = tx.chainId;//ethUtil.numberToHex(tx.chainId);
+              transaction.shardingFlag = tx.shardingFlag;//ethUtil.numberToHex(tx.shardingFlag);
+              transaction.systemContract = '0x';//System contract flag, always = 0
+              transaction.via = tx.via || '0x'; //Sharding subchain address
+  
+              //Encode the TX for signature
+              //   type txdata struct {
+              // AccountNonce uint64          `json:"nonce"    gencodec:"required"`
+              // SystemContract uint64          `json:"syscnt" gencodec:"required"`
+              // Price        *big.Int        `json:"gasPrice" gencodec:"required"`
+              // GasLimit     *big.Int        `json:"gas"      gencodec:"required"`
+              // Recipient    *common.Address `json:"to"       rlp:"nil"` // nil means contract creation
+              // Amount       *big.Int        `json:"value"    gencodec:"required"`
+              // Payload      []byte          `json:"input"    gencodec:"required"`
+              // ShardingFlag uint64 `json:"shardingFlag" gencodec:"required"`
+              // Via            *common.Address `json:"to"       rlp:"nil"`
+  
+              // // Signature values
+              // V *big.Int `json:"v" gencodec:"required"`
+              // R *big.Int `json:"r" gencodec:"required"`
+              // S *big.Int `json:"s" gencodec:"required"`
+  
+              var rlpEncoded = ethUtil.rlp.encode([
+                  Bytes.fromNat(transaction.nonce),
+                  Bytes.fromNat(transaction.systemContract),
+                  Bytes.fromNat(transaction.gasPrice),
+                  Bytes.fromNat(transaction.gasLimit),
+                  transaction.to.toLowerCase(),
+                  Bytes.fromNat(transaction.value),
+                  transaction.data,
+                  Bytes.fromNat(transaction.shardingFlag),
+                  transaction.via.toLowerCase(),
+                  Bytes.fromNat(transaction.chainId || "0x1"),
+                  "0x",
+                  "0x"]);
+  
+            //   var hash = Hash.keccak256(rlpEncoded);
+  
+              var hash2 = ethUtil.rlphash([
+                Bytes.fromNat(transaction.nonce),
+                Bytes.fromNat(transaction.systemContract),
+                Bytes.fromNat(transaction.gasPrice),
+                Bytes.fromNat(transaction.gasLimit),
+                transaction.to.toLowerCase(),
+                Bytes.fromNat(transaction.value),
+                transaction.data,
+                Bytes.fromNat(transaction.shardingFlag),
+                transaction.via.toLowerCase(),
+                Bytes.fromNat(transaction.chainId || "0x1"),
+                "0x",
+                "0x"]);
+
+              // for MOAC, keep 9 fields instead of 6
+              var vPos = 9;
+              //Sign the hash with the private key to produce the
+              //V, R, S
+              var newsign = ethUtil.ecsign(hash, privateKey);
+              var rawTx = ethUtil.rlp.decode(rlpEncoded).slice(0,vPos+3);
+  
+              //Replace the V field with chainID info
+              var newV = newsign.v + 8 + transaction.chainId *2;
+  
+              // rawTx[vPos] = makeEven(bufferToHex(newsign.v));
+              rawTx[vPos] = makeEven(bufferToHex(newV));
+              rawTx[vPos+1] = makeEven(bufferToHex(newsign.r));
+              rawTx[vPos+2] = makeEven(bufferToHex(newsign.s));
+  
+              var rawTransaction = rlpEncoded;//RLP.encode(rawTx);
+  
+  
+          } catch(e) {
+  
+              return e;
+          }
+  
+          return rawTransaction;
+    };
+
 module.exports = ethFuncs;
