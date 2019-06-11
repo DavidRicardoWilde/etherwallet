@@ -978,10 +978,10 @@
       </h5>
       <ul class="account-info">
         <li>
-          <a href="https://etherscan.io/address/{{wallet.getAddressString()}}"
+          <a href="http://explorer.moac.io/address/{{wallet.getAddressString()}}"
              target="_blank"
              rel="noopener noreferrer">
-               https://etherscan.io/address/ {{wallet.getAddressString()}}
+               http://explorer.moac.io/address/ {{wallet.getAddressString()}}
           </a>
         </li>
       </ul>
@@ -4454,7 +4454,7 @@
     <tr>
       <td>Name:</td>
       <td class="mono">
-        <a href="https://etherscan.io/enslookup?q={{objENS.name}}.eth"
+        <a href="http://explorer.moac.io/enslookup?q={{objENS.name}}.eth"
            target="_blank"
            rel="noopener noreferrer">
               {{objENS.name}}.eth
@@ -4677,7 +4677,7 @@
       <!-- After Sent: Place Bid / Start Auction -->
       <div class="form-group well" ng-show="objENS.txSent && (objENS.status==ensModes.auction || objENS.status==ensModes.open)">
         <h4 class="text-danger">If you haven't done so already, please screenshot & save the below information.</h4>
-        <p>Please check your address on <a href="https://etherscan.io/">https://etherscan.io/</a> to ensure your BID TX is on the blockchain, without errors.</p>
+        <p>Please check your address on <a href="http://explorer.moac.io/">http://explorer.moac.io/</a> to ensure your BID TX is on the blockchain, without errors.</p>
         
          <table class="table table-striped table-ens-modal">
   <tbody>
@@ -4873,7 +4873,7 @@
     <tr>
       <td>Name:</td>
       <td class="mono">
-        <a href="https://etherscan.io/enslookup?q={{objENS.name}}.eth"
+        <a href="http://explorer.moac.io/enslookup?q={{objENS.name}}.eth"
            target="_blank"
            rel="noopener noreferrer">
               {{objENS.name}}.eth
@@ -4977,7 +4977,7 @@
         Generate and send this transaction &ndash; leave "Amount to Send" as <strong>0</strong>
       </li>
       <li>
-        <a href="https://etherscan.io/tx/0x60eec50b492375bce25684f806599873b7f682e1ba504c8bed7cc90c33368118"
+        <a href="http://explorer.moac.io/tx/0x60eec50b492375bce25684f806599873b7f682e1ba504c8bed7cc90c33368118"
            target="_blank"
            rel="noopener noreferrer">
               TX should look like this.
@@ -5029,7 +5029,7 @@
         Generate and send this transaction &ndash; leave "Amount to Send" as <strong>0</strong>
       </li>
       <li>
-        <a href="https://etherscan.io/tx/0xe4b8cbbb9c30a9066e4d430e347e07442ccc99b927ed73280792aee718ecbd30"
+        <a href="http://explorer.moac.io/tx/0xe4b8cbbb9c30a9066e4d430e347e07442ccc99b927ed73280792aee718ecbd30"
            target="_blank"
            rel="noopener noreferrer">
               TX should look like this.
@@ -6739,7 +6739,7 @@
 
     <div class="cont-md" ng-show="txInfo.status == txStatus.mined">
       <h3 class="text-success" translate="tx_FoundOnChain"> Transaction Found </h3>
-      <h5> <a href="https://etherscan.io/tx/{{ tx.hash }}" target="_blank" rel="noopener noreferrer"> {{ tx.hash }} </a> </h5>
+      <h5> <a href="http://explorer.moac.io/tx/{{ tx.hash }}" target="_blank" rel="noopener noreferrer"> {{ tx.hash }} </a> </h5>
       <p><strong translate="tx_FoundOnChain_1"></strong></p>
       <ul>
         <li translate="tx_FoundOnChain_2"></li>
@@ -6784,7 +6784,7 @@
               TX Hash
             </td>
             <td>
-              <a href="https://etherscan.io/tx/{{ txInfo.hash }}" target="_blank" rel="noopener noreferrer">
+              <a href="http://explorer.moac.io/tx/{{ txInfo.hash }}" target="_blank" rel="noopener noreferrer">
                 {{ txInfo.hash }}
               </a>
             </td>
@@ -6794,7 +6794,7 @@
               From Address
             </td>
             <td>
-              <a href="https://etherscan.io/address/{{ txInfo.from }}" target="_blank" rel="noopener noreferrer">
+              <a href="http://explorer.moac.io/address/{{ txInfo.from }}" target="_blank" rel="noopener noreferrer">
                 {{ txInfo.from }}
               </a>
             </td>
@@ -6804,7 +6804,7 @@
               To Address
             </td>
             <td>
-              <a href="https://etherscan.io/address/{{ txInfo.to }}" target="_blank" rel="noopener noreferrer">
+              <a href="http://explorer.moac.io/address/{{ txInfo.to }}" target="_blank" rel="noopener noreferrer">
                 {{ txInfo.to }}
               </a>
             </td>
@@ -7576,7 +7576,7 @@
           ETH:
           <span class="mono wrap">
             mewtopia.eth
-            <a title="See this address on the blockchain explorer" href="https://etherscan.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D" class="ext-etheraddresslookup-link" target="_blank">
+            <a title="See this address on the blockchain explorer" href="http://explorer.moac.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D" class="ext-etheraddresslookup-link" target="_blank">
               0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D
             </a>
           </span>
@@ -7920,7 +7920,7 @@
                   It is made up of all the individual transactions sent from MyEtherWallet, MetaMask, Exodus, Mist, Geth, Parity, and everywhere else.
                 </li>
                 <li translate="ONBOARD_blockchain_content__5">
-                  When you see your balance on MoacWalletOnline.com or view your transactions on [etherscan.io](https://etherscan.io), you are seeing data on the blockchain, not in our personal systems.
+                  When you see your balance on MoacWalletOnline.com or view your transactions on [explorer.moac.io](http://explorer.moac.io), you are seeing data on the blockchain, not in our personal systems.
                 </li>
                 <li translate="ONBOARD_blockchain_content__6">
                    Again: <strong>we are not a bank</strong>.

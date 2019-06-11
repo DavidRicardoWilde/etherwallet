@@ -138,7 +138,7 @@ ONBOARD_blockchain_content__1   :  'El blockchain es como una gran hoja de cálc
 ONBOARD_blockchain_content__2   :  'Realiza un seguimiento de quién envió cuántas monedas a quién, y cuál es el saldo de cada cuenta.',
 ONBOARD_blockchain_content__3   :  'Es almacenado y mantenido por miles de personas (mineros) en todo el mundo que tienen computadoras especiales.',
 ONBOARD_blockchain_content__4   :  'Los bloques en el blockchain se componen de todas las transacciones individuales enviadas desde MyEtherWallet, MetaMask, Exodus, Mist, Geth, Parity y en cualquier otro lugar.',
-ONBOARD_blockchain_content__5   :  'Cuando vea su saldo en MoacWalletOnline.com o vea sus transacciones en [etherscan.io] (https://etherscan.io), verá datos en la cadena de bloques, no en nuestros sistemas personales.',
+ONBOARD_blockchain_content__5   :  'Cuando vea su saldo en MoacWalletOnline.com o vea sus transacciones en [explorer.moac.io] (http://explorer.moac.io), verá datos en la cadena de bloques, no en nuestros sistemas personales.',
 ONBOARD_blockchain_content__6   :  'De nuevo: **no somos un banco**.',
 ONBOARD_interface_title__alt    :  'MEW es una Interfaz',
 ONBOARD_why_title__alt          :  'Pero ... ¿por qué importa esto?',
@@ -472,7 +472,7 @@ MYWAL_Content_2             : 'Asegúrate de haber **guardado tu clave privada y
 MYWAL_Content_3             : 'Si en el futuro quieres utilizar esta cartera con MyEtherWallet CX, tendrás que volver a añadirla manualmente utilizando Clave Privada/JSON y contraseña. ',
 
 /* View Wallet Details */
-VIEWWALLET_Subtitle         : 'Esto te permite descargar múltiples versiones de claves privadas e imprimir de nuevo tu cartera en papel. Puede que te interese hacer esto para [importar tu cuenta en Geth/Mist](http://ethereum.stackexchange.com/questions/465/how-to-import-a-plain-private-key-into-geth/). Si quieres comprobar tu saldo, recomendamos utilizar un explorador de blockchain como [etherscan.io](https://etherscan.io/). ',
+VIEWWALLET_Subtitle         : 'Esto te permite descargar múltiples versiones de claves privadas e imprimir de nuevo tu cartera en papel. Puede que te interese hacer esto para [importar tu cuenta en Geth/Mist](http://ethereum.stackexchange.com/questions/465/how-to-import-a-plain-private-key-into-geth/). Si quieres comprobar tu saldo, recomendamos utilizar un explorador de blockchain como [explorer.moac.io](http://explorer.moac.io/). ',
 VIEWWALLET_Subtitle_Short   : 'Esto te permite descargar múltiples versiones de claves privadas e imprimir de nuevo tu cartera en papel. ',
 VIEWWALLET_SuccessMsg       : '¡Enhorabuena! Estos son los detalles de tu cartera. ',
 VIEWWALLET_ShowPrivKey      : '(mostrar)',
@@ -615,7 +615,7 @@ GETH_NegativeValue              :  '(geth-07) Valor negativo. Negative value.',
 GETH_Nonce                      :  "(geth-08) Nonce demasiado bajo. This TX's [nonce](https://myetherwallet.github.io/knowledge-base/transactions/what-is-nonce.html) is too low. Try incrementing the nonce by pressing the Generate button again, or [replace the pending transaction](https://myetherwallet.github.io/knowledge-base/transactions/check-status-of-ethereum-transaction.html).",
 GETH_NonExistentAccount         :  '(geth-09) La cuenta no existe o tiene un saldo insuficiente. Account does not exist or account balance too low',
 
-PARITY_AlreadyImported          :  "(parity-01) A transaction with the same hash was already imported. It was probably already broadcast. To avoid duplicate transactions, check your address on [etherscan.io](https://etherscan.io) & wait 10 minutes before attempting to send again. [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html)",
+PARITY_AlreadyImported          :  "(parity-01) A transaction with the same hash was already imported. It was probably already broadcast. To avoid duplicate transactions, check your address on [explorer.moac.io](http://explorer.moac.io) & wait 10 minutes before attempting to send again. [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html)",
 PARITY_GasLimitExceeded         :  "(parity-02) Transaction cost exceeds current gas limit. Limit: (d+), got: (d+). Please lower the gas limit to 21000 (for sending) or 200000 (for sending tokens or contracts) and try again. [Learn More](https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html)",
 PARITY_InsufficientBalance      :  "(parity-03) Insufficient balance. The account you tried to send transaction from does not have enough funds. If you believe this is in error, try using the 'Send Entire Balance' button, or pressing generate again. Required (d+) and got: (d+). [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html)",
 PARITY_InsufficientGasPrice     :  "(parity-04) There is another transaction with same nonce in the queue, or the transaction fee is too low. Try incrementing the nonce by clicking the Generate button again. [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html)",
@@ -831,10 +831,10 @@ HELP_15_Title               : '15) Why hasn\'t the account I just created show u
 HELP_15_Desc_1              : 'Accounts will only show up in a blockchain explorer once the account has activity on it&mdash;for example, once you have transferred some Ether to it. ',
 
 HELP_16_Title               : '16) How do I check the balance of my account? ',
-HELP_16_Desc_1              : 'You can use a blockchain explorer like [etherscan.io](https://etherscan.io/). Paste your address into the search bar and it will pull up your account and transaction history. For example, here\'s what our [donation account](https://etherscan.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D) looks like on etherscan.io ',
+HELP_16_Desc_1              : 'You can use a blockchain explorer like [explorer.moac.io](http://explorer.moac.io/). Paste your address into the search bar and it will pull up your account and transaction history. For example, here\'s what our [donation account](http://explorer.moac.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D) looks like on explorer.moac.io ',
 
 HELP_17_Title               : '17) Why isn\'t my balance showing up when I unlock my wallet? ',
-HELP_17_Desc_1              : 'This is most likely due to the fact that you are behind a firewall. The API that we use to get the balance and convert said balance is often blocked by firewalls for whatever reason. You will still be able to send transactions, you just need to use a different method to see said balance, like etherscan.io ',
+HELP_17_Desc_1              : 'This is most likely due to the fact that you are behind a firewall. The API that we use to get the balance and convert said balance is often blocked by firewalls for whatever reason. You will still be able to send transactions, you just need to use a different method to see said balance, like explorer.moac.io ',
 
 HELP_18_Title               : '18) Where is my geth wallet file? ',
 

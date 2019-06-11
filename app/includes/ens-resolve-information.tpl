@@ -4,7 +4,7 @@
     <tr>
       <td>Name:</td>
       <td class="mono">
-        <a href="https://etherscan.io/enslookup?q={{objENS.name}}.eth"
+        <a href="http://explorer.moac.io/enslookup?q={{objENS.name}}.eth"
            target="_blank"
            rel="noopener noreferrer">
               {{objENS.name}}.eth
