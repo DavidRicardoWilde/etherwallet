@@ -43,7 +43,7 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
         if ( globalFuncs.urlGet('tokensymbol') != null ) {
             $scope.unitReadable = $scope.tx.tokensymbol;
             $scope.tx.sendMode = 'token';
-        } else if (sendMode == 'eth') {
+        } else if (sendMode == 'ether') {
             $scope.unitReadable = ajaxReq.type;
         } else {
             $scope.unitReadable = tokensymbol;
@@ -190,7 +190,7 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
                     console.log("sendTxCtrl:190 ERROR");
                     $scope.notifier.danger(globalFuncs.errorMsgs[21]);
                 }
-                $scope.tx.gasLimit = data.data;
+                $scope.tx.gasLimit = 35000; //Need to update here for calculate automaticly     data.data;
             } else $scope.notifier.danger(data.msg);
         });
     }
@@ -250,7 +250,7 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
             if (!resp.isError) {
                 var checkTxLink = "https://www.MoacWalletOnline.com?txHash=" + resp.data + "#check-tx-status";
                 var txHashLink = $scope.ajaxReq.blockExplorerTX.replace("[[txHash]]", resp.data);
-                var emailBody = 'I%20was%20trying%20to..............%0A%0A%0A%0ABut%20I%27m%20confused%20because...............%0A%0A%0A%0A%0A%0ATo%20Address%3A%20https%3A%2F%2Fetherscan.io%2Faddress%2F' + $scope.tx.to + '%0AFrom%20Address%3A%20https%3A%2F%2Fetherscan.io%2Faddress%2F' + $scope.wallet.getAddressString() + '%0ATX%20Hash%3A%20https%3A%2F%2Fetherscan.io%2Ftx%2F' + resp.data + '%0AAmount%3A%20' + $scope.tx.value + '%20' + $scope.unitReadable + '%0ANode%3A%20' + $scope.ajaxReq.type + '%0AToken%20To%20Addr%3A%20' + $scope.tokenTx.to + '%0AToken%20Amount%3A%20' + $scope.tokenTx.value + '%20' + $scope.unitReadable + '%0AData%3A%20' + $scope.tx.data + '%0AGas%20Limit%3A%20' + $scope.tx.gasLimit + '%0AGas%20Price%3A%20' + $scope.tx.gasPrice;
+                var emailBody = 'I%20was%20trying%20to..............%0A%0A%0A%0ABut%20I%27m%20confused%20because...............%0A%0A%0A%0A%0A%0ATo%20Address%3A%20https%3A%2F%2Fexplorer.moac.io%2Faddress%2F' + $scope.tx.to + '%0AFrom%20Address%3A%20https%3A%2F%2Fexplorer.moac.io%2Faddress%2F' + $scope.wallet.getAddressString() + '%0ATX%20Hash%3A%20https%3A%2F%2Fexplorer.moac.io%2Ftx%2F' + resp.data + '%0AAmount%3A%20' + $scope.tx.value + '%20' + $scope.unitReadable + '%0ANode%3A%20' + $scope.ajaxReq.type + '%0AToken%20To%20Addr%3A%20' + $scope.tokenTx.to + '%0AToken%20Amount%3A%20' + $scope.tokenTx.value + '%20' + $scope.unitReadable + '%0AData%3A%20' + $scope.tx.data + '%0AGas%20Limit%3A%20' + $scope.tx.gasLimit + '%0AGas%20Price%3A%20' + $scope.tx.gasPrice;
                 var verifyTxBtn = $scope.ajaxReq.type != nodes.nodeTypes.Custom ? '<a class="btn btn-xs btn-info" href="' + txHashLink + '" class="strong" target="_blank" rel="noopener noreferrer">Verify Transaction</a>' : '';
                 var checkTxBtn = '<a class="btn btn-xs btn-info" href="' + checkTxLink + '" target="_blank" rel="noopener noreferrer"> Check TX Status </a>';
                 var emailBtn = '<a class="btn btn-xs btn-info " href="mailto:support@MoacWalletOnline.com?Subject=Issue%20regarding%20my%20TX%20&Body=' + emailBody + '" target="_blank" rel="noopener noreferrer">Confused? Email Us.</a>';

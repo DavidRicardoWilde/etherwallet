@@ -681,7 +681,7 @@
                ng-click="dropdownAmount = !dropdownAmount"
                ng-class="dropdownEnabled ? '' : 'disabled'">
                 <strong>
-                  MC
+                  {{unitReadable}}
                   <i class="caret"></i>
                 </strong>
             </a>
@@ -1597,7 +1597,7 @@
 
     <div ng-show="!wd">
       <p translate="VIEWWALLET_Subtitle">
-        This page allows you to download different versions of private keys and re-print your paper wallet. You may want to do this in order to [import your account into Geth/Mist](http://ethereum.stackexchange.com/questions/465/how-to-import-a-plain-private-key-into-geth/). If you want to check your balance, we recommend using a blockchain explorer like <a href="http://etherscan.io/" target="_blank" rel="noopener noreferrer">etherscan.io</a>.
+        This page allows you to download different versions of private keys and re-print your paper wallet. If you want to check your balance, we recommend using a blockchain explorer like <a href="http://explorer.moac.io/" target="_blank" rel="noopener noreferrer">explorer.moac.io</a>.
       </p>
       <wallet-decrypt-drtv></wallet-decrypt-drtv>
     </div>
@@ -1782,7 +1782,7 @@
 
     <div class="cont-md" ng-show="txInfo.status == txStatus.mined">
       <h3 class="text-success" translate="tx_FoundOnChain"> Transaction Found </h3>
-      <h5> <a href="https://etherscan.io/tx/{{ tx.hash }}" target="_blank" rel="noopener noreferrer"> {{ tx.hash }} </a> </h5>
+      <h5> <a href="http://explorer.moac.io/tx/{{ tx.hash }}" target="_blank" rel="noopener noreferrer"> {{ tx.hash }} </a> </h5>
       <p><strong translate="tx_FoundOnChain_1"></strong></p>
       <ul>
         <li translate="tx_FoundOnChain_2"></li>
@@ -1827,7 +1827,7 @@
               TX Hash
             </td>
             <td>
-              <a href="https://etherscan.io/tx/{{ txInfo.hash }}" target="_blank" rel="noopener noreferrer">
+              <a href="http://explorer.moac.io/tx/{{ txInfo.hash }}" target="_blank" rel="noopener noreferrer">
                 {{ txInfo.hash }}
               </a>
             </td>
@@ -1837,7 +1837,7 @@
               From Address
             </td>
             <td>
-              <a href="https://etherscan.io/address/{{ txInfo.from }}" target="_blank" rel="noopener noreferrer">
+              <a href="http://explorer.moac.io/address/{{ txInfo.from }}" target="_blank" rel="noopener noreferrer">
                 {{ txInfo.from }}
               </a>
             </td>
@@ -1847,7 +1847,7 @@
               To Address
             </td>
             <td>
-              <a href="https://etherscan.io/address/{{ txInfo.to }}" target="_blank" rel="noopener noreferrer">
+              <a href="http://explorer.moac.io/address/{{ txInfo.to }}" target="_blank" rel="noopener noreferrer">
                 {{ txInfo.to }}
               </a>
             </td>
@@ -2069,7 +2069,7 @@
                ng-click="dropdownAmount = !dropdownAmount"
                ng-class="dropdownEnabled ? '' : 'disabled'">
                 <strong>
-                  MC
+                  {{unitReadable}}
                   <i class="caret"></i>
                 </strong>
             </a>

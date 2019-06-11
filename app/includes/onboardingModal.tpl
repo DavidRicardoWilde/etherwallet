@@ -179,7 +179,7 @@
                   It is made up of all the individual transactions sent from MyEtherWallet, MetaMask, Exodus, Mist, Geth, Parity, and everywhere else.
                 </li>
                 <li translate="ONBOARD_blockchain_content__5">
-                  When you see your balance on MoacWalletOnline.com or view your transactions on [etherscan.io](https://etherscan.io), you are seeing data on the blockchain, not in our personal systems.
+                  When you see your balance on MoacWalletOnline.com or view your transactions on [explorer.moac.io](http://explorer.moac.io), you are seeing data on the blockchain, not in our personal systems.
                 </li>
                 <li translate="ONBOARD_blockchain_content__6">
                    Again: <strong>we are not a bank</strong>.

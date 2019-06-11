@@ -167,13 +167,13 @@ uiFuncs.generateTx = function(txData, callback) {
         var genTxWithInfo = function(inData) {
             var rawTx = {
                 nonce: ethFuncs.sanitizeHex(inData.nonce),
-                gasPrice: inData.isOffline ? ethFuncs.sanitizeHex(inData.gasprice) : ethFuncs.sanitizeHex(ethFuncs.addTinyMoreToGas(data.gasprice)),
+                gasPrice: ethFuncs.sanitizeHex(inData.gasprice),
                 gasLimit: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(txData.gasLimit)),
                 to: ethFuncs.sanitizeHex(txData.to),
                 value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(etherUnits.toWei(txData.value, txData.unit))),
                 data: ethFuncs.sanitizeHex(txData.data)
             }
-            if (ajaxReq.eip155) rawTx.chainId = ajaxReq.chainId;
+            if (ajaxReq.eip155) rawTx.chainId = '0x'+ethFuncs.decimalToHex(ajaxReq.chainId);
             //If 
             rawTx.data = rawTx.data == '' ? '0x' : rawTx.data;
 
@@ -244,6 +244,8 @@ uiFuncs.generateTx = function(txData, callback) {
             // }
         }//end genTxWithInfo
         console.log("genTx:txData:", txData);
+        txData.nonce = null;
+        txData.gasPrice = null;
         if (txData.nonce || txData.gasPrice) {
             var data = {
                 nonce: txData.nonce,
@@ -280,7 +282,7 @@ uiFuncs.generateTx = function(txData, callback) {
 }
 //Actual send the TX
 uiFuncs.sendTx = function(signedTx, callback) {
-    // check for web3 late signed tx
+    // check for web3 late signed tx  
     if (signedTx.slice(0, 2) !== '0x') {
         var txParams = JSON.parse(signedTx)
         window.web3.eth.sendTransaction(txParams, function(err, txHash) {
@@ -296,7 +298,7 @@ uiFuncs.sendTx = function(signedTx, callback) {
         });
         return
     }
-
+    
     ajaxReq.sendRawTx(signedTx, function(data) {
         var resp = {};
         if (data.error) {

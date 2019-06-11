@@ -351,10 +351,10 @@
       </h5>
       <ul class="account-info">
         <li>
-          <a href="https://etherscan.io/address/{{wallet.getAddressString()}}"
+          <a href="http://explorer.moac.io/address/{{wallet.getAddressString()}}"
              target="_blank"
              rel="noopener noreferrer">
-               https://etherscan.io/address/ {{wallet.getAddressString()}}
+               http://explorer.moac.io/address/ {{wallet.getAddressString()}}
           </a>
         </li>
       </ul>

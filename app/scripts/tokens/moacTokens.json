@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "address":"0x4c6007cea426e543551f2cb6392e6d6768f74706",
+        "symbol":"FST",
+        "decimal":18,
+        "type":"default"
+      },{
+        "address":"0xbaa8ba1c4f64ddcc526f99b25ef57f4494937ee6",
+        "symbol":"PAS",
+        "decimal":6,
+        "type":"default"
+      }
+    
+]

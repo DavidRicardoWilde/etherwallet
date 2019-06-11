@@ -64,7 +64,7 @@
           ETH:
           <span class="mono wrap">
             mewtopia.eth
-            <a title="See this address on the blockchain explorer" href="https://etherscan.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D" class="ext-etheraddresslookup-link" target="_blank">
+            <a title="See this address on the blockchain explorer" href="http://explorer.moac.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D" class="ext-etheraddresslookup-link" target="_blank">
               0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D
             </a>
           </span>

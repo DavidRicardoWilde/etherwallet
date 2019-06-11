@@ -138,7 +138,7 @@ ONBOARD_blockchain_content__1   :  'The blockchain is like a huge, global, decen
 ONBOARD_blockchain_content__2   :  'It keeps track of who sent how many coins to whom, and what the balance of every account is.',
 ONBOARD_blockchain_content__3   :  'It is stored and maintained by thousands of people (miners) across the globe who have special computers.',
 ONBOARD_blockchain_content__4   :  'The blocks in the blockchain are made up of all the individual transactions sent from MyEtherWallet, MetaMask, Exodus, Mist, Geth, Parity, and everywhere else.',
-ONBOARD_blockchain_content__5   :  'When you see your balance on MoacWalletOnline.com or view your transactions on [etherscan.io](https://etherscan.io), you are seeing data on the blockchain, not in our personal systems.',
+ONBOARD_blockchain_content__5   :  'When you see your balance on MoacWalletOnline.com or view your transactions on [explorer.moac.io](http://explorer.moac.io), you are seeing data on the blockchain, not in our personal systems.',
 ONBOARD_blockchain_content__6   :  'Again: **we are not a bank**.',
 ONBOARD_interface_title__alt    :  'MEW is an Interface',
 ONBOARD_why_title__alt          :  'But...why does this matter?',
@@ -472,7 +472,7 @@ MYWAL_Content_2             : 'Stellen Sie sicher, dass Sie **die private Key/JS
 MYWAL_Content_3             : 'Wenn Sie dieses Wallet in Zukunft mit MyEtherWallet CX verwenden wollen, müssen Sie es mittels des privaten Schlüssels/JSON Datei und Ihrem Passwort manuell wieder hinzufügen. ',
 
 /* View Wallet Details */
-VIEWWALLET_Subtitle         : 'Dies erlaubt Ihnen, den Download verschiedener Versionen Ihres privaten Schlüssels sowie das erneute Drucken Ihres Papier-Wallets. Es wird empfohlen, dies zu tun um [Ihren Account in Geth/Mist zu importieren.](http://ethereum.stackexchange.com/questions/465/how-to-import-a-plain-private-key-into-geth/). Zum Überprüfen Ihres Kontostands empfehlen wir, einen Blockchain Explorer wie [etherscan.io](https://etherscan.io/) zu verwenden. ',
+VIEWWALLET_Subtitle         : 'Dies erlaubt Ihnen, den Download verschiedener Versionen Ihres privaten Schlüssels sowie das erneute Drucken Ihres Papier-Wallets. Es wird empfohlen, dies zu tun um [Ihren Account in Geth/Mist zu importieren.](http://ethereum.stackexchange.com/questions/465/how-to-import-a-plain-private-key-into-geth/). Zum Überprüfen Ihres Kontostands empfehlen wir, einen Blockchain Explorer wie [explorer.moac.io](http://explorer.moac.io/) zu verwenden. ',
 VIEWWALLET_Subtitle_Short   : 'Dies erlaubt Ihnen den Download verschiedener Versionen Ihres privaten Schlüssel sowie das erneute Drucken Ihres Papier-Wallets. ',
 VIEWWALLET_SuccessMsg       : 'Erfolgreich! Hier sind die Daten Ihres Wallets. ',
 VIEWWALLET_ShowPrivKey      : '(anzeigen)',
@@ -834,10 +834,10 @@ HELP_15_Title               : '15) Why hasn\'t the account I just created show u
 HELP_15_Desc_1              : 'Accounts will only show up in a blockchain explorer once the account has activity on it&mdash;for example, once you have transferred some Ether to it. ',
 
 HELP_16_Title               : '16) How do I check the balance of my account? ',
-HELP_16_Desc_1              : 'You can use a blockchain explorer like [etherscan.io](https://etherscan.io/). Paste your address into the search bar and it will pull up your address and transaction history. For example, here\'s what our [donation account](https://etherscan.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D) looks like on etherscan.io ',
+HELP_16_Desc_1              : 'You can use a blockchain explorer like [explorer.moac.io](http://explorer.moac.io/). Paste your address into the search bar and it will pull up your address and transaction history. For example, here\'s what our [donation account](http://explorer.moac.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D) looks like on explorer.moac.io ',
 
 HELP_17_Title               : '17) Why isn\'t my balance showing up when I unlock my wallet? ',
-HELP_17_Desc_1              : 'This is most likely due to the fact that you are behind a firewall. The API that we use to get the balance and convert said balance is often blocked by firewalls for whatever reason. You will still be able to send transactions, you just need to use a different method to see said balance, like etherscan.io ',
+HELP_17_Desc_1              : 'This is most likely due to the fact that you are behind a firewall. The API that we use to get the balance and convert said balance is often blocked by firewalls for whatever reason. You will still be able to send transactions, you just need to use a different method to see said balance, like explorer.moac.io ',
 
 HELP_18_Title               : '18) Where is my geth wallet file? ',
 

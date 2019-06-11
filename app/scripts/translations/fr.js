@@ -138,7 +138,7 @@ ONBOARD_blockchain_content__1   :  'The blockchain is like a huge, global, decen
 ONBOARD_blockchain_content__2   :  'It keeps track of who sent how many coins to whom, and what the balance of every account is.',
 ONBOARD_blockchain_content__3   :  'It is stored and maintained by thousands of people (miners) across the globe who have special computers.',
 ONBOARD_blockchain_content__4   :  'The blocks in the blockchain are made up of all the individual transactions sent from MyEtherWallet, MetaMask, Exodus, Mist, Geth, Parity, and everywhere else.',
-ONBOARD_blockchain_content__5   :  'When you see your balance on MoacWalletOnline.com or view your transactions on [etherscan.io](https://etherscan.io), you are seeing data on the blockchain, not in our personal systems.',
+ONBOARD_blockchain_content__5   :  'When you see your balance on MoacWalletOnline.com or view your transactions on [explorer.moac.io](http://explorer.moac.io), you are seeing data on the blockchain, not in our personal systems.',
 ONBOARD_blockchain_content__6   :  'Again: **we are not a bank**.',
 ONBOARD_interface_title__alt    :  'MEW is an Interface',
 ONBOARD_why_title__alt          :  'But...why does this matter?',
@@ -476,7 +476,7 @@ MYWAL_Content_2             : 'Assurez-vous d\'avoir bien **sauvegardé la clé 
 MYWAL_Content_3             : 'Si vous voulez utiliser ce portefeuille avec MyEtherWallet CX à l\'avenir, vous devrez le rajouter manuellement en utilisant la clé privée / fichier JSON et le mot de passe.',
 
 /* View Wallet Details */
-VIEWWALLET_Subtitle         : 'Ceci vous permet de télécharger plusieurs versions des clefs privées et d\'imprimer votre portefeuille papier. Vous devrez le faire pour [importer votre compte dans Geth / Mist](http://ethereum.stackexchange.com/questions/465/how-to-import-a-plain-private-key-into-geth/). Si vous voulez seulement consulter votre solde, nous recommandons d\'utiliser un explorateur de blockchain comme [etherscan.io](https://etherscan.io/).',
+VIEWWALLET_Subtitle         : 'Ceci vous permet de télécharger plusieurs versions des clefs privées et d\'imprimer votre portefeuille papier. Vous devrez le faire pour [importer votre compte dans Geth / Mist](http://ethereum.stackexchange.com/questions/465/how-to-import-a-plain-private-key-into-geth/). Si vous voulez seulement consulter votre solde, nous recommandons d\'utiliser un explorateur de blockchain comme [explorer.moac.io](http://explorer.moac.io/).',
 VIEWWALLET_Subtitle_Short   : 'Ceci vous permet de télécharger plusieurs versions des clefs privées et d\'imprimer votre portefeuille papier.',
 VIEWWALLET_SuccessMsg       : 'Réussi ! Voici les détails de votre portefeuille :',
 VIEWWALLET_ShowPrivKey      : '(montrer)',
@@ -625,7 +625,7 @@ GETH_NegativeValue          : '(geth-07) Negative value. Valeur négative',
 GETH_Nonce                  : '(geth-08) This TX\'s [nonce](https://myetherwallet.github.io/knowledge-base/transactions/what-is-nonce.html) is too low. Try incrementing the nonce by pressing the Generate button again, or [replace the pending transaction](https://myetherwallet.github.io/knowledge-base/transactions/check-status-of-ethereum-transaction.html). Nonce trop bas',
 GETH_NonExistentAccount     : '(geth-09) Account does not exist or account balance too low. Compte inexistant ou solde du compte trop bas',
 
-PARITY_AlreadyImported      : "(parity-01) A transaction with the same hash was already imported. It was probably already broadcast. To avoid duplicate transactions, check your address on [etherscan.io](https://etherscan.io) & wait 10 minutes before attempting to send again. [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html). Une transaction portant la même empreinte (_hash_) a déjà été importée.",
+PARITY_AlreadyImported      : "(parity-01) A transaction with the same hash was already imported. It was probably already broadcast. To avoid duplicate transactions, check your address on [explorer.moac.io](http://explorer.moac.io) & wait 10 minutes before attempting to send again. [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html). Une transaction portant la même empreinte (_hash_) a déjà été importée.",
 PARITY_GasLimitExceeded     : "(parity-02) Transaction cost exceeds current gas limit. Limit: (d+), got: (d+). Please lower the gas limit to 21000 (for sending) or 200000 (for sending tokens or contracts) and try again. [Learn More](https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html). Le coût de la transaction excède la limite en Gas courante (limite : {}, coût : {}). Essayez de réduire le Gas fourni.",
 PARITY_InsufficientBalance  : "(parity-03) Insufficient balance. The account you tried to send transaction from does not have enough funds. If you believe this is in error, try using the 'Send Entire Balance' button, or pressing generate again. Required (d+) and got: (d+). [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html). Fonds insuffisants. Le compte d'où vous essayez d'envoyer une transaction ne possède pas assez de fonds (requis : {}, disponibles : {}).",
 PARITY_InsufficientGasPrice : "(parity-04) There is another transaction with same nonce in the queue, or the transaction fee is too low. Try incrementing the nonce by clicking the Generate button again. [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html). Les frais de transaction sont trop bas. Ils ne satisfont pas au minimum de votre nœud (minimum : {}, frais : {}). Essayez d\'augmenter les frais.",
@@ -830,10 +830,10 @@ HELP_15_Title               : '15) Pourquoi le compte que je viens de créer n\'
 HELP_15_Desc_1              : 'Les comptes n\'apparaissent dans un explorateur de blockchain qu\'après une activité, comme par exemple, un envoi ou une réception d\'Ether.',
 
 HELP_16_Title               : '16) Comment puis-je vérifier le solde de mon compte ?',
-HELP_16_Desc_1              : 'Vous pouvez utiliser un explorateur de blockchain comme [etherscan.io](https://etherscan.io/). Collez votre adresse dans la barre de recherche et cela récupérera votre solde et l\'historique de vos transactions. Par exemple, voici ce que montre notre [compte de donations](https://etherscan.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D) sur etherscan.io',
+HELP_16_Desc_1              : 'Vous pouvez utiliser un explorateur de blockchain comme [explorer.moac.io](http://explorer.moac.io/). Collez votre adresse dans la barre de recherche et cela récupérera votre solde et l\'historique de vos transactions. Par exemple, voici ce que montre notre [compte de donations](http://explorer.moac.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D) sur explorer.moac.io',
 
 HELP_17_Title               : '17) Pourquoi mon solde n\'apparaît-il pas quand je déverrouille mon portefeuille ?',
-HELP_17_Desc_1              : 'C\'est probablement dû au fait que vous vous trouviez derrière un parefeu. L\'API que nous utilisons pour obtenir le solde et converir celui-ci est souvent bloquée par des parefeus pour des raisons diverses. Vous êtes toujours capable d\'envoyer des transactions mais il vous faut employer une autre méthode pour voir le solde, comme etherscan.io',
+HELP_17_Desc_1              : 'C\'est probablement dû au fait que vous vous trouviez derrière un parefeu. L\'API que nous utilisons pour obtenir le solde et converir celui-ci est souvent bloquée par des parefeus pour des raisons diverses. Vous êtes toujours capable d\'envoyer des transactions mais il vous faut employer une autre méthode pour voir le solde, comme explorer.moac.io',
 
 HELP_18_Title               : '18) Où est le fichier de mon portefeuille geth ?',
 
