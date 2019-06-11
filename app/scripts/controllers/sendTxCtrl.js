@@ -190,7 +190,7 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
                     console.log("sendTxCtrl:190 ERROR");
                     $scope.notifier.danger(globalFuncs.errorMsgs[21]);
                 }
-                $scope.tx.gasLimit = data.data;
+                $scope.tx.gasLimit = 35000; //Need to update here for calculate automaticly     data.data;
             } else $scope.notifier.danger(data.msg);
         });
     }
