@@ -22,6 +22,15 @@ const uglify       = require('gulp-uglify');
 const zip          = require('gulp-zip');
 const html2js      = require('html2js-browserify');
 
+const connect = require('gulp-connect');
+const http         = require('http');
+const express      = require('express');
+const compression  = require('compression');
+const serveStatic  = require('serve-static');
+const webserver    = require('gulp-webserver');
+// const runSequence  = require('run-sequence');
+const http2        = require('spdy');
+
 const app          = './app/';
 const dist         = './dist/';
 const dist_CX      = './chrome-extension/';
@@ -416,4 +425,15 @@ gulp.task('watchProd', ['watchJSProd', 'watchLess', 'watchPAGES', 'watchTPL', 'w
 gulp.task('build', ['js', 'html', 'styles', 'copy']);
 gulp.task('build-debug', ['js-debug', 'html', 'styles', 'watchJSDebug', 'watchLess', 'watchPAGES', 'watchTPL', 'watchCX'])
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('webserver', function(){
+    gulp.src('dist')
+      .pipe(webserver({
+        livereload: true,
+        directoryListing: true,
+        root:'index.html',
+        open: false,
+        https:{key: 'sslcert/privkey.pem', cert: 'sslcert/cacert.pem'}
+      }));
+  })
+
+  gulp.task("default", ["build", "watch", "webserver"]);

@@ -252,10 +252,12 @@ Wallet.prototype.toJSON = function() {
     }
 }
 Wallet.fromMyEtherWallet = function(input, password) {
+    console.warn("fromMyEtherWallet");
     var json = (typeof input === 'object') ? input : JSON.parse(input)
     var privKey
     if (!json.locked) {
         if (json.private.length !== 64) {
+            console.warn("json.private.length");
             throw new Error('Invalid private key length')
         }
         privKey = new Buffer(json.private, 'hex')

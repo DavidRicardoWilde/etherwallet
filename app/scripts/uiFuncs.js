@@ -55,11 +55,22 @@ uiFuncs.signTxTrezor = function(rawTx, txData, callback) {
         localCallback
     );
 }
-uiFuncs.signTxLedger = function(app, eTx, rawTx, txData, old, callback) {
-    eTx.raw[6] = Buffer.from([rawTx.chainId]);
-    eTx.raw[7] = eTx.raw[8] = 0;
-    var toHash = old ? eTx.raw.slice(0, 6) : eTx.raw;
+uiFuncs.signTxLedger = function(app, mTx, rawTx, txData, old, callback) {
+    mTx.raw[9] = Buffer.from([rawTx.chainId]);
+    mTx.raw[10] = mTx.raw[11] = 0;
+    var toHash = old ? mTx.raw.slice(0, 6) : mTx.raw;
     var txToSign = ethUtil.rlp.encode(toHash);
+    // console.warn("eTx.raw[0]: ",eTx.raw[0]);
+    // console.warn("eTx.raw[1]: ",eTx.raw[1]);
+    // console.warn("eTx.raw[2]: ",eTx.raw[2]);
+    // console.warn("eTx.raw[3]: ",eTx.raw[3]);
+    // console.warn("eTx.raw[4]: ",eTx.raw[4]);
+    // console.warn("eTx.raw[5]: ",eTx.raw[5]);
+    // console.warn("chainid is: ",eTx.raw[6]);
+    // console.warn("eTx.raw[7]: ",eTx.raw[7]);
+    // console.warn("eTx.raw[8]: ",eTx.raw[8]);
+    // console.warn("eTx.raw[8]: ",eTx.raw[9]);
+    
     var localCallback = function(result, error) {
         if (typeof error != "undefined") {
             error = error.errorCode ? u2f.getErrorByCode(error.errorCode) : error;
@@ -69,10 +80,24 @@ uiFuncs.signTxLedger = function(app, eTx, rawTx, txData, old, callback) {
             });
             return;
         }
-        rawTx.v = "0x" + result['v'];
+
+        var v = result['v'].toString(16);
+        if (!old) {
+            // EIP155 support. check/recalc signature v value.
+            var rv = parseInt(v, 16);
+            var cv = rawTx.chainId * 2 + 35;
+            if (rv !== cv && (rv & cv) !== rv) {
+                cv += 1; // add signature v bit.
+            }
+            v = cv.toString(16);
+        }
+
+        rawTx.v = "0x" + v;
+        
         rawTx.r = "0x" + result['r'];
         rawTx.s = "0x" + result['s'];
-        eTx = new ethUtil.Tx(rawTx);
+        // eTx = new ethUtil.Tx(rawTx);
+        mTx = new moacTx(rawTx);
         rawTx.rawTx = JSON.stringify(rawTx);
         rawTx.signedTx = '0x' + eTx.serialize().toString('hex');
         rawTx.isError = false;
@@ -163,15 +188,27 @@ uiFuncs.generateTx = function(txData, callback) {
     try {
         uiFuncs.isTxDataValid(txData);
         //Define the rawTX and sign with different signers
-
         var genTxWithInfo = function(inData) {
+            // var rawTx = {
+            //     nonce: ethFuncs.sanitizeHex(inData.nonce),
+            //     gasPrice: ethFuncs.sanitizeHex(inData.gasprice),
+            //     gasLimit: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(txData.gasLimit)),
+            //     to: ethFuncs.sanitizeHex(txData.to),
+            //     value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(etherUnits.toWei(txData.value, txData.unit))),
+            //     data: ethFuncs.sanitizeHex(txData.data)
+            // }
             var rawTx = {
                 nonce: ethFuncs.sanitizeHex(inData.nonce),
+                // systemContract: ethFuncs.sanitizeHex(inData.systemContract),
                 gasPrice: ethFuncs.sanitizeHex(inData.gasprice),
                 gasLimit: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(txData.gasLimit)),
                 to: ethFuncs.sanitizeHex(txData.to),
                 value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(etherUnits.toWei(txData.value, txData.unit))),
-                data: ethFuncs.sanitizeHex(txData.data)
+                data: ethFuncs.sanitizeHex(txData.data),
+                // shardingFlag: ethFuncs.sanitizeHex(inData.shardingFlag),
+                // v: ethFuncs.sanitizeHex(inData.v),
+                // r: ethFuncs.sanitizeHex(inData.r),
+                // s: ethFuncs.sanitizeHex(inData.s)
             }
             if (ajaxReq.eip155) rawTx.chainId = '0x'+ethFuncs.decimalToHex(ajaxReq.chainId);
             //If 
@@ -183,11 +220,44 @@ uiFuncs.generateTx = function(txData, callback) {
             rawTx.shardingFlag = txData.systemContract || '0x';
 
             var mTx = new moacTx(rawTx);
-            mTx.sign(new Buffer(txData.privKey, 'hex'));
-            rawTx.signedTx = '0x' + mTx.serialize().toString('hex');
-            rawTx.rawTx = JSON.stringify(rawTx);
-            rawTx.isError = false;
-            if (callback !== undefined) callback(rawTx);
+            if ((typeof txData.hwType != "undefined") && (txData.hwType == "ledger")) { //ledger
+                //ledger hardware wallet
+                var app = new ledgerEth(txData.hwTransport);
+                var EIP155Supported = false;
+                var localCallback = function(result, error) {
+                    if (typeof error != "undefined") {
+                        if (callback !== undefined) callback({
+                            isError: true,
+                            error: error
+                        });
+                        return;
+                    }
+                    var splitVersion = result['version'].split('.');
+                    if (parseInt(splitVersion[0]) > 1) {
+                        EIP155Supported = true;
+                    } else
+                    if (parseInt(splitVersion[1]) > 0) {
+                        EIP155Supported = true;
+                    } else
+                    if (parseInt(splitVersion[2]) > 2) {
+                        EIP155Supported = true;
+                    }
+                    uiFuncs.signTxLedger(app, mTx, rawTx, txData, !EIP155Supported, callback);
+                }
+                app.getAppConfiguration(localCallback);
+            }else{ //keystore file ->
+                mTx.sign(new Buffer(txData.privKey, 'hex'));
+                rawTx.signedTx = '0x' + mTx.serialize().toString('hex');
+                rawTx.rawTx = JSON.stringify(rawTx);
+                rawTx.isError = false;
+                if (callback !== undefined) callback(rawTx);
+            }
+
+            // mTx.sign(new Buffer(txData.privKey, 'hex'));
+            // rawTx.signedTx = '0x' + mTx.serialize().toString('hex');
+            // rawTx.rawTx = JSON.stringify(rawTx);
+            // rawTx.isError = false;
+            // if (callback !== undefined) callback(rawTx);
 // var eTx = new ethUtil.Tx(rawTx);
             // if ((typeof txData.hwType != "undefined") && (txData.hwType == "ledger")) {
             //     //ledger hardware wallet
@@ -325,7 +395,8 @@ uiFuncs.transferAllBalance = function(fromAdd, gasLimit, callback) {
             maxVal = etherUnits.toEther(maxVal, 'wei') < 0 ? 0 : etherUnits.toEther(maxVal, 'wei');
             if (callback !== undefined) callback({
                 isError: false,
-                unit: "ether",
+                // unit: "ether",
+                unit: "mc",
                 value: maxVal
             });
         });

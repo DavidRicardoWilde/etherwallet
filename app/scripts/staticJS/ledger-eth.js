@@ -39,19 +39,25 @@ LedgerEth.splitPath = function(path) {
 
 // callback is function(response, error)
 LedgerEth.prototype.getAddress = function(path, callback, boolDisplay, boolChaincode) {
+	// console.warn("scanLedger check 004");
 	var splitPath = LedgerEth.splitPath(path);
+	// console.warn("scanLedger check 005");
 	var buffer = new Buffer(5 + 1 + splitPath.length * 4);
+	// console.warn("scanLedger check 006");
 	buffer[0] = 0xe0;
 	buffer[1] = 0x02;
 	buffer[2] = (boolDisplay ? 0x01 : 0x00);
 	buffer[3] = (boolChaincode ? 0x01 : 0x00);
 	buffer[4] = 1 + splitPath.length * 4;
 	buffer[5] = splitPath.length;
+	// console.warn("scanLedger check 007");
 	splitPath.forEach(function (element, index) {
 		buffer.writeUInt32BE(element, 6 + 4 * index);
 	});
+	// console.warn("scanLedger check 008");
 	var self = this;
 	var localCallback = function(response, error) {
+		// console.warn("scanLedger check 009");
 		if (typeof error != "undefined") {
 			callback(undefined, error);
 		}
@@ -73,6 +79,7 @@ LedgerEth.prototype.getAddress = function(path, callback, boolDisplay, boolChain
 			callback(result);
 		}
 	};
+	// console.warn("scanLedger check 0010");
 	this.comm.exchange(buffer.toString('hex'), localCallback);
 }
 

@@ -230,13 +230,14 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
             txData.value = '0x00';
         }
         uiFuncs.generateTx(txData, function(rawTx) {
-            console.log("rawTx.isError?", rawTx.isError);
+            console.log("rawTx.isError? ", rawTx.isError);
             if (!rawTx.isError) {
                 $scope.rawTx = rawTx.rawTx;
                 $scope.signedTx = rawTx.signedTx;
                 $rootScope.rootScopeShowRawTx = true;
             } else {
-                console.log("rawTxeror:", rawTx.error);
+                console.log("rawTxeror: ", rawTx.error);
+                console.warn("check data: ",rawTx.data);
                 $rootScope.rootScopeShowRawTx = false;
                 $scope.notifier.danger(rawTx.error);
             }
