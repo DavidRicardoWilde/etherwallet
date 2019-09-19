@@ -192,6 +192,7 @@ u2f.GetJsApiVersionResponse;
  * @param {function((MessagePort|u2f.WrappedChromeRuntimePort_))} callback
  */
 u2f.getMessagePort = function(callback) {
+  console.warn("check chrome",chrome);
   if (typeof chrome != 'undefined' && chrome.runtime) {
     // The actual message here does not matter, but we need to get a reply
     // for the callback to run. Thus, send an empty signature request
@@ -238,6 +239,8 @@ u2f.isAndroidChrome_ = function() {
  */
 u2f.isIosChrome_ = function() {
   return $.inArray(navigator.platform, ["iPhone", "iPad", "iPod"]) > -1;
+  // return false;
+  // return true;
 };
 
 /**

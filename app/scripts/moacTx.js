@@ -621,6 +621,7 @@ class moacTx {
    */
   sign (privateKey) {
     const msgHash = this.hash(false)
+    console.warn("privatekey is: ", privateKey)
     // console.log("Sign the hash with  chainID", this._chainId)
 
     const sig = ethUtil.ecsign(msgHash, privateKey)
