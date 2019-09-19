@@ -326,10 +326,15 @@ var decryptWalletCtrl = function($scope, $sce, walletService) {
             $scope.notifier.danger(error);
     }
     $scope.scanLedger = function() {
+        console.warn("scanLedger start");
         $scope.ledgerError = false;
+        // console.warn("scanLedger check 002");
         $scope.ledger = new Ledger3("w0w");
+        // console.warn("scanLedger check 001");
         var app = new ledgerEth($scope.ledger);
+        // console.warn("scanLedger check 002");
         var path = $scope.getLedgerPath();
+        // console.warn("scanLedger check 003");
         app.getAddress(path, $scope.ledgerCallback, false, true);
     };
     $scope.scanDigitalBitbox = function() {
